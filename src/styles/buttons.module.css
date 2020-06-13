@@ -1,0 +1,35 @@
+@value tokens: "./tokens.module.css";
+@value colorPrimary, darkPrimary from tokens;
+
+.blueButton {
+  display: flex;
+  flex-direction: row;
+  padding: 1.6rem 7.2rem;
+  background: #002860;
+  border-radius: 1.5rem;
+  width: 28.7rem;
+  height: 8.3rem;
+  color: colorPrimary;
+  font-family: Bungee;
+  font-size: 4.2rem;
+}
+
+.base {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: solight;
+}
+
+.content {
+  composes: base;
+  grid-row: span 2;
+}
+
+.full {
+  composes: base;
+  grid-row: 1 / -1;
+}
+
+.column {
+  padding: spacer1;
+}

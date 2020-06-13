@@ -1,0 +1,43 @@
+@value tokens: "../styles/tokens.module.css";
+@value colorPrimary, darkPrimary from tokens;
+
+.fullContainer {
+  width: 96rem;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block {
+  width: 100%;
+  background-color: darkPrimary;
+  color: colorPrimary;
+}
+
+.titel {
+  margin-top: 22.9rem;
+  color: white;
+  font-family: "Bungee", sans-serif;
+  font-size: 7.9rem;
+}
+
+.text {
+  margin-top: 1rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.start {
+  margin-top: 4rem;
+  composes: blueButton from "../styles/buttons.module.css";
+}
+
+.info {
+  font-family: Bungee;
+  font-size: 3.3rem;
+  line-height: 40px;
+  align-self: flex-end;
+  margin-top: 40rem;
+}
