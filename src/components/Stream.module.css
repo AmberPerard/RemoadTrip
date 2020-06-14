@@ -10,6 +10,14 @@
 }
 
 .topContainer {
+  background-color: darkPrimary;
+  color: colorPrimary;
+  font-family: Bungee;
+  font-size: 25px;
+
+  position: absolute;
+  width: 50.6rem;
+  height: 7.8rem;
 }
 
 .location {
