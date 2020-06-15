@@ -16,6 +16,7 @@ const Introduction = () => {
         </Link>
         <p className={style.info}>More information</p>
       </div>
+
       <div className={style.block}>
         <h2>Travel &amp; explore from your couch</h2>
         <p>You just need at least 1 computer and 1 phone. </p>

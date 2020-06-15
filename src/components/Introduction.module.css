@@ -35,9 +35,23 @@
 }
 
 .info {
+  position: absolute;
   font-family: Bungee;
   font-size: 3.3rem;
   line-height: 40px;
-  align-self: flex-end;
-  margin-top: 40rem;
+  top: 92%;
+  text-align: right;
+  width: 85%;
+}
+
+.info::after {
+  position: absolute;
+  content: '';
+  background: url('/assets/polygonmoreinformation.png') no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  margin-left: 1.5rem; 
+  margin-top: 1rem;
 }
