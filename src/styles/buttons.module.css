@@ -20,9 +20,9 @@
   display: flex;
   flex-direction: row;
   background: colorPrimary;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   width: 28rem;
-  height: 8.3rem;
+  height: 5.4rem;
   color: darkPrimary;
   font-family: Bungee;
   font-size: 3rem;
