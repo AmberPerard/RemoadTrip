@@ -12,12 +12,13 @@
   color: colorPrimary;
   font-family: Bungee;
   font-size: 4.2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .base {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: solight;
 }
 
 .content {
