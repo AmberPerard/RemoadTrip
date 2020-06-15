@@ -2,8 +2,10 @@
 @value colorPrimary, darkPrimary from tokens;
 
 .container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 .hidden {
   display: none;
@@ -13,42 +15,127 @@
   background-color: darkPrimary;
   color: colorPrimary;
   font-family: Bungee;
-  font-size: 25px;
+  font-size: 2.5rem;
 
   position: absolute;
   width: 50.6rem;
-  height: 7.8rem;
-}
+  height: 5.6rem;
+  z-index: 2;
 
-.location {
+  display: flex;
+  justify-content: space-around;
 }
-
-.localTime {
-}
-
 .tokenFound {
+  padding: 2rem;
+}
+
+.tokenFound::before {
+  content: "";
+  background: url("/assets/token_small.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -0.3rem;
 }
 
 .tokenNear {
+  padding: 2rem;
+}
+
+.tokenNear::before {
+  content: "";
+  background: url("/assets/token_small.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -0.3rem;
+}
+
+.tokenNear::after {
+  content: "";
+  background: url("/assets/near.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+  margin-top: -0.3rem;
 }
 
 .video {
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  position: absolute;
 }
 
 .bottomContainer {
+  background-color: #001026;
+  color: colorPrimary;
+  font-family: Bungee;
+  font-size: 2.3rem;
+  z-index: 2;
+  align-self: flex-end;
+  width: 100%;
+  height: 8.1rem;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .drivenTime {
+  padding: 2rem;
+  font-size: 4rem;
+  color: #909090;
 }
 
 .local {
+  margin-top: -3.3rem;
+  padding: 2rem;
+  width: 45rem;
+  height: 11.4rem;
+
+  background: #00204b;
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.location {
+.location::before {
+  content: "";
+  background: url("/assets/location.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 1.8rem;
+  height: 2.4rem;
+  margin-left: -2rem;
+  margin-top: -0.3rem;
 }
 
 .localTime {
+  padding-top: 1rem;
+}
+
+.localTimeBig {
+  font-size: 3rem;
 }
 
 .finish {
+  margin: 1.5rem;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 2.3rem;
+  border: 2.46973px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 8.23244px;
 }

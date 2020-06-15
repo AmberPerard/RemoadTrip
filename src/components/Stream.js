@@ -12,14 +12,21 @@ const Stream = () => {
           <p className={style.tokenFound}>1</p>
           <p className={style.tokenNear}>29m</p>
         </div>
-        <video autoplay playsinline id="video" className={style.video}></video>
+        <iframe
+          src="https://agile-harbor-82821.herokuapp.com/"
+          title="carStream"
+          className={style.video}
+        ></iframe>
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:03</p>
           <div className={style.local}>
             <p className={style.location}>UK, Wales</p>
-            <p className={style.localTime}>13:19</p>
+            <p className={style.localTime}>
+              local time <span className={style.localTimeBig}>13:19</span>
+            </p>
           </div>
           <Link className={style.finish} to={ROUTES.finish}>
+            <img alt="finsh flag" src="./assets/flag.png"></img>
             Finish
           </Link>
         </div>
