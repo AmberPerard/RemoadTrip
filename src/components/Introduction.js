@@ -6,7 +6,7 @@ import style from "./Introduction.module.css";
 const Introduction = () => {
   return (
     <>
-      <div className={style.landingcontainer}>
+      <article className={style.landingcontainer}>
         <h1 className={style.titel}>REMOAD TRIP</h1>
         <p className={style.text}>
           Take a trip around the world from your couch
@@ -18,7 +18,7 @@ const Introduction = () => {
           <p className={style.introanimate}>More information</p>
         </div>
       
-      </div>
+      </article>
 
       <div className={style.landingbg}>
           <img className={style.road__one} src="/assets/road__one.png" width="2880" height="813" alt="road"/>

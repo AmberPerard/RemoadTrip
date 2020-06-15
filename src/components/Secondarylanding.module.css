@@ -2,8 +2,16 @@
 @value colorPrimary, darkPrimary from tokens;
 
 .block {
-    width: 100%;
-    background-color: darkPrimary;
-    color: colorPrimary;
-  }
+  width: 100%;
+  height: 100vh;
+  background-color: darkPrimary;
+  color: colorPrimary;
+}
   
+.title {
+  padding-top: 9.4rem;
+  color: colorPrimary;
+  text-align: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 3.5rem;
+}
