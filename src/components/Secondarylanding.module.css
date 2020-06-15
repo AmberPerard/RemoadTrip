@@ -1,0 +1,9 @@
+@value tokens: "../styles/tokens.module.css";
+@value colorPrimary, darkPrimary from tokens;
+
+.block {
+    width: 100%;
+    background-color: darkPrimary;
+    color: colorPrimary;
+  }
+  

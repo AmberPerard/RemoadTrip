@@ -6,6 +6,7 @@ import { ROUTES } from "./consts";
 import Introduction from "./components/Introduction.js";
 import Stream from "./components/Stream.js";
 import Finish from "./components/Finish.js";
+import Secondarylanding from "./components/Secondarylanding.js";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       </Route>
       <Route exact strict path={ROUTES.home}>
         <Introduction />
+        <Secondarylanding />
       </Route>
     </Switch>
   );

@@ -12,12 +12,6 @@
   position: absolute;
 }
 
-.block {
-  width: 100%;
-  background-color: darkPrimary;
-  color: colorPrimary;
-}
-
 .titel {
   margin-top: 25rem;
   color: white;
@@ -80,12 +74,13 @@
   height: 100vh;
   top: 0;
   left: 0;
-  /* overflow: hidden; */
+  position: relative;
+  overflow: hidden;
 }
 
 .road__one {
   position: absolute;
-  z-index: -2;
+  z-index: -3;
   width: 150rem; 
   height: auto;
 }
@@ -93,11 +88,11 @@
 .car__one{
   position: absolute;
   z-index: -1;
-  width: 6.05rem; 
+  width: 6.05rem;
   height: 5.16rem;
   transform: rotate(2.88deg);
-  margin-top: 27.5rem;
-  margin-left: 5.5rem;
+  margin-top: 28rem;
+  margin-left: 2.5rem;
 }
 
 .car__two{
@@ -108,4 +103,61 @@
   transform: rotate(2.88deg);
   margin-top: 8rem;
   margin-left: 75rem;
+}
+
+.road__two {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  width: 114rem;
+  height: 79rem;
+  bottom: 0;
+}
+
+.car__three{
+  position: absolute;
+  z-index: -2;
+  transform: scaleX(-1) rotate(-7.52deg);
+  width: 8.25rem;
+  height: 7.03rem;
+  left: 23rem;
+  bottom: 54.4rem;
+}
+
+.car__four{
+  position: absolute;
+  z-index: -2;
+  transform: scaleX(-1) rotate(-7.52deg);
+  width: 8.66rem;
+  height: 7.38rem;
+  left: 33rem;
+  bottom: 47rem;
+}
+
+.car__five{
+  position: absolute;
+  z-index: -2;
+  transform: scaleX(-1) rotate(-7.52deg);
+  width: 10.7rem;
+  height: 9.1rem;
+  left: 65rem;
+  bottom: 22.5rem;
+}
+
+.road__three {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  width: 100rem;
+  height: 70rem;
+}
+
+.car__six {
+  position: absolute;
+  transform: rotate(-9deg);
+  width: 17.6rem;
+  height: 15rem;
+  right: 6rem;
+  bottom: 44.5rem;
 }

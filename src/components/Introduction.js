@@ -21,17 +21,16 @@ const Introduction = () => {
       </div>
 
       <div className={style.landingbg}>
-          <img className={style.road__one} src="/assets/road__one.png" width="2880" height="813"/>
-          <img className={style.car__one} src="/assets/car__3D.png" width="364" height="310"/>
-          <img className={style.car__two} src="/assets/car__3D.png" width="364" height="310"/>
-
+          <img className={style.road__one} src="/assets/road__one.png" width="2880" height="813" alt="road"/>
+          <img className={style.car__one} src="/assets/car__3D.png" width="364" height="310" alt="car"/>
+          <img className={style.car__two} src="/assets/car__3D.png" width="364" height="310" alt="car"/>
+          <img className={style.road__two} src="/assets/road__two.png" width="1078" height="690" alt="road"/>
+          <img className={style.road__three} src="/assets/road__three.png" width="1252" height="764" alt="road"/>
+          <img className={style.car__three} src="/assets/car__3D.png" width="364" height="310" alt="car"/>
+          <img className={style.car__four} src="/assets/car__3D.png" width="364" height="310" alt="car"/>
+          <img className={style.car__five} src="/assets/car__3D.png" width="364" height="310" alt="car"/>
+          <img className={style.car__six} src="/assets/car__3D.png" width="364" height="310" alt="car"/>
         </div>
-
-      <div className={style.block}>
-        <h2>Travel &amp; explore from your couch</h2>
-        <p>You just need at least 1 computer and 1 phone. </p>
-        <p>Download the app </p>
-      </div>
 
     </>
   );
