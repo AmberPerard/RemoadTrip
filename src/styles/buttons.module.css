@@ -19,7 +19,6 @@
 .yellowButton {
   display: flex;
   flex-direction: row;
-  padding: 1.6rem 7.2rem;
   background: colorPrimary;
   border-radius: 1.5rem;
   width: 28rem;
