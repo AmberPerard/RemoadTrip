@@ -39,11 +39,20 @@
   transform: scale(.9);
 }
 
+.img__maintwo {
+  margin-top: 14rem;
+  margin-left: -8rem;
+  transform: scale(1.5);
+}
+
 .download__div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 5rem 1fr;
   margin-top: -21rem;
+  /* dit hieronder wegdoen indien img__maintwo weg moet en img__main wel blijft*/
+  align-self: flex-end;
+  margin-right: 17rem;
 }
 
 .download__title {
