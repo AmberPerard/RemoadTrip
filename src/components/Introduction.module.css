@@ -28,6 +28,7 @@
 .start {
   margin-top: 4rem;
   composes: blueButton from "../styles/buttons.module.css";
+  z-index: 1;
 }
 
 .info {

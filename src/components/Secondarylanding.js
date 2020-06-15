@@ -9,11 +9,8 @@ const Secondarylanding = () => {
       <section className={style.block}>
         <h2 className={style.title}>Travel &amp; explore from your couch</h2>
         <p className={style.subtitle}>You just need at least 1 computer and 1 phone. </p>
-        <div>
-          <img className={style.img} src="/assets/" width="" height="" alt=""/>
-          <img className={style.img} src="/assets/" width="" height="" alt=""/>
-          <img className={style.img} src="/assets/" width="" height="" alt=""/>
-          <img className={style.img} src="/assets/" width="" height="" alt=""/>
+        <div className={style.imgcontainer}>
+          <img className={style.img__main} src="/assets/screenandroad.png" width="1758" height="1083" alt="computer and phone screen with a road and two cars"/>
         </div>
         <div>
           <p className={style.download}>Download the app </p>

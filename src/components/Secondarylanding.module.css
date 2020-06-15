@@ -6,6 +6,10 @@
   height: 100vh;
   background-color: darkPrimary;
   color: colorPrimary;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
 }
   
 .title {
@@ -14,4 +18,21 @@
   text-align: center;
   font-family: "Bungee", sans-serif;
   font-size: 3.5rem;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  margin-top: 1.3rem;
+}
+
+.imgcontainer {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 66rem;
+}
+
+.img__main {
+  grid-column: 2/3;
+  position: relative;
+  margin-top: -14rem;
 }
