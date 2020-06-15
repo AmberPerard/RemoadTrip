@@ -14,7 +14,9 @@ const Introduction = () => {
         <Link className={style.start} to={ROUTES.stream}>
           Start
         </Link>
-        <p className={style.info}>More information</p>
+        <div className={style.info}>
+          <p className={style.introanimate}>More information</p>
+        </div>
       </div>
 
       <div className={style.block}>
@@ -22,6 +24,11 @@ const Introduction = () => {
         <p>You just need at least 1 computer and 1 phone. </p>
         <p>Download the app </p>
       </div>
+
+      <div class={style.introanimate}>
+        <img src="/assets/polygonmoreinformation.png"></img>
+      </div>
+
     </>
   );
 };
