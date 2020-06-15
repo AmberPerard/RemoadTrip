@@ -1,5 +1,5 @@
 @value tokens: "../styles/tokens.module.css";
-@value colorPrimary, darkPrimary from tokens;
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .block {
   width: 100%;
@@ -34,5 +34,92 @@
 .img__main {
   grid-column: 2/3;
   position: relative;
-  margin-top: -14rem;
+  margin-top: -15rem;
+  margin-left: -9rem;
+  transform: scale(.9);
+}
+
+.download__div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5rem 1fr;
+  margin-top: -21rem;
+}
+
+.download__title {
+  grid-column: 1/3;
+  text-align: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 3rem;
+}
+
+.dowload__apps {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.download__img {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.download__name {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.download__store {
+  font-size: 2.2rem;
+  width: 12rem;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.start {
+  margin-top: 4rem;
+  /* composes: blueButton from "../styles/buttons.module.css"; */
+  z-index: 1;
+
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.start::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: darkPrimary;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.start::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: OrangeColor;
+  transition: all .3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+.start:hover {
+  color: #002860;
+}
+
+.start:hover::before {
+  width: 100%;
 }

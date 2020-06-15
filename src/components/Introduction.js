@@ -6,7 +6,7 @@ import style from "./Introduction.module.css";
 const Introduction = () => {
   return (
     <>
-      <article className={style.landingcontainer}>
+      <section className={style.landingcontainer}>
         <h1 className={style.titel}>REMOAD TRIP</h1>
         <p className={style.text}>
           Take a trip around the world from your couch
@@ -18,9 +18,10 @@ const Introduction = () => {
           <p className={style.introanimate}>More information</p>
         </div>
       
-      </article>
+      </section>
 
-      <div className={style.landingbg}>
+      <section className={style.landingbg}>
+          <h1 className={style.hidden}>Background image</h1>
           <img className={style.road__one} src="/assets/road__one.png" width="2880" height="813" alt="road"/>
           <img className={style.car__one} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
           <img className={style.car__two} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
@@ -30,7 +31,7 @@ const Introduction = () => {
           <img className={style.car__four} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
           <img className={style.car__five} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
           <img className={style.car__six} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
-        </div>
+        </section>
 
     </>
   );
