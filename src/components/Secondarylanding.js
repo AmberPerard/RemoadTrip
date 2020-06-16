@@ -16,7 +16,7 @@ const Secondarylanding = () => {
         </div>
         <div className={style.imgcontainer}>
           {/* <img className={style.img__main} src="/assets/screenandroad.png" width="1758" height="1083" alt="computer and phone screen with a road and two cars"/> */}
-          <img className={style.img__maintwo} src="/assets/Pcphonejapan3.gif" width="540" height="348"/>
+          <img className={style.img__maintwo} src="/assets/Pcphonejapan3.gif" width="540" height="348" alt="phone and computer demonstration of concept"/>
         </div>
         <div className={style.download__div}>
           <p className={style.download__title}>Download the app </p>

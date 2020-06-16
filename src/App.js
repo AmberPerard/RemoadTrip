@@ -7,6 +7,8 @@ import Introduction from "./components/Introduction.js";
 import Stream from "./components/Stream.js";
 import Finish from "./components/Finish.js";
 import Secondarylanding from "./components/Secondarylanding.js";
+import Exploreandsteps from "./components/Exploreandsteps.js";
+
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
       <Route exact strict path={ROUTES.home}>
         <Introduction />
         <Secondarylanding />
+        <Exploreandsteps />
       </Route>
     </Switch>
   );
