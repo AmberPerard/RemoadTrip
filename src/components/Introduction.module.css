@@ -6,9 +6,11 @@
 }
 
 .landingcontainer {
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   height: 100%;
+  min-height: 70rem;
+  max-height: 110rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,8 +114,10 @@
 /* landing background */
 
 .landingbg {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  min-height: 70rem;
+  max-height: 110rem;
   top: 0;
   left: 0;
   position: relative;
@@ -129,7 +133,7 @@
 
 .car__one{
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   width: 6.05rem;
   height: 5.16rem;
   transform: rotate(2.88deg);
@@ -139,7 +143,7 @@
 
 .car__two{
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   width: 8.25rem; 
   height: 7.03rem;
   transform: rotate(2.88deg);

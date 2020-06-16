@@ -21,12 +21,16 @@ const Secondarylanding = () => {
         <div className={style.download__div}>
           <p className={style.download__title}>Download the app </p>
           <div className={style.dowload__apps}>
-              <img className={style.download__img} src="/assets/appstore.png" width="75" height="74" alt="appstore logo of remoad control app"/>
+              <a href="https://www.apple.com/benl/ios/app-store/">
+                <img className={style.download__img} src="/assets/appstore.png" width="75" height="74" alt="appstore logo of remoad control app"/>
+              </a>
               <p className={style.download__name}>Remoad control</p>
               <p className={style.download__store}>App Store</p>
           </div>
           <div className={style.dowload__apps}>
-              <img className={style.download__img} src="/assets/googleps.png" width="74" height="74" alt="google play store logo of remoad control app"/>
+              <a href="https://play.google.com/store">
+                <img className={style.download__img} src="/assets/googleps.png" width="74" height="74" alt="google play store logo of remoad control app"/>
+              </a>
               <p className={style.download__name}>Remoad control</p>
               <p className={style.download__store}>Google Play Store</p>
           </div>

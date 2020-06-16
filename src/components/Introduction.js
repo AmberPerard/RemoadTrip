@@ -21,7 +21,7 @@ const Introduction = () => {
       </section>
 
       <section className={style.landingbg}>
-          <h1 className={style.hidden}>Background image</h1>
+          <h2 className={style.hidden}>Background image</h2>
           <img className={style.road__one} src="/assets/road__one.png" width="2880" height="813" alt="road"/>
           <img className={style.car__one} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
           <img className={style.car__two} src="/assets/car__3D.png" width="364" height="310" alt="car illustration"/>
