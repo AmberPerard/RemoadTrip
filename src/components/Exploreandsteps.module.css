@@ -55,7 +55,7 @@
 .sectionone__paragraph {
   z-index: 3;
   width: 37rem;
-  font-size: fontSizeSmall;
+  font-size: 1.6rem;
   background: colorPrimary;
   padding: 1rem;
   border-radius: 1rem;
@@ -92,7 +92,7 @@
 }
 
 .token {
-  margin-top: -6rem;
+  margin-top: -8rem;
   z-index: 2;
   align-self: flex-end;
   display: grid;
@@ -110,11 +110,31 @@
 
 .token__paragraph {
   grid-area: tokeninfo;
-  font-size: fontSizeSmall;
+  font-size: 1.6rem;
 }
 
 .token__image {
   grid-area: tokenimage;
   transform: rotate(10deg);
   margin-top: -4rem;
+}
+
+.title__second {
+  line-height: 1.1;
+}
+
+.sub {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.exploration__p{
+    font-size: 1.6rem;
+    width: 42rem;
+    text-align: center;
+}
+
+.img__worldmap {
+  order: -1;
 }

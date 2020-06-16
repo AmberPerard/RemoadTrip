@@ -26,10 +26,10 @@ const Exploreandsteps = () => {
       </section>
 
       <section className={style.block}>
-          <h2 className={`${style.title} ${style.title__second}`}><span>The map to</span><br/>your exploration</h2>
-          <p>You can explore the world from out of your couch, nothing can stop you! Not even COVID-19!</p>
-          <img src="" width="" height="" alt=""/>
-          <img src="" width="" height="" alt=""/>
+          <h2 className={`${style.title} ${style.title__second}`}><span className={style.sub}>The map to</span><br/>your exploration</h2>
+          <p className={style.exploration__p}>You can explore the world from out of your couch, nothing can stop you! Not even COVID-19!</p>
+          <img className={style.img__worldmap} src="/assets/worldmap.png" width="455" height="241" alt="illustration of world map with cars located on it"/>
+          <img className={style.img__globe} src="/assets/exploreglobe.png" width="642" height="642" alt="illustration of the globe in flat design"/>
       </section>
 
       <section className={style.block}>
