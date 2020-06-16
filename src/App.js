@@ -9,6 +9,7 @@ import Finish from "./components/Finish.js";
 import Secondarylanding from "./components/Secondarylanding.js";
 import Exploreandsteps from "./components/Exploreandsteps.js";
 import Formulas from "./components/Formulas.js";
+import Footer from "./components/Footer.js";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Secondarylanding />
         <Exploreandsteps />
         <Formulas />
+        <Footer />
       </Route>
     </Switch>
   );
