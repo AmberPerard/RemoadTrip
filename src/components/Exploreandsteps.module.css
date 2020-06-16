@@ -1,13 +1,120 @@
 @value tokens: "../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
 
+.hidden {
+  display: none;
+}
+
 .block {
-    width: 100%;
-    background-color: colorPrimary;
-    color: darkPrimary;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    overflow: hidden;
-  }
+  width: 100%;
+  background-color: colorPrimary;
+  color: darkPrimary;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Bungee", sans-serif;
+  font-size: 4rem;
+}
+
+.title__first {
+  margin: 8rem 22rem 4rem 0rem;
+}
+
+.title__second {
+  text-align: center;
+}
     
+.sectionone__imgs {
+  position: absolute;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'bergman';
+  margin-top: 14.5rem;
+}
+
+.sectionone__mountain {
+  position: relative;
+  grid-area: bergman;
+  z-index: 1;
+}
+
+.sectionone__watcher {
+  position: relative;
+  grid-area: bergman;
+  z-index: 0;
+  margin-left: 16.3rem;
+  margin-top: 5.7rem;
+}
+
+.sectionone__paragraph {
+  z-index: 3;
+  width: 37rem;
+  font-size: fontSizeSmall;
+  background: colorPrimary;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.paragraph__two {
+  margin: 3rem 0rem 18rem 16rem;
+}
+
+.roads {
+  position: relative;
+  display: grid;
+  width: 100vw;
+  left: 0;
+  margin-top: -12rem;
+  z-index: 0;
+  grid-template-areas: 'bothroads';
+}
+
+.road {
+  grid-area: bothroads;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.road__one {
+  z-index: 1;
+}
+
+.road__two {
+    margin-top: 6rem;
+    z-index: 0;
+}
+
+.token {
+  margin-top: -6rem;
+  z-index: 2;
+  align-self: flex-end;
+  display: grid;
+  grid-template-columns: 30rem 25rem;
+  grid-template-rows: 4rem 1fr;
+  grid-template-areas: 'tokenimage tokentitle' 'tokenimage tokeninfo';
+  transform: rotate(-10deg);
+}
+
+.token__title {
+  grid-area: tokentitle;
+  font-size: 3rem;
+  font-family: "Bungee", sans-serif;
+}
+
+.token__paragraph {
+  grid-area: tokeninfo;
+  font-size: fontSizeSmall;
+}
+
+.token__image {
+  grid-area: tokenimage;
+  transform: rotate(10deg);
+  margin-top: -4rem;
+}
