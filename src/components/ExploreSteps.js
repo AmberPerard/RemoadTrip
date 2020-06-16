@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./Exploreandsteps.module.css";
+import style from "./ExploreSteps.module.css";
 
-const Exploreandsteps = () => {
+const ExploreSteps = () => {
   return (
     <>
       <section className={style.block}>
@@ -73,4 +73,4 @@ const Exploreandsteps = () => {
   );
 };
 
-export default Exploreandsteps;
+export default ExploreSteps;

@@ -6,8 +6,8 @@ import { ROUTES } from "./consts";
 import Introduction from "./components/Introduction.js";
 import Stream from "./components/Stream.js";
 import Finish from "./components/Finish.js";
-import Secondarylanding from "./components/Secondarylanding.js";
-import Exploreandsteps from "./components/Exploreandsteps.js";
+import SecondaryLanding from "./components/SecondaryLanding.js";
+import ExploreSteps from "./components/ExploreSteps.js";
 import Formulas from "./components/Formulas.js";
 import Footer from "./components/Footer.js";
 
@@ -22,8 +22,8 @@ const App = () => {
       </Route>
       <Route exact strict path={ROUTES.home}>
         <Introduction />
-        <Secondarylanding />
-        <Exploreandsteps />
+        <SecondaryLanding />
+        <ExploreSteps />
         <Formulas />
         <Footer />
       </Route>
