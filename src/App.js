@@ -8,7 +8,7 @@ import Stream from "./components/Stream.js";
 import Finish from "./components/Finish.js";
 import Secondarylanding from "./components/Secondarylanding.js";
 import Exploreandsteps from "./components/Exploreandsteps.js";
-
+import Formulas from "./components/Formulas.js";
 
 const App = () => {
   return (
@@ -23,6 +23,7 @@ const App = () => {
         <Introduction />
         <Secondarylanding />
         <Exploreandsteps />
+        <Formulas />
       </Route>
     </Switch>
   );
