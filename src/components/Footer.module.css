@@ -1,10 +1,5 @@
 @value tokens: "../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
-
-/* verwijder lijn 5-7 achteraf*/
-.block {
-margin-top: 3rem;
-}
   
 .block {
   background: darkPrimary;

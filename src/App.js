@@ -10,6 +10,7 @@ import SecondaryLanding from "./components/SecondaryLanding.js";
 import ExploreSteps from "./components/ExploreSteps.js";
 import Formulas from "./components/Formulas.js";
 import Footer from "./components/Footer.js";
+import ShareSupport from "./components/ShareSupport.js";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <SecondaryLanding />
         <ExploreSteps />
         <Formulas />
+        <ShareSupport />
         <Footer />
       </Route>
     </Switch>
