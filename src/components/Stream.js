@@ -12,11 +12,12 @@ const Stream = () => {
           <p className={style.tokenFound}>1</p>
           <p className={style.tokenNear}>29m</p>
         </div>
-        <iframe
+        <embed
           src="https://serverwebrtcint4.herokuapp.com/"
-          title="carStream"
+          width="100vw"
+          height="100vh"
           className={style.video}
-        ></iframe>
+        ></embed>
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:03</p>
           <div className={style.local}>
