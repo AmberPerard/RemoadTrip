@@ -19,7 +19,7 @@ const Map = () => {
           height="100vh"
           className={style.video}
         ></embed> */}
-        <MapBoxMap></MapBoxMap>
+        <MapBoxMap class="container__map"></MapBoxMap>
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:00</p>
           <div className={style.local}>
