@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
-import MapBoxMap from "../components/MapBoxMap.js"
+import MapBoxMap from "../components/MapBoxMap.js";
 import style from "./Map.module.css";
 
 const Map = () => {
@@ -10,8 +10,8 @@ const Map = () => {
       <h1 className={style.hidden}>Stream</h1>
       <div className={style.container}>
         <div className={style.topContainer}>
-          <p className={style.tokenFound}>1</p>
-          <p className={style.tokenNear}>29m</p>
+          <p className={style.tokenFound}>0</p>
+          <p className={style.tokenNear}>-m</p>
         </div>
         {/* <embed
           src="https://serverwebrtcint4.herokuapp.com/"
@@ -21,16 +21,16 @@ const Map = () => {
         ></embed> */}
         <MapBoxMap class="container__map"></MapBoxMap>
         <div className={style.bottomContainer}>
-          <p className={style.drivenTime}>00:03</p>
+          <p className={style.drivenTime}>00:00</p>
           <div className={style.local}>
-            <p className={style.location}>UK, Wales</p>
+            <p className={style.location}>Location</p>
             <p className={style.localTime}>
-              local time <span className={style.localTimeBig}>13:19</span>
+              local time <span className={style.localTimeBig}>00:00</span>
             </p>
           </div>
-          <Link className={style.finish} to={ROUTES.stream}>
+          <Link className={style.finish} to={ROUTES.controller}>
             <img alt="finsh flag" src="./assets/flag.png"></img>
-            set
+            Get ready
           </Link>
         </div>
       </div>

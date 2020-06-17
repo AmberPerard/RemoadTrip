@@ -12,6 +12,7 @@ import ExploreSteps from "./components/ExploreSteps.js";
 import Formulas from "./components/Formulas.js";
 import Footer from "./components/Footer.js";
 import ShareSupport from "./components/ShareSupport.js";
+import Controller from "./components/Controller.js";
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
       </Route>
       <Route path={ROUTES.map}>
         <Map />
+      </Route>
+      <Route path={ROUTES.controller}>
+        <Controller />
       </Route>
       <Route exact strict path={ROUTES.home}>
         <Introduction />
