@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
-import style from "./_Secondary_Landing.module.css";
+import style from "./SecondaryLanding.module.css";
 
-const _Secondary_Landing = () => {
+const SecondaryLanding = () => {
   return (
     <>
       <section className={style.block}>
@@ -68,4 +68,4 @@ const _Secondary_Landing = () => {
   );
 };
 
-export default _Secondary_Landing;
+export default SecondaryLanding;
