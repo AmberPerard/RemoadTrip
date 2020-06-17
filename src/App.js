@@ -5,6 +5,7 @@ import { ROUTES } from "./consts";
 
 import Introduction from "./components/Introduction.js";
 import Stream from "./components/Stream.js";
+import Map from "./components/Map.js";
 import Finish from "./components/Finish.js";
 import SecondaryLanding from "./components/SecondaryLanding.js";
 import ExploreSteps from "./components/ExploreSteps.js";
@@ -20,6 +21,9 @@ const App = () => {
       </Route>
       <Route path={ROUTES.stream}>
         <Stream />
+      </Route>
+      <Route path={ROUTES.map}>
+        <Map />
       </Route>
       <Route exact strict path={ROUTES.home}>
         <Introduction />
