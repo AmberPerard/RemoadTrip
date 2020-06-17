@@ -57,11 +57,12 @@
   color: colorPrimary;
   font-size: 2.5rem;
   border-radius: 1.1rem;
-  padding: 2.7rem;
+  padding: 2.7rem 1.4rem;
   text-align: center;
 }
 .containerCollectedToken {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .collectedToken {
