@@ -40,10 +40,10 @@ class MapBoxMap extends React.Component {
 
     var el = document.createElement("div");
     el.className = "autoMarker";
-    
-    el.addEventListener('click', function() {
+
+    el.addEventListener("click", function () {
       window.alert("alert");
-      });
+    });
 
     new mapboxgl.Marker(el).setLngLat([30.5, 50.5]).addTo(map);
 
