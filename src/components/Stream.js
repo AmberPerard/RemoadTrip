@@ -24,6 +24,7 @@ const Stream = () => {
           width="100vw"
           height="100vh"
           className={style.video}
+          scrolling="no"
         ></iframe>
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:03</p>
