@@ -4,6 +4,9 @@ import { ROUTES } from "../consts";
 import style from "./Stream.module.css";
 
 const Stream = () => {
+  let today = new Date();
+
+  let time = today.getHours() + ":" + today.getMinutes();
   return (
     <>
       <h1 className={style.hidden}>Stream</h1>
@@ -29,9 +32,9 @@ const Stream = () => {
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:03</p>
           <div className={style.local}>
-            <p className={style.location}>UK, Wales</p>
+            <p className={style.location}>Brugge, Belgium</p>
             <p className={style.localTime}>
-              local time <span className={style.localTimeBig}>13:19</span>
+              local time <span className={style.localTimeBig}>{time}</span>
             </p>
           </div>
           <Link className={style.finish} to={ROUTES.finish}>

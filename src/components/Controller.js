@@ -6,29 +6,52 @@ import QRCode from "qrcode.react";
 import BackLink from "./Backlink";
 
 const Controller = () => {
+  let today = new Date();
+
+  let time = today.getHours() + ":" + today.getMinutes();
   return (
     <>
-      <h1 className={style.title}>Connecting the devices</h1>
+      <h1 className={style.hidden}>Connecting the devices</h1>
       <div className={style.container}>
         <div className={style.topContainer}>
           <p className={style.tokenFound}>0</p>
           <p className={style.tokenNear}>-m</p>
         </div>
-        <BackLink></BackLink>
-        <p className={style.subtitle}>1. Open the app on your phone</p>
-        <div className={style.qrcodes}>
-          <QRCode value="https://gentle-cove-91397.herokuapp.com/" />
+        <div className={style.backlink}>
+          <BackLink></BackLink>
         </div>
-        <Link className={style.start} to={ROUTES.stream}>
-          <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
-          Go start driving
-        </Link>
+        <div className={style.controllerContainer}>
+          <h2 className={style.title}>Connecting the devices</h2>
+          <div className={style.qrcodes}>
+            <QRCode value="https://gentle-cove-91397.herokuapp.com/" />
+            <p className={style.link}>
+              or surf to:&#8192;
+              <a href="https://gentle-cove-91397.herokuapp.com/">
+                https://gentle-cove-91397.herokuapp.com/
+              </a>
+            </p>
+          </div>
+          <div className={style.car}>
+            <img
+              src="./assets/car__3D.png"
+              alt="car"
+              width="148px"
+              height="126px"
+            ></img>
+            <p>Connected</p>
+          </div>
+          <Link className={style.start} to={ROUTES.stream}>
+            <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
+            Go start driving
+          </Link>
+        </div>
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:00</p>
           <div className={style.local}>
             <p className={style.location}>Brugge, Belgium</p>
             <p className={style.localTime}>
-              local time <span className={style.localTimeBig}>14:33</span>
+              local time{" "}
+              <span className={style.localTimeBig}>&#8192;{time}</span>
             </p>
           </div>
           <Link className={style.finish} to={ROUTES.stream}>
