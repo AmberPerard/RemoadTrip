@@ -6,7 +6,7 @@ import { ROUTES } from "./consts";
 import Introduction from "./components/Introduction.js";
 import Stream from "./components/Stream.js";
 import Finish from "./components/Finish.js";
-import SecondaryLanding from "./components/Secondarylanding.js";
+import SecondaryLanding from "./components/SecondaryLanding.js";
 import ExploreSteps from "./components/ExploreSteps.js";
 import Formulas from "./components/Formulas.js";
 import Footer from "./components/Footer.js";
