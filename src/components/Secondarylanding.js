@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./Secondarylanding.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
+import style from "./SecondaryLanding.module.css";
 
 const SecondaryLanding = () => {
   return (
