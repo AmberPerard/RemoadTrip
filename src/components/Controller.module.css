@@ -11,6 +11,46 @@
   display: none;
 }
 
+.title {
+  position: absolute;
+  width: 422px;
+  height: 36px;
+  left: 515px;
+  top: 142px;
+  font-family: Bungee;
+  font-size: 3rem;
+}
+
+.backbutton {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+  composes: blueButton from "../styles/buttons.module.css";
+  font-size: 3rem;
+  width: 20.4rem;
+  padding: 0.5rem 1rem;
+  height: 5.8rem;
+}
+
+.subtitle {
+  position: absolute;
+  width: 471px;
+  height: 30px;
+  left: 504px;
+  top: 436px;
+
+  font-family: Bungee;
+  font-size: 2.5rem;
+}
+
+.qrcodes {
+  position: absolute;
+  width: 192px;
+  height: 172px;
+  left: 623px;
+  top: 477px;
+}
+
 .topContainer {
   background-color: darkPrimary;
   color: colorPrimary;
@@ -67,14 +107,6 @@
   height: 3rem;
   margin-left: 1rem;
   margin-top: -0.3rem;
-}
-
-.video {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: absolute;
-  overflow: hidden;
 }
 
 .bottomContainer {
