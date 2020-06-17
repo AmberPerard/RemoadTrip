@@ -26,7 +26,9 @@ const ShareSupport = () => {
             <h3 className={`${style.title} ${style.title__support}`}>Support many</h3>
             <p className={`${style.paragraph} ${style.paragraph__support}`}>Your money mainly goes out to support all the local people who mostly depend on tourism! While having fun, you also give the locals and their economy a big boost up!</p>
             <div className={style.div__support}>
-                <img  className={style.image__tdoubleroad}src="/assets/TAndDoubleRoad.png" width="1440" height="1290" alt="illustration of a blue T-road and two orange roads beside it."/>
+                <img  className={style.image__tdoubleroad}src="/assets/TAndDoubleRoad.png" width="438" height="1268" alt="illustration of a blue T-road"/>
+                <img  className={style.image__uturn}src="/assets/Ubocht.png" width="1306" height="678" alt="illustration of an orange U-turn road"/>
+
                 <ul className={style.list}>
                     <li className={`${style.listitem} ${style.listitem__normal}`}>Economy</li>
                     <li className={`${style.listitem} ${style.listitem__up}`}>Locals</li>
@@ -41,7 +43,9 @@ const ShareSupport = () => {
             <h3 className={`${style.title} ${style.title__share}`}>Share the love</h3>
             <p className={`${style.paragraph} ${style.paragraph__share}`}>Share your road trips and wonderful experiences on social media! Tell others about your travels and make connections with other people around the world!</p>
             <p className={style.hashtags}>#remoadtrip #digitaltravel #lovetravel</p>
-            <img className={style.socialcar} src="/assets/socialmedia.gif" width="1467" height="134" alt="illustrated car driving through social media icons"/>
+            <div className={style.socialcar__div} >
+              <img className={style.socialcar} src="/assets/socialmedia.gif" width="1467" height="134" alt="illustrated car driving through social media icons"/>
+            </div>
         </article>
 
         <article className={`${style.article} ${style.article__cta}`}>
