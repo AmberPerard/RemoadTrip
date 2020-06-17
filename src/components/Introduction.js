@@ -11,7 +11,7 @@ const Introduction = () => {
         <p className={style.text}>
           Take a trip around the world from your couch
         </p>
-        <Link className={style.start} to={ROUTES.stream}>
+        <Link className={style.start} to={ROUTES.map}>
           Start
         </Link>
         <div className={style.info}>
