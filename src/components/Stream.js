@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
 import style from "./Stream.module.css";
 
 const Stream = () => {
-  let today = new Date();
-
-  let time = today.getHours() + ":" + today.getMinutes();
+  const [today, setToday] = useState(new Date());
+  let time = today.toLocaleTimeString("en-BE");
+  setInterval(() => {
+    setToday(new Date());
+    console.log(today);
+  }, 1 * 1000);
   return (
     <>
       <h1 className={style.hidden}>Stream</h1>

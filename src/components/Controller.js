@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
 import style from "./Controller.module.css";
@@ -6,9 +6,12 @@ import QRCode from "qrcode.react";
 import BackLink from "./Backlink";
 
 const Controller = () => {
-  let today = new Date();
-
-  let time = today.getHours() + ":" + today.getMinutes();
+  const [today, setToday] = useState(new Date());
+  let time = today.toLocaleTimeString("en-BE");
+  setInterval(() => {
+    setToday(new Date());
+    console.log(today);
+  }, 1 * 1000);
   return (
     <>
       <h1 className={style.hidden}>Connecting the devices</h1>
