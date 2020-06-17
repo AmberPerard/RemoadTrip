@@ -6,6 +6,8 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-flow: column;
 }
 .hidden {
   display: none;
@@ -17,7 +19,7 @@
   font-family: Bungee;
   font-size: 2.5rem;
 
-  position: absolute;
+  /* position: absolute; */
   width: 50.6rem;
   height: 5.6rem;
   z-index: 2;
@@ -139,3 +141,9 @@
   box-sizing: border-box;
   border-radius: 8.23244px;
 }
+
+/* .container__map {
+  display:flex;
+  align-self: center;
+  justify-self: center;
+} */

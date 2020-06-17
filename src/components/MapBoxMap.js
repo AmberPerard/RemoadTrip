@@ -43,7 +43,7 @@ class MapBoxMap extends React.Component {
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/ellensierens/ckbjb7nun2a2z1iqn1baqejj7",
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom,
     });
@@ -78,13 +78,7 @@ class MapBoxMap extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="sidebarStyle">
-          <div>
-            Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom:{" "}
-            {this.state.zoom}
-          </div>
-        </div>
+      <div className="container__map">
         <div ref={(el) => (this.mapContainer = el)} className="mapContainer" />
       </div>
     );
