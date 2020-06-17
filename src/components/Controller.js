@@ -17,8 +17,12 @@ const Controller = () => {
         <BackLink></BackLink>
         <p className={style.subtitle}>1. Open the app on your phone</p>
         <div className={style.qrcodes}>
-          <QRCode value="https://images.unsplash.com/photo-1570018144715-43110363d70a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80/" />
+          <QRCode value="https://gentle-cove-91397.herokuapp.com/" />
         </div>
+        <Link className={style.start} to={ROUTES.stream}>
+          <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
+          Go start driving
+        </Link>
         <div className={style.bottomContainer}>
           <p className={style.drivenTime}>00:00</p>
           <div className={style.local}>

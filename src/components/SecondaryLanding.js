@@ -12,7 +12,7 @@ const SecondaryLanding = () => {
           You just need at least 1 computer and 1 phone.{" "}
         </p>
         <div className={style.button}>
-          <Link className={style.start} to={ROUTES.stream}>
+          <Link className={style.start} to={ROUTES.map}>
             Start driving
           </Link>
         </div>
