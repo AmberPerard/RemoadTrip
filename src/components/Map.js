@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
 import MapBoxMap from "../components/MapBoxMap.js";
 import style from "./Map.module.css";
+import BackLink from "./Backlink";
 
 const Map = () => {
   return (
@@ -13,6 +14,7 @@ const Map = () => {
           <p className={style.tokenFound}>0</p>
           <p className={style.tokenNear}>-m</p>
         </div>
+        <BackLink></BackLink>
         {/* <embed
           src="https://serverwebrtcint4.herokuapp.com/"
           width="100vw"

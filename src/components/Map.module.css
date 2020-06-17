@@ -71,13 +71,6 @@
   margin-top: -0.3rem;
 }
 
-.video {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: absolute;
-}
-
 .bottomContainer {
   background-color: #001026;
   color: colorPrimary;
@@ -99,17 +92,27 @@
 }
 
 .local {
-  margin-top: -3.3rem;
-  padding: 2rem;
+  margin-top: -6.3rem;
+  padding: 1.4rem;
+  /* padding-top: 1rem; */
   width: 45rem;
   height: 11.4rem;
 
-  background: #00204b;
+  /* background: #00204b; */
   border-radius: 1rem 1rem 0 0;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+
+  border-bottom: 11.6rem solid #00204b;
+  border-left: 2.5rem solid transparent;
+  border-right: 2.5rem solid transparent;
+  /* height: 0; */
+}
+
+.location {
+  margin-top: 15rem;
 }
 
 .location::before {

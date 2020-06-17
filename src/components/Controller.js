@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
 import style from "./Controller.module.css";
 import QRCode from "qrcode.react";
+import BackLink from "./Backlink";
 
 const Controller = () => {
   return (
@@ -13,7 +14,7 @@ const Controller = () => {
           <p className={style.tokenFound}>0</p>
           <p className={style.tokenNear}>-m</p>
         </div>
-        <p className={style.backbutton}>&#10094; go back</p>
+        <BackLink></BackLink>
         <p className={style.subtitle}>1. Open the app on your phone</p>
         <div className={style.qrcodes}>
           <QRCode value="https://images.unsplash.com/photo-1570018144715-43110363d70a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80/" />
