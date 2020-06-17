@@ -1,0 +1,28 @@
+.mapContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.sidebarStyle {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 4 !important;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.autoMarker {
+    /* background-color: black; */
+    background-image: url(./assets/auto.png);
+    background-size: 50px;
+    width: 50px;
+    height: 45px;
+}
