@@ -98,6 +98,10 @@
 
 /*animation op de intro <<more information>> */
 .introanimate {
+  text-decoration: none;
+  color: darkPrimary;
+  position: relative;
+  z-index: 3;
   -webkit-animation: mover 1s infinite  alternate;
   animation: mover 1s infinite  alternate;
 }

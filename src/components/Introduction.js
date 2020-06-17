@@ -15,7 +15,9 @@ const Introduction = () => {
           Start
         </Link>
         <div className={style.info}>
+          <a href="#secondary">
           <p className={style.introanimate}>More information</p>
+          </a>
         </div>
       
       </section>
