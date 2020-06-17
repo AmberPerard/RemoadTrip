@@ -3,6 +3,10 @@ import React from "react";
 import mapboxgl from "mapbox-gl";
 // import Marker from "./components/Marker.js"
 // import ReactMapGL, { Marker } from "react-map-gl";
+import socketIOClient from "socket.io-client";
+
+const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
+let set = false
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoyc2NwYzBqdjIyeXM3d3h2bW0xNGcifQ.AiHZhuCKL51mfLLdAf9dyQ";
@@ -16,10 +20,27 @@ class MapBoxMap extends React.Component {
       lat: 34,
       zoom: 2,
       userLocation: {},
+      location: {},
     };
+    this.socket = socketIOClient(ENDPOINT);
   }
 
   componentDidMount() {
+
+    if (set === false) {
+        set = true;
+        this.socket.emit("getCoords", (data) => {
+          console.log(data);
+  
+          this.setState({location: {
+              lat: parseFloat(data.latitude),
+              lng: parseFloat(data.longitude),
+          }});
+          new mapboxgl.Marker(el).setLngLat([this.state.location.lng, this.state.location.lat]).addTo(map);
+          console.log(this.state.location.lat, this.state.location.lng)
+        });
+      }
+
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: "mapbox://styles/mapbox/streets-v11",
@@ -45,10 +66,14 @@ class MapBoxMap extends React.Component {
       window.alert("alert");
     });
 
-    new mapboxgl.Marker(el).setLngLat([30.5, 50.5]).addTo(map);
+    // if(set === true){
+    //     new mapboxgl.Marker(el).setLngLat([this.state.location.lat, this.state.location.lng]).addTo(map);
+    // }
 
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav, "top-left");
+
+
   }
 
   render() {
