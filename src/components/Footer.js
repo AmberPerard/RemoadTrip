@@ -37,8 +37,8 @@ const Footer = () => {
                 </ul>
             </article> 
         </div>
-        <div class={style.footing}>
-            <h3 class={style.footing__p}>&copy;2020 Devine Integration - student project by Amber Pérard, Ellen Sierens &amp; Julia Anseele</h3>
+        <div className={style.footing}>
+            <h3 className={style.footing__p}>&copy;2020 Devine Integration - student project by Amber Pérard, Ellen Sierens &amp; Julia Anseele</h3>
         </div>
       </section>
 
