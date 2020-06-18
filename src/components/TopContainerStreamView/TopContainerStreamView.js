@@ -5,8 +5,8 @@ const TopContainerStreamView = ({ tokensFound, mtoToken }) => {
   return (
     <>
       <div className={style.topContainer}>
-        <p className={style.tokenFound}>{tokensFound}</p>
         <p className={style.tokenNear}>{mtoToken}m</p>
+        <p className={style.tokenFound}>{tokensFound}</p>
       </div>
     </>
   );

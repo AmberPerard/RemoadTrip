@@ -4,7 +4,6 @@
 .topContainer {
   grid-area: topbox;
   justify-self: center;
-  background-color: darkPrimary;
   color: colorPrimary;
   font-family: Bungee;
   font-size: 2.5rem;
@@ -14,9 +13,16 @@
   z-index: 1;
   display: flex;
   justify-content: space-around;
+
+  border-bottom: 6.1rem solid darkPrimary;
+  border-left: 2.5rem solid transparent;
+  border-right: 2.5rem solid transparent;
+  transform: rotate(180deg);
 }
 .tokenFound {
+  transform: rotate(-180deg);
   padding: 2rem;
+  margin-top: 2rem;
 }
 
 .tokenFound::before {
@@ -32,7 +38,9 @@
 }
 
 .tokenNear {
+  transform: rotate(-180deg);
   padding: 2rem;
+  margin-top: 2rem;
 }
 
 .tokenNear::before {

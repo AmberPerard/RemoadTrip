@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
 import style from "./Controller.module.css";
@@ -8,11 +8,22 @@ import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamV
 import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
 
 const Controller = () => {
+  let time;
   const [today, setToday] = useState(new Date());
-  let time = today.toLocaleTimeString("en-BE");
-  setInterval(() => {
+
+  const getTime = () => {
+    console.log(today);
+    time = today.toLocaleTimeString("en-BE");
     setToday(new Date());
-  }, 1 * 1000);
+  };
+
+  const setTime = setInterval(getTime, 1 * 1000);
+
+  useEffect(() => {
+    return () => {
+      clearInterval(setTime);
+    };
+  });
   return (
     <>
       <h1 className={style.hidden}>Connecting the devices</h1>
