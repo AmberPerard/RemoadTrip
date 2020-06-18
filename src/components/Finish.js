@@ -50,12 +50,17 @@ const Finish = () => {
         </div>
         <div className={style.containerButton}>
           <Link className={style.button} to={ROUTES.home}>
-            Leave feedback
+            Leave feedbackg
           </Link>
           <Link className={style.button} to={ROUTES.home}>
             Finish ride
           </Link>
         </div>
+      </div>
+      <div className={style.roads}>
+        <img className={style.road} src="/assets/finishroad_1.png" width="417" height="454" alt="illustration of a blue road"/>
+        <img className={style.road} src="/assets/finishroad_2.png" width="1439" height="902" alt="illustration of an orange road"/>
+        <img className={style.road} src="/assets/finishroad_3.png" width="848" height="384" alt="illustration of an orange road"/>
       </div>
     </>
   );
