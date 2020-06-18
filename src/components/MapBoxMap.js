@@ -67,6 +67,10 @@ const MapBoxMap = () => {
     };
 
     if (!map) initializeMap({ setMap, mapContainer });
+
+    return () => {
+      this.map.remove();
+    }
   }, [el, lat, lng, map]);
 
   return (
