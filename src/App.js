@@ -13,6 +13,7 @@ import Formulas from "./components/Formulas.js";
 import Footer from "./components/Footer.js";
 import ShareSupport from "./components/ShareSupport.js";
 import Controller from "./components/Controller.js";
+import CarDetail from "./components/CarDetail/CarDetail";
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
       </Route>
       <Route path={ROUTES.controller}>
         <Controller />
+      </Route>
+      <Route path={ROUTES.cardetails}>
+        <CarDetail />
       </Route>
       <Route exact strict path={ROUTES.home}>
         <Introduction />
