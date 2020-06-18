@@ -26,21 +26,26 @@ class MapBoxMap extends React.Component {
     if (set === false) {
       set = true;
       this.socket.emit("getCoords", (data) => {
-        console.log(data);
-        if (!data) {
+        if (
+          data.latitude === 0 &&
+          data.longitude === 0 &&
+          data.altitude === 0
+        ) {
+          console.log("ik heb geen gps");
           this.setState({
             location: {
               lat: parseFloat(51.22316),
               lng: parseFloat(3.238466),
             },
           });
+        } else {
+          this.setState({
+            location: {
+              lat: parseFloat(data.latitude),
+              lng: parseFloat(data.longitude),
+            },
+          });
         }
-        this.setState({
-          location: {
-            lat: parseFloat(data.latitude),
-            lng: parseFloat(data.longitude),
-          },
-        });
         new mapboxgl.Marker(el)
           .setLngLat([this.state.location.lng, this.state.location.lat])
           .addTo(map);
