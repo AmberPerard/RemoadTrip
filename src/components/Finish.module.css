@@ -1,5 +1,5 @@
 @value tokens: "../styles/tokens.module.css";
-@value colorPrimary, darkPrimary from tokens;
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .container {
   width: 100vw;
@@ -8,7 +8,10 @@
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
+  padding: 6rem;
 }
+
 .hidden {
   display: none;
 }
@@ -26,8 +29,6 @@
 
 .finishImg {
   margin-bottom: 2.4rem;
-  width: 14.6rem;
-  height: 13rem;
 }
 
 .containerBox {
@@ -37,9 +38,8 @@
 
 .boxLeft {
   margin-left: 3rem;
-  width: 31.4rem;
+  width: 33.4rem;
   height: 25.1rem;
-
   background-color: darkPrimary;
   color: colorPrimary;
   font-size: 2.5rem;
@@ -50,9 +50,8 @@
 
 .boxMiddle {
   margin: 0 3rem;
-  width: 42.9rem;
   height: 30.4rem;
-
+  width: 45rem;
   background-color: darkPrimary;
   color: colorPrimary;
   font-size: 2.5rem;
@@ -60,6 +59,7 @@
   padding: 2.7rem 1.4rem;
   text-align: center;
 }
+
 .containerCollectedToken {
   display: flex;
   flex-wrap: wrap;
@@ -85,6 +85,7 @@
 }
 
 .buttonToken {
+  margin-left: 3.5rem;
   grid-area: button;
   background: colorPrimary;
   border-radius: 0.7rem;
@@ -111,9 +112,8 @@
 
 .boxRight {
   margin-right: 3rem;
-  width: 31.4rem;
+  width: 33.4rem;
   height: 25.1rem;
-
   background-color: darkPrimary;
   color: colorPrimary;
   font-size: 2.5rem;
@@ -133,6 +133,43 @@
   flex-flow: row;
 }
 
+.roads {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.road {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: none;
+}
+
+.road__one {
+  width: 30vw;
+  height: auto;
+}
+
+.road__two {
+  position: fixed;
+  top: unset;
+  left: unset;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+}
+
+.road__three {
+  position: fixed;
+  top: unset;
+  left: unset;
+  right: 0;
+  bottom: 0;
+  width: 59vw;
+  height: auto;
+}
+
 .button {
   composes: blueButton from "../styles/buttons.module.css";
   font-size: 2.3rem;
@@ -140,4 +177,47 @@
   padding: 2rem;
   height: 7.4rem;
   margin: 0 1rem;
+}
+
+.button__animation {
+  z-index: 1;
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.button__animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.button__animation::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  transition: all .3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+
+.button__animation:hover {
+  color: darkPrimary;
+}
+
+.button__animation:hover::before {
+  width: 100%;
+}
+
+.trackedjourney {
+  margin: 1.5rem 0;
 }
