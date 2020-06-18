@@ -1,107 +1,79 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-// import { ROUTES } from "../consts";
+import { ROUTES } from "../consts";
 import socketIOClient from "socket.io-client";
-// import { useHistory } from "react-router-dom";
-
-const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
-let set = false;
+import { useHistory } from "react-router-dom";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoyc2NwYzBqdjIyeXM3d3h2bW0xNGcifQ.AiHZhuCKL51mfLLdAf9dyQ";
-// let history = useHistory();
 
-class MapBoxMap extends React.Component {
-  // Code from the next few steps will go here
-  constructor(props) {
-    super(props);
-    this.state = {
-      lng: 5,
-      lat: 34,
-      zoom: 2,
-      userLocation: {},
-      location: {},
-    };
-    this.socket = socketIOClient(ENDPOINT);
+const MapBoxMap = () => {
+  let history = useHistory();
+  const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
+  let set = false;
+
+  const [map, setMap] = useState(null);
+  const mapContainer = useRef(null);
+  const [lng, setLng] = useState(5);
+  const [lat, setLat] = useState(34);
+
+  let socket = socketIOClient(ENDPOINT);
+
+  if (set === false) {
+    set = true;
+    socket.emit("getCoords", (data) => {
+      console.log(data);
+      if (
+        data === "geen current coords" ||
+        (data.latitude === 0 && data.longitude === 0 && data.altitude === 0)
+      ) {
+        console.log("ik heb geen gps");
+        setLat(parseFloat("51.22316"));
+        setLng(parseFloat("3.238466"));
+      } else {
+        setLat(parseFloat(data.latitude));
+        setLng(parseFloat(data.longitude));
+      }
+      console.log(lat, lng);
+    });
   }
 
-  componentDidMount() {
-    if (set === false) {
-      set = true;
-      this.socket.emit("getCoords", (data) => {
-        console.log(data);
-        if (
-          data === "geen current coords" ||
-          (data.latitude === 0 && data.longitude === 0 && data.altitude === 0)
-        ) {
-          console.log("ik heb geen gps");
-          this.setState({
-            location: {
-              lat: parseFloat("51.22316"),
-              lng: parseFloat("3.238466"),
-            },
-          });
-        } else {
-          this.setState({
-            location: {
-              lat: parseFloat(data.latitude),
-              lng: parseFloat(data.longitude),
-            },
-          });
-        }
-        console.log(this.state.location.lat, this.state.location.lng);
-        new mapboxgl.Marker(el)
-          .setLngLat([this.state.location.lng, this.state.location.lat])
-          .addTo(this.map);
-        console.log(this.state.location.lat, this.state.location.lng);
-      });
-    }
+  var el = document.createElement("div");
+  el.className = "autoMarker";
 
-    this.map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style:
-        "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom,
-    });
+  el.addEventListener("click", function () {
+    history.push(ROUTES.cardetails.to);
+  });
 
-    this.map.on("move", () => {
-      this.setState({
-        lng: this.map.getCenter().lng.toFixed(4),
-        lat: this.map.getCenter().lat.toFixed(4),
-        zoom: this.map.getZoom().toFixed(2),
-      });
-    });
-
+  useEffect(() => {
     mapboxgl.accessToken =
       "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoycTIyNTBsM2kycnB2eGZ3czczNjcifQ.MRi5rwt-X4q9xUd6fgP9Lw";
+    const initializeMap = ({ setMap, mapContainer }) => {
+      const map = new mapboxgl.Map({
+        container: mapContainer.current,
+        style:
+          "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
+        center: [5, 34],
+        zoom: 2,
+      });
+      const nav = new mapboxgl.NavigationControl();
+      map.addControl(nav, "bottom-right");
+      new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
 
-    var el = document.createElement("div");
-    el.className = "autoMarker";
+      map.on("load", () => {
+        setMap(map);
+        map.resize();
+      });
+    };
 
-    el.addEventListener("click", function () {
-      // history.push(ROUTES.cardetails.to);
-    });
+    if (!map) initializeMap({ setMap, mapContainer });
+  }, [el, lat, lng, map]);
 
-    // if(set === true){
-    //     new mapboxgl.Marker(el).setLngLat([this.state.location.lat, this.state.location.lng]).addTo(map);
-    // }
-
-    const nav = new mapboxgl.NavigationControl();
-    this.map.addControl(nav, "top-left");
-  }
-
-  componentWillUnmount() {
-    this.map.remove();
-  }
-
-  render() {
-    return (
-      <div className="container__map">
-        <div ref={(el) => (this.mapContainer = el)} className="mapContainer" />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="container__map">
+      <div ref={(el) => (mapContainer.current = el)} className="mapContainer" />
+    </div>
+  );
+};
 
 export default MapBoxMap;
