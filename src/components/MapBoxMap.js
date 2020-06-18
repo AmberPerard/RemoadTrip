@@ -1,8 +1,5 @@
 import React from "react";
-// import ReactDOM from "react-dom";
 import mapboxgl from "mapbox-gl";
-// import Marker from "./components/Marker.js"
-// import ReactMapGL, { Marker } from "react-map-gl";
 import socketIOClient from "socket.io-client";
 
 const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
@@ -30,7 +27,14 @@ class MapBoxMap extends React.Component {
       set = true;
       this.socket.emit("getCoords", (data) => {
         console.log(data);
-
+        if (!data) {
+          this.setState({
+            location: {
+              lat: parseFloat(51.22316),
+              lng: parseFloat(3.238466),
+            },
+          });
+        }
         this.setState({
           location: {
             lat: parseFloat(data.latitude),
@@ -46,7 +50,8 @@ class MapBoxMap extends React.Component {
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
+      style:
+        "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom,
     });

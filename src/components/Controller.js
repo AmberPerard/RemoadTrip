@@ -10,7 +10,6 @@ const Controller = () => {
   let time = today.toLocaleTimeString("en-BE");
   setInterval(() => {
     setToday(new Date());
-    console.log(today);
   }, 1 * 1000);
   return (
     <>
