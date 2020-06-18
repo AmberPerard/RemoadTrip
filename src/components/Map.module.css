@@ -40,4 +40,11 @@
 .from {
   margin-top: 2.2rem;
   display: flex;
+  text-align: center;
+}
+
+.biglable {
+  font-family: Bungee;
+  font-size: 2rem;
+  color: darkPrimary;
 }

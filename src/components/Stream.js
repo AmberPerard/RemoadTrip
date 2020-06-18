@@ -46,7 +46,7 @@ const Stream = () => {
           timeDriven={"00:00"}
           location={"Brugge, Belgium"}
           timeLocal={time}
-          route={ROUTES.home}
+          route={ROUTES.finish}
           textButton={"Finish"}
         ></BottomContainerStreamView>
       </div>

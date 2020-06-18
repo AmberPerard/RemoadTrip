@@ -22,7 +22,7 @@ const Map = () => {
           <h2 className={style.title}>World map</h2>
           <p className={style.subtitle}>choose your location</p>
           <form className={style.from}>
-            <p className={style.biglabel}>Filter by</p>
+            <p className={style.biglable}>Filter by</p>
             <select className={style.select} defaultValue="Difficulty">
               <option value="difficulty">Difficulty</option>
               <option value="availability">Availability</option>
