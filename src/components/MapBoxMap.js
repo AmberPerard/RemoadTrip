@@ -4,7 +4,6 @@ import socketIOClient from "socket.io-client";
 
 const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
 let set = false;
-let map;
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoyc2NwYzBqdjIyeXM3d3h2bW0xNGcifQ.AiHZhuCKL51mfLLdAf9dyQ";
@@ -49,12 +48,12 @@ class MapBoxMap extends React.Component {
         }
         new mapboxgl.Marker(el)
           .setLngLat([this.state.location.lng, this.state.location.lat])
-          .addTo(map);
+          .addTo(this.map);
         console.log(this.state.location.lat, this.state.location.lng);
       });
     }
 
-    map = new mapboxgl.Map({
+    this.map = new mapboxgl.Map({
       container: this.mapContainer,
       style:
         "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
@@ -62,11 +61,11 @@ class MapBoxMap extends React.Component {
       zoom: this.state.zoom,
     });
 
-    map.on("move", () => {
+    this.map.on("move", () => {
       this.setState({
-        lng: map.getCenter().lng.toFixed(4),
-        lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2),
+        lng: this.map.getCenter().lng.toFixed(4),
+        lat: this.map.getCenter().lat.toFixed(4),
+        zoom: this.map.getZoom().toFixed(2),
       });
     });
 
@@ -85,11 +84,11 @@ class MapBoxMap extends React.Component {
     // }
 
     const nav = new mapboxgl.NavigationControl();
-    map.addControl(nav, "top-left");
+    this.map.addControl(nav, "top-left");
   }
 
   componentWillUnmount() {
-    map.remove()
+    this.map.remove()
   }
 
 
