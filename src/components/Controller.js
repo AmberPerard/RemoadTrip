@@ -4,6 +4,8 @@ import { ROUTES } from "../consts";
 import style from "./Controller.module.css";
 import QRCode from "qrcode.react";
 import BackLink from "./Backlink";
+import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamView";
+import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
 
 const Controller = () => {
   const [today, setToday] = useState(new Date());
@@ -15,10 +17,10 @@ const Controller = () => {
     <>
       <h1 className={style.hidden}>Connecting the devices</h1>
       <div className={style.container}>
-        <div className={style.topContainer}>
-          <p className={style.tokenFound}>0</p>
-          <p className={style.tokenNear}>-m</p>
-        </div>
+        <TopContainerStreamView
+          tokensFound={0}
+          mtoToken={"-"}
+        ></TopContainerStreamView>
         <div className={style.backlink}>
           <BackLink></BackLink>
         </div>
@@ -47,20 +49,13 @@ const Controller = () => {
             Go start driving
           </Link>
         </div>
-        <div className={style.bottomContainer}>
-          <p className={style.drivenTime}>00:00</p>
-          <div className={style.local}>
-            <p className={style.location}>Brugge, Belgium</p>
-            <p className={style.localTime}>
-              local time{" "}
-              <span className={style.localTimeBig}>&#8192;{time}</span>
-            </p>
-          </div>
-          <Link className={style.finish} to={ROUTES.stream}>
-            <img alt="finsh flag" src="./assets/flag.png"></img>
-            Go
-          </Link>
-        </div>
+        <BottomContainerStreamView
+          timeDriven={"00:00"}
+          location={"Brugge, Belgium"}
+          timeLocal={time}
+          route={ROUTES.stream}
+          textButton={"Go"}
+        ></BottomContainerStreamView>
       </div>
     </>
   );

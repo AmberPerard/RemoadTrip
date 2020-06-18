@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { ROUTES } from "../consts";
 import style from "./Stream.module.css";
+import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamView";
+import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
 
 const Stream = () => {
   const [today, setToday] = useState(new Date());
   let time = today.toLocaleTimeString("en-BE");
   setInterval(() => {
     setToday(new Date());
-    console.log(today);
   }, 1 * 1000);
   return (
     <>
       <h1 className={style.hidden}>Stream</h1>
       <div className={style.container}>
-        <div className={style.topContainer}>
-          <p className={style.tokenFound}>1</p>
-          <p className={style.tokenNear}>29m</p>
-        </div>
+        <TopContainerStreamView
+          tokensFound={0}
+          mtoToken={29}
+        ></TopContainerStreamView>
         {/* <embed
           src="https://serverwebrtcint4.herokuapp.com/"
           width="100vw"
@@ -32,19 +32,13 @@ const Stream = () => {
           className={style.video}
           scrolling="no"
         ></iframe>
-        <div className={style.bottomContainer}>
-          <p className={style.drivenTime}>00:03</p>
-          <div className={style.local}>
-            <p className={style.location}>Brugge, Belgium</p>
-            <p className={style.localTime}>
-              local time <span className={style.localTimeBig}>{time}</span>
-            </p>
-          </div>
-          <Link className={style.finish} to={ROUTES.finish}>
-            <img alt="finsh flag" src="./assets/flag.png"></img>
-            Finish
-          </Link>
-        </div>
+        <BottomContainerStreamView
+          timeDriven={"00:00"}
+          location={"Brugge, Belgium"}
+          timeLocal={time}
+          route={ROUTES.home}
+          textButton={"Finish"}
+        ></BottomContainerStreamView>
       </div>
     </>
   );

@@ -1,0 +1,60 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary from tokens;
+
+.topContainer {
+  grid-area: topbox;
+  justify-self: center;
+  background-color: darkPrimary;
+  color: colorPrimary;
+  font-family: Bungee;
+  font-size: 2.5rem;
+
+  width: 50.6rem;
+  height: 5.6rem;
+
+  display: flex;
+  justify-content: space-around;
+}
+.tokenFound {
+  padding: 2rem;
+}
+
+.tokenFound::before {
+  content: "";
+  background: url("/assets/token_small.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -0.3rem;
+}
+
+.tokenNear {
+  padding: 2rem;
+}
+
+.tokenNear::before {
+  content: "";
+  background: url("/assets/token_small.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -0.3rem;
+}
+
+.tokenNear::after {
+  content: "";
+  background: url("/assets/near.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+  margin-top: -0.3rem;
+}
