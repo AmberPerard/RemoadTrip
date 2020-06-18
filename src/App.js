@@ -30,7 +30,7 @@ const App = () => {
       <Route path={ROUTES.controller}>
         <Controller />
       </Route>
-      <Route path={ROUTES.cardetails}>
+      <Route path={ROUTES.cardetails.path}>
         <CarDetail />
       </Route>
       <Route exact strict path={ROUTES.home}>

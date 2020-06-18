@@ -1,6 +1,8 @@
 import React from "react";
 import mapboxgl from "mapbox-gl";
+import { ROUTES } from "../consts";
 import socketIOClient from "socket.io-client";
+import { useHistory } from "react-router-dom";
 
 const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
 let set = false;
@@ -20,6 +22,7 @@ class MapBoxMap extends React.Component {
       location: {},
     };
     this.socket = socketIOClient(ENDPOINT);
+    this.history = useHistory();
   }
 
   componentDidMount() {
@@ -77,7 +80,7 @@ class MapBoxMap extends React.Component {
     el.className = "autoMarker";
 
     el.addEventListener("click", function () {
-      window.alert("alert");
+      this.history.push(ROUTES.cardetails.to);
     });
 
     // if(set === true){

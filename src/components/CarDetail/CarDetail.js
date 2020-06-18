@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
 import BackLink from "../Backlink";
