@@ -12,7 +12,6 @@ const Controller = () => {
   const [today, setToday] = useState(new Date());
 
   const getTime = () => {
-    console.log(today);
     time = today.toLocaleTimeString("en-BE");
     setToday(new Date());
   };

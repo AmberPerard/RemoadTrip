@@ -7,15 +7,14 @@
   width: 722px;
   height: 383px;
   border-radius: 10px;
-
 }
 
 .container__map {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
 
 /* .sidebarStyle {
@@ -32,9 +31,9 @@
 } */
 
 .autoMarker {
-    /* background-color: black; */
-    background-image: url(./assets/auto.png);
-    background-size: 50px;
-    width: 50px;
-    height: 45px;
+  /* background-color: black; */
+  background-image: url(./assets/auto.png);
+  background-size: 50px;
+  width: 50px;
+  height: 45px;
 }

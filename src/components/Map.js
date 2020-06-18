@@ -15,8 +15,49 @@ const Map = () => {
           tokensFound={0}
           mtoToken={"-"}
         ></TopContainerStreamView>
-        <BackLink></BackLink>
-        <MapBoxMap class="container__map"></MapBoxMap>
+        <div className={style.backlink}>
+          <BackLink></BackLink>
+        </div>
+        <div className={style.mapContainer}>
+          <h2 className={style.title}>World map</h2>
+          <p className={style.subtitle}>choose your location</p>
+          <form className={style.from}>
+            <p className={style.biglabel}>Filter by</p>
+            <select className={style.select} defaultValue="Difficulty">
+              <option value="difficulty">Difficulty</option>
+              <option value="availability">Availability</option>
+            </select>
+            <label className={style.label}>
+              <input
+                className={style.input}
+                type="radio"
+                name="react-tips"
+                value="option1"
+                defaultChecked={true}
+              />
+              Easy going
+            </label>
+            <label className={style.label}>
+              <input
+                className={style.input}
+                type="radio"
+                name="react-tips"
+                value="option2"
+              />
+              Challenging
+            </label>
+            <label className={style.label}>
+              <input
+                className={style.input}
+                type="radio"
+                name="react-tips"
+                value="option3"
+              />
+              Adeventure Time
+            </label>
+          </form>
+          <MapBoxMap class="container__map"></MapBoxMap>
+        </div>
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={"Brugge, Belgium"}

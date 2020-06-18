@@ -4,16 +4,40 @@
 .container {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 80rem 1fr;
+  grid-template-rows: 11rem auto 21rem;
+  grid-template-areas: "backlink topbox ." " . middel ." "bottombox bottombox bottombox";
   justify-content: center;
-  align-items: center;
-  flex-flow: column;
 }
+
 .hidden {
   display: none;
 }
-/* .container__map {
-  display:flex;
-  align-self: center;
-  justify-self: center;
-} */
+
+.backlink {
+  grid-area: backlink;
+}
+
+.mapContainer {
+  grid-area: middel;
+}
+
+.title {
+  font-family: Bungee;
+  font-size: 4rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: lowercase;
+  color: #ffffff;
+}
+
+.from {
+  margin-top: 2.2rem;
+  display: flex;
+}
