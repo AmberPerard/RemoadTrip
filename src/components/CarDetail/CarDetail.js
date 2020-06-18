@@ -31,7 +31,11 @@ const CarDetail = () => {
         <div className={style.backlink}>
           <BackLink></BackLink>
         </div>
-        <div className={style.CarDetailContainer}></div>
+        <div className={style.CarDetailContainer}>
+          <div className={style.orderDetail}>
+            <h2 className={style.orderTitle}>Order detail</h2>
+          </div>
+        </div>
         <img
           className={style.carRoad}
           src="./assets/driving_car.gif"

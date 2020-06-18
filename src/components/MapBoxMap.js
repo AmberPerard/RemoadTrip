@@ -11,6 +11,7 @@ const MapBoxMap = () => {
   let history = useHistory();
   const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
   let set = false;
+  const marker = useRef();
 
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
@@ -58,7 +59,7 @@ const MapBoxMap = () => {
       });
       const nav = new mapboxgl.NavigationControl();
       map.addControl(nav, "bottom-right");
-      new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
+      marker.current = new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
 
       map.on("load", () => {
         setMap(map);
@@ -67,11 +68,10 @@ const MapBoxMap = () => {
     };
 
     if (!map) initializeMap({ setMap, mapContainer });
-
-    return () => {
-      map.remove();
-    }
-  }, [el, lat, lng, map]);
+    // return () => {
+    //   marker.remove();
+    // };
+  }, [el, lat, lng, map, marker]);
 
   return (
     <div className="container__map">
