@@ -2,6 +2,7 @@
 @value colorPrimary, darkPrimary from tokens;
 
 .container {
+  background-color: #ff961a;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -96,4 +97,20 @@
   align-items: center;
   text-align: center;
   color: #00204b;
+}
+
+.road {
+  grid-area: bottombox;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.carRoad {
+  grid-row: 3;
+  grid-column: 3;
+  justify-self: left;
+  transform: rotateY(180deg);
+  width: 13.4rem;
+  height: 8.5rem;
 }

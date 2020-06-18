@@ -2,6 +2,7 @@
 @value colorPrimary, darkPrimary from tokens;
 
 .container {
+  background-color: #ff961a;
   width: 100vw;
   height: 100vh;
   display: grid;

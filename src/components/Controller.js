@@ -58,6 +58,16 @@ const Controller = () => {
             Go start driving
           </Link>
         </div>
+        <img
+          className={style.carRoad}
+          src="./assets/driving_car.gif"
+          alt="animation of car that is riding"
+        ></img>
+        <img
+          className={style.road}
+          src="./assets/road.png"
+          alt="road to follow"
+        ></img>
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={"Brugge, Belgium"}

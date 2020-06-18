@@ -2,6 +2,7 @@
 @value colorPrimary, darkPrimary from tokens;
 
 .container {
+  background-color: #ff961a;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -38,13 +39,83 @@
 }
 
 .from {
-  margin-top: 2.2rem;
+  margin: 2.2rem 4.3rem;
   display: flex;
   text-align: center;
+  align-self: center;
+  width: 71rem;
+  justify-content: space-between;
 }
 
 .biglable {
   font-family: Bungee;
   font-size: 2rem;
   color: darkPrimary;
+  height: 3rem;
+  padding: 0.3rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 27rem;
+}
+
+.select {
+  background-color: darkPrimary;
+  color: colorPrimary;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 0.8rem;
+  font-size: 1.7rem;
+  padding-left: 1rem;
+}
+
+.buttonGroup {
+  margin-top: 0.42rem;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.label {
+  width: 10.3rem;
+  height: 3rem;
+  background: #825b31;
+  border-radius: 8.13431px;
+  color: colorPrimary;
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.8rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.label:hover {
+  background-color: darkPrimary;
+}
+
+.label input:checked ~ .label {
+  background-color: darkPrimary;
+}
+
+.road {
+  grid-area: bottombox;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.car {
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: right;
+  transform: rotateY(180deg);
+  width: 13.4rem;
+  height: 8.5rem;
 }
