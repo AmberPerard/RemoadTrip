@@ -48,7 +48,7 @@ const CarDetail = () => {
           location={"Brugge, Belgium"}
           timeLocal={time}
           route={ROUTES.stream}
-          textButton={"Go"}
+          textButton={"Set"}
         ></BottomContainerStreamView>
       </div>
     </>
