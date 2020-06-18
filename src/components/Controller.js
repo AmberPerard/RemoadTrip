@@ -8,11 +8,10 @@ import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamV
 import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
 
 const Controller = () => {
-  let time;
   const [today, setToday] = useState(new Date());
+  let time = today.toLocaleTimeString("en-BE");
 
   const getTime = () => {
-    time = today.toLocaleTimeString("en-BE");
     setToday(new Date());
   };
 
