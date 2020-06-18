@@ -63,7 +63,7 @@ const Controller = () => {
               width="148px"
               height="126px"
             ></img>
-            <p>Connected</p>
+            <p>{connected? "Connected" : "Connecting"}</p>
           </div>
           {connected? <Link className={style.start} to={ROUTES.stream}>
             <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
