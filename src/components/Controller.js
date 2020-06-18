@@ -4,24 +4,36 @@ import { ROUTES } from "../consts";
 import style from "./Controller.module.css";
 import QRCode from "qrcode.react";
 import BackLink from "./Backlink";
+import socketIOClient from "socket.io-client";
 import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamView";
 import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
 
 const Controller = () => {
+  const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
   const [today, setToday] = useState(new Date());
+  const [connected, setConnected] = useState(false);
   let time = today.toLocaleTimeString("en-BE");
 
   const getTime = () => {
     setToday(new Date());
   };
 
-  const setTime = setInterval(getTime, 1 * 1000);
+  let socket = socketIOClient(ENDPOINT);
 
+  const setTime = setInterval(getTime, 1 * 1000);
   useEffect(() => {
+    // console.log(connected);
+    socket.on("controllerConnected", () => {
+      // console.log("controller connected");
+      setConnected(true);
+      // console.log(connected);
+    });
+    // setConnected(false)
+
     return () => {
       clearInterval(setTime);
     };
-  });
+  }, [connected, setTime, socket]);
   return (
     <>
       <h1 className={style.hidden}>Connecting the devices</h1>
@@ -53,10 +65,11 @@ const Controller = () => {
             ></img>
             <p>Connected</p>
           </div>
-          <Link className={style.start} to={ROUTES.stream}>
+          {connected? <Link className={style.start} to={ROUTES.stream}>
             <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
             Go start driving
-          </Link>
+          </Link> : ""}
+          
         </div>
         <img
           className={style.carRoad}
