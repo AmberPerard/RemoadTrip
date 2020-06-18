@@ -4,6 +4,7 @@ import socketIOClient from "socket.io-client";
 
 const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
 let set = false;
+let map;
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoyc2NwYzBqdjIyeXM3d3h2bW0xNGcifQ.AiHZhuCKL51mfLLdAf9dyQ";
@@ -53,7 +54,7 @@ class MapBoxMap extends React.Component {
       });
     }
 
-    const map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
       container: this.mapContainer,
       style:
         "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
@@ -86,6 +87,11 @@ class MapBoxMap extends React.Component {
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav, "top-left");
   }
+
+  componentWillUnmount() {
+    map.remove()
+  }
+
 
   render() {
     return (
