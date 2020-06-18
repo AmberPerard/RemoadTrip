@@ -18,6 +18,7 @@ const Stream = () => {
           tokensFound={0}
           mtoToken={29}
         ></TopContainerStreamView>
+
         {/* <embed
           src="https://serverwebrtcint4.herokuapp.com/"
           width="100vw"
@@ -32,11 +33,12 @@ const Stream = () => {
           className={style.video}
           scrolling="no"
         ></iframe>
+
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={"Brugge, Belgium"}
           timeLocal={time}
-          route={ROUTES.home}
+          route={ROUTES.finish}
           textButton={"Finish"}
         ></BottomContainerStreamView>
       </div>
