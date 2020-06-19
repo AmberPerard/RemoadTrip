@@ -8,10 +8,18 @@ import Road from "../Road/Road";
 
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
+  const [bigImage, setBigImage] = useState("pic1.png");
   let time = today.toLocaleTimeString("en-BE");
 
   const getTime = () => {
     setToday(new Date());
+  };
+
+  const handleClickImg = (e) => {
+    if (e) {
+      const img = e.currentTarget.src.split("/")[4];
+      setBigImage(img);
+    }
   };
 
   const setTime = setInterval(getTime, 1 * 1000);
@@ -85,24 +93,34 @@ const CarDetail = () => {
                   </li>
                 </ul>
                 <div className={style.coordinates__div}>
-                  <p  className={style.coordinates__title}>Live coordinates</p>
+                  <p className={style.coordinates__title}>Live coordinates</p>
                   <ul className={style.coordinates}>
-                    <li className={style.coordinate}>51&#176;12&#8217;34&#8220;N</li>
-                    <li className={style.coordinate}>3&#176;13&#8217;29&#8220;E</li>
+                    <li className={style.coordinate}>
+                      51&#176;12&#8217;34&#8220;N
+                    </li>
+                    <li className={style.coordinate}>
+                      3&#176;13&#8217;29&#8220;E
+                    </li>
                   </ul>
                 </div>
                 <div className={style.details}>
                   <div className={style.details__tokens}>
-                    <p  className={style.details__three}>3</p>
+                    <p className={style.details__three}>3</p>
                     <p className={style.align__left}>
                       <span className={style.details__bold}>Nearby</span> <br />
                       tokens
                     </p>
                   </div>
                   <div>
-                    <img src="/assets/detail__stars.png" alt="stars representing amount of challenge" width="59" height="16"/>
+                    <img
+                      src="/assets/detail__stars.png"
+                      alt="stars representing amount of challenge"
+                      width="59"
+                      height="16"
+                    />
                     <p>
-                      <span className={style.details__bold}>Formula</span> <br />
+                      <span className={style.details__bold}>Formula</span>{" "}
+                      <br />
                       challenging
                     </p>
                   </div>
@@ -123,7 +141,16 @@ const CarDetail = () => {
                   General information
                 </h3>
                 <p>
-                What could be more romantic and inspiring than a place that looks like a backdrop for a fairy tale? The medieval overtones of Bruges’ cobblestone streets lead to countless historical, architectural and artistic wonders. Marvel at ornate houses lining intricate canals, and understand why this is a favorite destination for all types of travelers. The whole city emanates an appreciation of the past, a love of the present, and enthusiasm for the future. Don’t miss Hof Bladelin, Groeninge Museum, Church of Our Lady, and Belfry and Market Halls.
+                  What could be more romantic and inspiring than a place that
+                  looks like a backdrop for a fairy tale? The medieval overtones
+                  of Bruges’ cobblestone streets lead to countless historical,
+                  architectural and artistic wonders. Marvel at ornate houses
+                  lining intricate canals, and understand why this is a favorite
+                  destination for all types of travelers. The whole city
+                  emanates an appreciation of the past, a love of the present,
+                  and enthusiasm for the future. Don’t miss Hof Bladelin,
+                  Groeninge Museum, Church of Our Lady, and Belfry and Market
+                  Halls.
                 </p>
               </div>
               <div>
@@ -142,33 +169,34 @@ const CarDetail = () => {
                 Location pictures
               </h2>
               <div className={style.content__pictures}>
-                <h3 className={style.content__subtitles}>
-                  Pictures of Bruges
-                </h3>
+                <h3 className={style.content__subtitles}>Pictures of Bruges</h3>
                 <img
-                  src="/assets/pic1.png"
+                  src={`/assets/${bigImage}`}
                   width="374"
                   height="214"
-                  alt="a watercave in yucatan"
+                  alt="a wide shot of bruges"
                 />
                 <div className={style.images__small}>
                   <img
                     src="/assets/pic2.png"
                     width="112"
                     height="64"
-                    alt="beach in yucatan"
+                    alt="shops in bruges"
+                    onClick={handleClickImg}
                   />
                   <img
                     src="/assets/pic3.png"
                     width="112"
                     height="64"
-                    alt="temple in yucatan"
+                    alt="houses alongside the water in bruges"
+                    onClick={handleClickImg}
                   />
                   <img
                     src="/assets/pic4.png"
                     width="112"
                     height="64"
-                    alt="beach in yucatan"
+                    alt="burges"
+                    onClick={handleClickImg}
                   />
                 </div>
               </div>
@@ -192,7 +220,7 @@ const CarDetail = () => {
           <Road step={2}></Road>
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Brugge, Belgium"}
+            location={"Bruges, Belgium"}
             timeLocal={time}
             route={ROUTES.controller}
             textButton={"Set"}

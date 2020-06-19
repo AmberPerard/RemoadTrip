@@ -55,10 +55,7 @@ const Controller = () => {
               value="https://int4controllers.herokuapp.com/"
             />
             <p className={style.link}>
-              scan or surf to:&#8192;
-              <a href="https://int4controllers.herokuapp.com/">
-                https://int4controllers.herokuapp.com/
-              </a>
+              scan or surf to:&#8192;https://int4controllers.herokuapp.com/
             </p>
           </div>
           <div className={style.car}>
@@ -92,7 +89,7 @@ const Controller = () => {
         {connected ? (
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Brugge, Belgium"}
+            location={"Bruges, Belgium"}
             timeLocal={time}
             route={ROUTES.stream}
             textButton={"Go"}
@@ -100,7 +97,7 @@ const Controller = () => {
         ) : (
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Brugge, Belgium"}
+            location={"Bruges, Belgium"}
             timeLocal={time}
             route={"#"}
             textButton={"Go"}

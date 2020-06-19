@@ -1,5 +1,4 @@
 import React from "react";
-import { ROUTES } from "../../consts";
 import MapBoxMap from "../MapBoxMap/MapBoxMap.js";
 import style from "./Map.module.css";
 import BackLink from "../Backlink/Backlink";
