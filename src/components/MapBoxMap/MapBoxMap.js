@@ -55,7 +55,7 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
         zoom: zoom,
         interactive: controls,
       });
-      console.log(map);
+      //console.log(map);
 
       const nav = new mapboxgl.NavigationControl({
         showCompass: controls,
