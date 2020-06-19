@@ -32,99 +32,8 @@
   z-index: 0;
   display: grid;
   grid-template-columns: 2fr 1.8fr 2fr;
-  grid-template-areas: 'leftcontent middlecontent rightcontent';
+  grid-template-areas: "leftcontent middlecontent rightcontent";
   gap: 3rem;
-}
-
-.road {
-  grid-area: bottombox;
-  align-self: center;
-  width: 100%;
-  height: auto;
-}
-
-.carRoad {
-  grid-row: 3;
-  grid-column: 2;
-  justify-self: center;
-  transform: rotateY(180deg);
-  width: 13.4rem;
-  height: 8.5rem;
-}
-
-.roadandcar {
-  margin-top: 2.5rem;
-}
-
-.Point {
-  margin-top: -4rem;
-  height: 9.6rem;
-  align-self: start;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-.firstPoint {
-  grid-row: 3;
-  grid-column: 1;
-  justify-self: right;
-  margin-right: 2rem;
-}
-
-.secondPoint {
-  grid-row: 3;
-  grid-column: 2;
-  justify-self: center;
-}
-
-.thirdPoint {
-  grid-row: 3;
-  grid-column: 3;
-  justify-self: left;
-  margin-left: 4rem;
-}
-
-.bumpedUp {
-  margin-top: -6rem;
-}
-
-.redCircle {
-  width: 4.6rem;
-  height: 4.6rem;
-  background: AccentColor;
-  border-radius: 50%;
-  font-family: Bungee;
-  font-size: 1.5rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  color: colorPrimary;
-}
-
-.pointTitle {
-  font-family: Bungee;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15.4121px;
-  line-height: 18px;
-  padding: 1rem 0 0.5rem;
-
-  text-align: center;
-
-  color: #00204b;
-}
-
-.pointImg {
-  -webkit-filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(0deg) saturate(0%) contrast(2);
-  filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(0deg) saturate(0%) contrast(2);
-}
-
-.roadandcar {
-  margin-top: 2.5rem;
 }
 
 .content__title {
@@ -177,14 +86,14 @@
   grid-template-rows: 5rem 1fr;
   padding: 5rem;
   padding-left: 8rem;
-  gap: .8rem;
+  gap: 0.8rem;
   height: 55vh;
   margin-top: 19rem;
 }
 
 .localinfo {
   background: darkPrimary;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   color: colorPrimary;
   font-size: 1.6rem;
   font-family: "Bungee", sans-serif;
@@ -222,7 +131,7 @@
   text-align: left;
   justify-content: space-around;
   align-items: center;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 .localinfo__time {
@@ -242,7 +151,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: .6rem;
+  padding-bottom: 0.6rem;
 }
 
 .localinfo__title {

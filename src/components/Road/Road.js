@@ -1,12 +1,13 @@
 import React from "react";
 import style from "./Road.module.css";
-
+import { ROUTES } from "../../consts";
 import { Link } from "react-router-dom";
 
 const Road = ({ step }) => {
   return (
     <>
-      <div
+      <Link
+        to={ROUTES.map}
         className={`${style.Point} ${style.firstPoint} ${
           step === 1 ? style.bumpedUp : ""
         }`}
@@ -20,9 +21,10 @@ const Road = ({ step }) => {
           width="12px"
           height="16.72px"
         ></img>
-      </div>
+      </Link>
 
-      <div
+      <Link
+        to={ROUTES.cardetails.to}
         className={`${style.Point} ${style.secondPoint} ${
           step === 2 ? style.bumpedUp : ""
         }`}
@@ -36,8 +38,9 @@ const Road = ({ step }) => {
           width="12px"
           height="16.72px"
         ></img>
-      </div>
-      <div
+      </Link>
+      <Link
+        to={ROUTES.controller}
         className={`${style.Point} ${style.thirdPoint} ${
           step === 3 ? style.bumpedUp : ""
         }`}
@@ -51,7 +54,7 @@ const Road = ({ step }) => {
           width="19px"
           height="14px"
         ></img>
-      </div>
+      </Link>
       <img
         className={` ${step === 1 ? style.carRoad1 : ""} ${
           step === 2 ? style.carRoad2 : ""
