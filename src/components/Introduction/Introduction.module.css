@@ -1,4 +1,4 @@
-@value tokens: "../styles/tokens.module.css";
+@value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .hidden {
@@ -33,16 +33,16 @@
 /* animation on button */
 .start {
   margin-top: 4rem;
-  composes: blueButton from "../styles/buttons.module.css";
+  composes: blueButton from "../../styles/buttons.module.css";
   z-index: 1;
 
-	transition: all .3s;
-	position: relative;
-	overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .start::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -54,14 +54,14 @@
 }
 
 .start::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
   background-color: OrangeColor;
-  transition: all .3s;
+  transition: all 0.3s;
   border-radius: 0.3rem;
   z-index: -1;
 }
@@ -86,14 +86,14 @@
 
 .introanimate::after {
   position: absolute;
-  content: '';
-  background: url('/assets/polygonmoreinformation.png') no-repeat;
+  content: "";
+  background: url("/assets/polygonmoreinformation.png") no-repeat;
   background-size: contain;
   display: inline-block;
   width: 4rem;
   height: 4rem;
-  margin-left: 1.5rem; 
-  margin-top: .7rem;
+  margin-left: 1.5rem;
+  margin-top: 0.7rem;
 }
 
 /*animation op de intro <<more information>> */
@@ -102,17 +102,25 @@
   color: darkPrimary;
   position: relative;
   z-index: 3;
-  -webkit-animation: mover 1s infinite  alternate;
-  animation: mover 1s infinite  alternate;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
 }
 
 @-webkit-keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 @keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 /* landing background */
@@ -131,11 +139,11 @@
 .road__one {
   position: absolute;
   z-index: -3;
-  width: 150rem; 
+  width: 150rem;
   height: auto;
 }
 
-.car__one{
+.car__one {
   position: absolute;
   z-index: -2;
   width: 6.05rem;
@@ -145,10 +153,10 @@
   margin-left: 2.5rem;
 }
 
-.car__two{
+.car__two {
   position: absolute;
   z-index: -2;
-  width: 8.25rem; 
+  width: 8.25rem;
   height: 7.03rem;
   transform: rotate(2.88deg);
   margin-top: 8rem;
@@ -164,7 +172,7 @@
   bottom: 0;
 }
 
-.car__three{
+.car__three {
   position: absolute;
   z-index: -2;
   transform: scaleX(-1) rotate(-7.52deg);
@@ -174,7 +182,7 @@
   bottom: 54.4rem;
 }
 
-.car__four{
+.car__four {
   position: absolute;
   z-index: -2;
   transform: scaleX(-1) rotate(-7.52deg);
@@ -184,7 +192,7 @@
   bottom: 47rem;
 }
 
-.car__five{
+.car__five {
   position: absolute;
   z-index: -2;
   transform: scaleX(-1) rotate(-7.52deg);

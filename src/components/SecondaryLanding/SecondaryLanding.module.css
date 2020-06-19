@@ -1,4 +1,4 @@
-@value tokens: "../styles/tokens.module.css";
+@value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .block {
@@ -13,7 +13,7 @@
   align-items: center;
   overflow: hidden;
 }
-  
+
 .title {
   padding-top: 9.4rem;
   color: colorPrimary;
@@ -38,7 +38,7 @@
   position: relative;
   margin-top: -15rem;
   margin-left: -9rem;
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
 .img__maintwo {
@@ -98,16 +98,16 @@
 
 .start {
   margin-top: 4rem;
-  composes: yellowButton from "../styles/buttons.module.css";
+  composes: yellowButton from "../../styles/buttons.module.css";
   z-index: 1;
 
-	transition: all .3s;
-	position: relative;
-	overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .start::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -118,14 +118,14 @@
 }
 
 .start::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
   background-color: OrangeColor;
-  transition: all .3s;
+  transition: all 0.3s;
   border-radius: 0.3rem;
   z-index: -1;
 }

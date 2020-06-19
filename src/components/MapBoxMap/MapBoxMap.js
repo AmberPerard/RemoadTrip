@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-import { ROUTES } from "../consts";
+import { ROUTES } from "../../consts";
 import socketIOClient from "socket.io-client";
 import { useHistory } from "react-router-dom";
 
-mapboxgl.accessToken =
-  process.env.REACT_APP_apiKey;
+mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 
 const MapBoxMap = () => {
   let history = useHistory();
@@ -47,13 +46,11 @@ const MapBoxMap = () => {
   });
 
   useEffect(() => {
-    mapboxgl.accessToken =
-      process.env.REACT_APP_accessToken;
+    mapboxgl.accessToken = process.env.REACT_APP_accessToken;
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
-        style:
-          process.env.REACT_APP_styleKey,
+        style: process.env.REACT_APP_styleKey,
         center: [lng, lat],
         zoom: 2,
       });

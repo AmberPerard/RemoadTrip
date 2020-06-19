@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../consts";
+import { ROUTES } from "../../consts";
 import style from "./ShareSupport.module.css";
 
 const ShareSupport = () => {

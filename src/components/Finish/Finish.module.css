@@ -1,4 +1,4 @@
-@value tokens: "../styles/tokens.module.css";
+@value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .container {
@@ -171,7 +171,7 @@
 }
 
 .button {
-  composes: blueButton from "../styles/buttons.module.css";
+  composes: blueButton from "../../styles/buttons.module.css";
   font-size: 2.3rem;
   width: 29.1rem;
   padding: 2rem;
@@ -181,13 +181,13 @@
 
 .button__animation {
   z-index: 1;
-	transition: all .3s;
-	position: relative;
-	overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .button__animation::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -198,14 +198,14 @@
 }
 
 .button__animation::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
   background-color: white;
-  transition: all .3s;
+  transition: all 0.3s;
   border-radius: 0.3rem;
   z-index: -1;
 }

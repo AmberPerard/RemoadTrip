@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ROUTES } from "../consts";
+import { ROUTES } from "../../consts";
 import style from "./Stream.module.css";
-import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamView";
-import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
+import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
+import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 
 const Stream = () => {
   const [today, setToday] = useState(new Date());

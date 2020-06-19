@@ -8,6 +8,7 @@ const BottomContainerStreamView = ({
   timeLocal,
   route,
   textButton,
+  noClick,
 }) => {
   return (
     <>
@@ -20,6 +21,7 @@ const BottomContainerStreamView = ({
             <span className={style.localTimeBig}>&#8192;{timeLocal}</span>
           </p>
         </div>
+        {/* if noClick hier dan een klasse op zetten dat hij grijs wordt + geen hover (misschien gewoon een andere klasse) */}
         <Link className={style.finish} to={route}>
           <img
             className={style.flag}

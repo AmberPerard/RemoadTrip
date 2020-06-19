@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
-import BackLink from "../Backlink";
+import BackLink from "../Backlink/Backlink";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 import Road from "../Road/Road";

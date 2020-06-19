@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../consts";
+import { ROUTES } from "../../consts";
 import style from "./SecondaryLanding.module.css";
 
 const SecondaryLanding = () => {
@@ -19,11 +19,11 @@ const SecondaryLanding = () => {
         <div className={style.imgcontainer}>
           {/* <img className={style.img__main} src="/assets/screenandroad.png" width="1758" height="1083" alt="computer and phone screen with a road and two cars"/> */}
           <img
-           className={style.youtubevid}
-           src="/assets/Pcphonejapan3.gif"
-           width="540"
-           height="348"
-           alt="phone and computer demonstration of concept"
+            className={style.youtubevid}
+            src="/assets/Pcphonejapan3.gif"
+            width="540"
+            height="348"
+            alt="phone and computer demonstration of concept"
           />
           <img
             className={style.img__maintwo}

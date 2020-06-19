@@ -1,4 +1,4 @@
-@value tokens: "../styles/tokens.module.css";
+@value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, darkPrimary from tokens;
 
 .container {

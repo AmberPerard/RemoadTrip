@@ -1,4 +1,4 @@
-@value tokens: "../styles/tokens.module.css";
+@value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .hidden {
@@ -27,14 +27,14 @@
 .title__second {
   text-align: center;
 }
-    
+
 .sectionone__imgs {
   position: absolute;
   left: 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: 'bergman';
+  grid-template-areas: "bergman";
   margin-top: 14.5rem;
 }
 
@@ -72,7 +72,7 @@
   left: 0;
   margin-top: -12rem;
   z-index: 0;
-  grid-template-areas: 'bothroads';
+  grid-template-areas: "bothroads";
 }
 
 .road {
@@ -87,8 +87,8 @@
 }
 
 .road__two {
-    margin-top: 6rem;
-    z-index: 0;
+  margin-top: 6rem;
+  z-index: 0;
 }
 
 .token {
@@ -98,7 +98,7 @@
   display: grid;
   grid-template-columns: 30rem 25rem;
   grid-template-rows: 4rem 1fr;
-  grid-template-areas: 'tokenimage tokentitle' 'tokenimage tokeninfo';
+  grid-template-areas: "tokenimage tokentitle" "tokenimage tokeninfo";
   transform: rotate(-10deg);
   margin-right: 3rem;
 }
@@ -136,7 +136,7 @@
   margin-bottom: 2rem;
 }
 
-.exploration__p{
+.exploration__p {
   font-size: 1.6rem;
   width: 42rem;
   text-align: center;
@@ -161,7 +161,7 @@
 
 @keyframes main {
   0% {
-    transform: scale(.93);
+    transform: scale(0.93);
   }
 
   50% {
@@ -169,7 +169,7 @@
   }
 
   100% {
-    transform: scale(.93);
+    transform: scale(0.93);
   }
 }
 
@@ -267,5 +267,5 @@
 }
 
 .step__store {
-    margin: .8rem;
+  margin: 0.8rem;
 }

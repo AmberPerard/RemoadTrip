@@ -1,11 +1,11 @@
 import React from "react";
-import { ROUTES } from "../consts";
-import MapBoxMap from "../components/MapBoxMap.js";
+import { ROUTES } from "../../consts";
+import MapBoxMap from "../MapBoxMap/MapBoxMap.js";
 import style from "./Map.module.css";
-import BackLink from "./Backlink";
-import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamView";
-import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
-import Road from "./Road/Road";
+import BackLink from "../Backlink/Backlink";
+import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
+import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
+import Road from "../Road/Road";
 
 const Map = () => {
   return (

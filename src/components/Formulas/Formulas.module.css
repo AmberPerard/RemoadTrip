@@ -1,4 +1,4 @@
-@value tokens: "../styles/tokens.module.css";
+@value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, darkPrimary, OrangeColor from tokens;
 
 .block {
@@ -7,7 +7,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   position: relative;
   z-index: 0;
   height: 75rem;

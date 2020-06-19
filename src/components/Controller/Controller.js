@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../consts";
+import { ROUTES } from "../../consts";
 import style from "./Controller.module.css";
 import QRCode from "qrcode.react";
-import BackLink from "./Backlink";
+import BackLink from "../Backlink/Backlink";
 import socketIOClient from "socket.io-client";
-import TopContainerStreamView from "./TopContainerStreamView/TopContainerStreamView";
-import BottomContainerStreamView from "./BottomContainerStreamView/BottomContainerStreamView";
-import Road from "./Road/Road";
+import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
+import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
+import Road from "../Road/Road";
 
 const Controller = () => {
   const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
@@ -49,11 +49,15 @@ const Controller = () => {
         <div className={style.controllerContainer}>
           <h2 className={style.title}>Connecting the devices</h2>
           <div className={style.qrcodes}>
-            <QRCode fgColor="#FFB400" bgColor="#00204B" value="https://int4controllers.herokuapp.com/" />
+            <QRCode
+              fgColor="#FFB400"
+              bgColor="#00204B"
+              value="https://int4controllers.herokuapp.com/"
+            />
             <p className={style.link}>
               scan or surf to:&#8192;
               <a href="https://int4controllers.herokuapp.com/">
-              https://int4controllers.herokuapp.com/
+                https://int4controllers.herokuapp.com/
               </a>
             </p>
           </div>
