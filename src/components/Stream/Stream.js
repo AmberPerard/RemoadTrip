@@ -5,12 +5,14 @@ import TopContainerStreamView from "../TopContainerStreamView/TopContainerStream
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 
 const Stream = () => {
+
   const [today, setToday] = useState(new Date());
   let time = today.toLocaleTimeString("en-BE");
-  let hours = useRef(0);
-  let minutes = useRef(0);
+  // let hours = useRef(0);
+  // let minutes = useRef(0);
 
   const [seconds, setSeconds] = useState(0);
+  const [passedTime, setPassedTime] = useState("00:00");
   const [isActive, setIsActive] = useState(false);
 
   const getTime = () => {
@@ -27,23 +29,11 @@ const Stream = () => {
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
     }
-
-    // 2
-    hours.current = Math.floor(seconds / 60 / 60);
-    console.log(hours);
-    console.log(minutes);
-    // 37
-    if (hours <= 0) {
-      minutes.current = Math.floor(seconds / 60);
-    } else {
-      minutes.current = Math.floor(seconds / 60);
-    }
-
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
   const setTime = setInterval(getTime, 1 * 1000);
-  console.log(seconds);
+  // console.log(seconds);
 
   useEffect(() => {
     return () => {
@@ -73,7 +63,7 @@ const Stream = () => {
           scrolling="no"
         ></iframe>
         <BottomContainerStreamView
-          timeDriven={`${minutes.current}:${seconds}`}
+          timeDriven={seconds}
           location={"Brugge, Belgium"}
           timeLocal={time}
           route={ROUTES.finish}
