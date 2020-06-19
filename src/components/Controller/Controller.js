@@ -70,14 +70,23 @@ const Controller = () => {
             ></img>
             <p>{connected ? "Connected" : "Connecting"}</p>
           </div>
-          {connected ? (
-            <Link className={style.start} to={ROUTES.stream}>
-              <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
-              Go start driving
-            </Link>
-          ) : (
+          {/* {connected ? ( */}
+          <Link className={style.start} to={ROUTES.stream}>
+            <div>
+              <img
+                className={style.whiteImg}
+                alt="finsh flag"
+                src="./assets/flag.png"
+                width="50px"
+                height="40px"
+              ></img>
+              Go
+            </div>
+            <p className={style.littlebuttonText}>start driving</p>
+          </Link>
+          {/* ) : (
             ""
-          )}
+          )} */}
         </div>
         <Road step={3}></Road>
         <BottomContainerStreamView

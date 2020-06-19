@@ -14,27 +14,27 @@ const MapBoxMap = () => {
 
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
-  const [lng, setLng] = useState(5);
-  const [lat, setLat] = useState(34);
+  const [lng, setLng] = useState(parseFloat("3.238466"));
+  const [lat, setLat] = useState(parseFloat("51.22316"));
 
   let socket = socketIOClient(ENDPOINT);
 
   if (set === false) {
     set = true;
     socket.emit("getCoords", (data) => {
-      console.log(data);
+      // console.log(data);
       if (
         data === "geen current coords" ||
         (data.latitude === 0 && data.longitude === 0 && data.altitude === 0)
       ) {
-        console.log("ik heb geen gps");
+        // console.log("ik heb geen gps");
         setLat(parseFloat("51.22316"));
         setLng(parseFloat("3.238466"));
       } else {
         setLat(parseFloat(data.latitude));
         setLng(parseFloat(data.longitude));
       }
-      console.log(lat, lng);
+      // console.log(lat, lng);
     });
   }
 

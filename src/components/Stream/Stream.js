@@ -30,8 +30,8 @@ const Stream = () => {
 
     // 2
     hours.current = Math.floor(seconds / 60 / 60);
-    console.log(hours);
-    console.log(minutes);
+    // console.log(hours);
+    // console.log(minutes);
     // 37
     if (hours <= 0) {
       minutes.current = Math.floor(seconds / 60);
@@ -43,7 +43,7 @@ const Stream = () => {
   }, [isActive, seconds]);
 
   const setTime = setInterval(getTime, 1 * 1000);
-  console.log(seconds);
+  // console.log(seconds);
 
   useEffect(() => {
     return () => {
