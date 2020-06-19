@@ -29,6 +29,24 @@ const Stream = () => {
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
     }
+
+    const minutes = Math.floor(seconds/60)
+    console.log(minutes)
+
+    if(minutes >= 10) {
+      if(seconds- (minutes*60) >= 10){
+        setPassedTime(`${minutes}:${seconds - (minutes*60)}`)
+      }else if (seconds- (minutes*60) < 10) {
+        setPassedTime(`${minutes}:0${seconds - (minutes*60)} `)
+      }
+    }else if (minutes < 10){
+      if(seconds- (minutes*60) >= 10){
+        setPassedTime(`0${minutes}:${seconds - (minutes*60)}`)
+      }else if (seconds- (minutes*60) < 10) {
+        setPassedTime(`0${minutes}:0${seconds -(minutes*60)}`)
+      }
+    }
+
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
@@ -63,7 +81,7 @@ const Stream = () => {
           scrolling="no"
         ></iframe>
         <BottomContainerStreamView
-          timeDriven={seconds}
+          timeDriven={passedTime}
           location={"Brugge, Belgium"}
           timeLocal={time}
           route={ROUTES.finish}
