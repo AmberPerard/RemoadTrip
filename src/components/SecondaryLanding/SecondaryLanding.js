@@ -18,13 +18,7 @@ const SecondaryLanding = () => {
         </div>
         <div className={style.imgcontainer}>
           {/* <img className={style.img__main} src="/assets/screenandroad.png" width="1758" height="1083" alt="computer and phone screen with a road and two cars"/> */}
-          <img
-            className={style.youtubevid}
-            src="/assets/Pcphonejapan3.gif"
-            width="540"
-            height="348"
-            alt="phone and computer demonstration of concept"
-          />
+          <iframe className={style.video} width="560" height="315" src="https://www.youtube.com/embed/SUftVy9NrCM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video Remoad Trip">Your browser doesn't support iframe</iframe>
           <img
             className={style.img__maintwo}
             src="/assets/Pcphonejapan3.gif"
