@@ -72,13 +72,30 @@
   padding: 1rem;
   color: #ffffff;
   font-size: 2.3rem;
-  border: 2.46973px solid #ffffff;
+  border: .25rem solid #ffffff;
   box-sizing: border-box;
   border-radius: 8.23244px;
+  width: 13.5rem;
+  text-align: center;
+  padding-left: 3rem;
 }
 
 .flag {
   width: 2.86rem;
   height: 2.1rem;
-  margin-right: .5rem;
+  margin-right: 9.3rem;
+  margin-top: 3rem;
+  position: absolute;
+  right: 0;
+}
+
+.finish:hover {
+  background: colorPrimary;
+  border: .25rem solid colorPrimary;
+  color: darkPrimary;
+}
+
+.finish:hover + .flag {
+  -webkit-filter: grayscale(100%) brightness(10%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+  filter: grayscale(100%) brightness(10%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
 }
