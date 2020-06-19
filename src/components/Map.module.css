@@ -1,5 +1,5 @@
 @value tokens: "../styles/tokens.module.css";
-@value colorPrimary, darkPrimary from tokens;
+@value colorPrimary, darkPrimary, AccentColor from tokens;
 
 .container {
   background-color: #ff961a;
@@ -90,7 +90,7 @@
   height: 3rem;
   background: darkPrimary;
   color: colorPrimary;
-  opacity: .5;
+  opacity: 0.5;
   border-radius: 8.13431px;
   padding: 0.6rem 1.2rem;
   margin-right: 0.8rem;
@@ -120,6 +120,73 @@
   transform: rotateY(180deg);
   width: 13.4rem;
   height: 8.5rem;
+}
+
+.Point {
+  margin-top: -4rem;
+  margin-right: 2rem;
+  height: 9.6rem;
+  align-self: start;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.firstPoint {
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: right;
+}
+
+.secondPoint {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: center;
+}
+
+.thirdPoint {
+  grid-row: 3;
+  grid-column: 3;
+  justify-self: left;
+}
+
+.bumpedUp {
+  margin-top: -6rem;
+}
+
+.redCircle {
+  width: 4.6rem;
+  height: 4.6rem;
+  background: AccentColor;
+  border-radius: 50%;
+  font-family: Bungee;
+  font-size: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: colorPrimary;
+}
+
+.pointTitle {
+  font-family: Bungee;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15.4121px;
+  line-height: 18px;
+  padding: 1rem 0 0.5rem;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #00204b;
+}
+
+.pointImg {
+  filter: grayscale(120%) brightness(120%) sepia(100%) hue-rotate(10deg)
+    saturate(500%) contrast(0.7);
 }
 
 .roadandcar {

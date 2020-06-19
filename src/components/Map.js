@@ -30,20 +30,86 @@ const Map = () => {
               </select>
             </div>
             <div className={style.buttonGroup}>
-              <input className={style.input} type="radio" name="react-tips" value="option1" id="easygoing" defaultChecked={true}/>
-              <label className={`${style.label}`} for="easygoing">Easy going</label>
+              <input
+                className={style.input}
+                type="radio"
+                name="react-tips"
+                value="option1"
+                id="easygoing"
+                defaultChecked={true}
+              />
+              <label className={`${style.label}`} for="easygoing">
+                Easy going
+              </label>
 
-              <input className={style.input} type="radio" name="react-tips" value="option2" id="challenging"/>
-              <label className={`${style.label}`} for="challenging">Challenging</label>
+              <input
+                className={style.input}
+                type="radio"
+                name="react-tips"
+                value="option2"
+                id="challenging"
+              />
+              <label className={`${style.label}`} for="challenging">
+                Challenging
+              </label>
 
-              <input className={style.input} type="radio" name="react-tips" value="option3" id="adventuretime"/>
-              <label className={`${style.label}`} for="adventuretime">Adventure Time</label>
+              <input
+                className={style.input}
+                type="radio"
+                name="react-tips"
+                value="option3"
+                id="adventuretime"
+              />
+              <label className={`${style.label}`} for="adventuretime">
+                Adventure Time
+              </label>
             </div>
           </form>
           <MapBoxMap class="container__map"></MapBoxMap>
         </div>
-        <img className={`${style.car} ${style.roadandcar}`} src="./assets/driving_car.gif" alt="animation of car that is riding"></img>
-        <img className={`${style.road} ${style.roadandcar}`} src="./assets/road.png" alt="road to follow"></img>
+        <div className={`${style.Point} ${style.firstPoint} ${style.bumpedUp}`}>
+          <p className={style.redCircle}>1</p>
+          <p className={style.pointTitle}>Get ready</p>
+          <img
+            className={style.pointImg}
+            src="./assets/location_yellow.png"
+            alt="yellow location marker"
+            width="12px"
+            height="16.72px"
+          ></img>
+        </div>
+        <div className={`${style.Point} ${style.secondPoint}`}>
+          <p className={style.redCircle}>2</p>
+          <p className={style.pointTitle}>Set</p>
+          <img
+            className={style.pointImg}
+            src="./assets/money.png"
+            alt="yellow location marker"
+            width="12px"
+            height="16.72px"
+          ></img>
+        </div>
+        <div className={`${style.Point} ${style.thirdPoint}`}>
+          <p className={style.redCircle}>3</p>
+          <p className={style.pointTitle}>go!</p>
+          <img
+            className={style.pointImg}
+            src="./assets/flag.png"
+            alt="yellow location marker"
+            width="19px"
+            height="14px"
+          ></img>
+        </div>
+        <img
+          className={`${style.car} ${style.roadandcar}`}
+          src="./assets/driving_car.gif"
+          alt="animation of car that is riding"
+        ></img>
+        <img
+          className={`${style.road} ${style.roadandcar}`}
+          src="./assets/road.png"
+          alt="road to follow"
+        ></img>
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={"location"}
