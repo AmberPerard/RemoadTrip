@@ -10,6 +10,7 @@
   grid-template-rows: 11rem auto 21rem;
   grid-template-areas: "backlink topbox ." " . middel ." "bottombox bottombox bottombox";
   justify-content: center;
+  overflow: hidden;
 }
 
 .hidden {
