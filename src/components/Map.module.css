@@ -124,7 +124,6 @@
 
 .Point {
   margin-top: -4rem;
-  margin-right: 2rem;
   height: 9.6rem;
   align-self: start;
   display: flex;
@@ -134,6 +133,7 @@
 
 .firstPoint {
   grid-row: 3;
+  margin-right: 2rem;
   grid-column: 1;
   justify-self: right;
 }
