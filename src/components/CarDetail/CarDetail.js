@@ -22,6 +22,7 @@ const CarDetail = () => {
   });
   return (
     <>
+    <section>
       <h1 className={style.hidden}>Connecting the devices</h1>
       <div className={style.container}>
         <TopContainerStreamView
@@ -31,11 +32,49 @@ const CarDetail = () => {
         <div className={style.backlink}>
           <BackLink></BackLink>
         </div>
+
         <div className={style.CarDetailContainer}>
-          <div className={style.orderDetail}>
-            <h2 className={style.orderTitle}>Order detail</h2>
-          </div>
+          <article className={style.content__article}>
+            <h2 className={`${style.content__title} ${style.hidden}`}>Location information</h2>
+            <div>
+              <h3>Local time</h3>
+            </div>
+            <div>
+              <h3>Daytime</h3>
+            </div>
+            <div>
+              <h3>Local information &#x28;live&#x29;</h3>
+            </div>
+          </article>
+
+          <article className={style.content__article}>
+            <h2 className={`${style.content__title}`}>Mexico, yucatan</h2>
+            <div>
+              <h3>General information</h3>
+            </div>
+            <div>
+              <h3>Live location</h3>
+              <img src="" width="" height="" alt=""/>
+            </div>
+          </article>
+
+          <article >
+            <h2 className={`${style.content__title} ${style.hidden}`}>Location pictures</h2>
+            <div>
+              <h3>Pictures of the yucatan region</h3>
+              <img src="" width="" height="" alt=""/>
+              <img src="" width="" height="" alt=""/>
+              <img src="" width="" height="" alt=""/>
+              <img src="" width="" height="" alt=""/>
+            </div>
+          </article>
+
+          <article className={style.content__background}>
+            <h2 className={`${style.background__title} ${style.background__asset}`} >N° MY312</h2>
+            <img className={`${style.background__img} ${style.background__asset}`} src="/assets/detailpage__bg.png" width="525" height="370" alt="illustration of an orange road with a red car on"/>
+          </article>
         </div>
+
         <div className={`${style.Point} ${style.firstPoint}`}>
           <p className={style.redCircle}>1</p>
           <p className={style.pointTitle}>Get ready</p>
@@ -89,6 +128,7 @@ const CarDetail = () => {
           textButton={"Set"}
         ></BottomContainerStreamView>
       </div>
+    </section>
     </>
   );
 };
