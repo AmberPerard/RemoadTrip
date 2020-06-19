@@ -87,8 +87,8 @@ const CarDetail = () => {
                 <div className={style.coordinates__div}>
                   <p  className={style.coordinates__title}>Live coordinates</p>
                   <ul className={style.coordinates}>
-                    <li className={style.coordinate}>20°51'13.6"N</li>
-                    <li className={style.coordinate}>89°14'12.6"W</li>
+                    <li className={style.coordinate}>51&#176;12&#8217;34&#8220;N</li>
+                    <li className={style.coordinate}>3&#176;13&#8217;29&#8220;E</li>
                   </ul>
                 </div>
                 <div className={style.details}>

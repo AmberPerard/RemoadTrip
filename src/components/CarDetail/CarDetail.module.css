@@ -188,11 +188,11 @@
 .coordinates__div::after {
   content: '';
   position: absolute;
-  width: 27rem;
+  width: 31rem;
   height: .2rem;
   background: #FFB400;
   border-radius: 1rem;
-  margin-left: -13.5rem;
+  margin-left: -15.5rem;
   margin-top: 1rem;
 }
 
