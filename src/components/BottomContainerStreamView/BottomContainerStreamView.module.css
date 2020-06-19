@@ -106,3 +106,22 @@
   filter: grayscale(100%) brightness(10%) sepia(100%) hue-rotate(-180deg)
     saturate(700%) contrast(0.8);
 }
+
+.noClick {
+  color: #909090;
+  border-color: #909090;
+}
+
+.noClick > .flag {
+  filter: grayscale(100%);
+}
+
+.noClick:hover {
+  background: none;
+  border-color: #909090;
+  color: #909090;
+}
+
+.noClick:hover > .flag {
+  filter: grayscale(100%);
+}

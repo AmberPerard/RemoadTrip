@@ -21,8 +21,10 @@ const BottomContainerStreamView = ({
             <span className={style.localTimeBig}>&#8192;{timeLocal}</span>
           </p>
         </div>
-        {/* if noClick hier dan een klasse op zetten dat hij grijs wordt + geen hover (misschien gewoon een andere klasse) */}
-        <Link className={style.finish} to={route}>
+        <Link
+          className={`${style.finish} ${noClick === true ? style.noClick : ""}`}
+          to={route}
+        >
           <img
             className={style.flag}
             alt="finsh flag"

@@ -72,21 +72,41 @@ const Controller = () => {
           </div>
           {connected ? (
             <Link className={style.start} to={ROUTES.stream}>
-              <img alt="finsh flag" src="./assets/finish_flag_blue.png"></img>
-              Go start driving
+              <div>
+                <img
+                  className={style.whiteImg}
+                  alt="finsh flag"
+                  src="./assets/flag.png"
+                  width="50px"
+                  height="40px"
+                ></img>
+                Go
+              </div>
+              <p className={style.littlebuttonText}>start driving</p>
             </Link>
           ) : (
             ""
           )}
         </div>
         <Road step={3}></Road>
-        <BottomContainerStreamView
-          timeDriven={"00:00"}
-          location={"Brugge, Belgium"}
-          timeLocal={time}
-          route={ROUTES.stream}
-          textButton={"Go"}
-        ></BottomContainerStreamView>
+        {connected ? (
+          <BottomContainerStreamView
+            timeDriven={"00:00"}
+            location={"Brugge, Belgium"}
+            timeLocal={time}
+            route={ROUTES.stream}
+            textButton={"Go"}
+          ></BottomContainerStreamView>
+        ) : (
+          <BottomContainerStreamView
+            timeDriven={"00:00"}
+            location={"Brugge, Belgium"}
+            timeLocal={time}
+            route={"#"}
+            textButton={"Go"}
+            noClick={true}
+          ></BottomContainerStreamView>
+        )}
       </div>
     </>
   );
