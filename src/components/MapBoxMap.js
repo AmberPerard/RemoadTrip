@@ -5,7 +5,7 @@ import socketIOClient from "socket.io-client";
 import { useHistory } from "react-router-dom";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoyc2NwYzBqdjIyeXM3d3h2bW0xNGcifQ.AiHZhuCKL51mfLLdAf9dyQ";
+  process.env.REACT_APP_apiKey;
 
 const MapBoxMap = () => {
   let history = useHistory();
@@ -48,12 +48,12 @@ const MapBoxMap = () => {
 
   useEffect(() => {
     mapboxgl.accessToken =
-      "pk.eyJ1IjoiZWxsZW5zaWVyZW5zIiwiYSI6ImNrYmoycTIyNTBsM2kycnB2eGZ3czczNjcifQ.MRi5rwt-X4q9xUd6fgP9Lw";
+      process.env.REACT_APP_accessToken;
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style:
-          "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
+          process.env.REACT_APP_styleKey,
         center: [lng, lat],
         zoom: 2,
       });
