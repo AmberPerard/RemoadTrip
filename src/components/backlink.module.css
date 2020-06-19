@@ -15,7 +15,7 @@
 }
 
 .button__animation {
-  margin-top: 4rem;
+  margin-top: 1rem;
   composes: blueButton from "../styles/buttons.module.css";
   z-index: 1;
   
