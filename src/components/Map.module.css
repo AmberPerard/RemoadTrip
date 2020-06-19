@@ -88,9 +88,10 @@
 .label {
   width: 10.3rem;
   height: 3rem;
-  background: #825b31;
-  border-radius: 8.13431px;
+  background: darkPrimary;
   color: colorPrimary;
+  opacity: .5;
+  border-radius: 8.13431px;
   padding: 0.6rem 1.2rem;
   margin-right: 0.8rem;
   margin-top: 3rem;
@@ -98,11 +99,11 @@
 }
 
 .label:hover {
-  background-color: darkPrimary;
+  opacity: 1;
 }
 
-.label input:checked ~ .label {
-  background-color: darkPrimary;
+.input:checked + .label {
+  opacity: 1;
 }
 
 .road {
