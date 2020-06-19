@@ -76,6 +76,7 @@ const Map = () => {
           timeLocal={"00:00"}
           route={ROUTES.cardetails}
           textButton={"Get ready"}
+          noClick={true}
         ></BottomContainerStreamView>
       </div>
     </>
