@@ -21,7 +21,7 @@ const Map = () => {
         <div className={style.mapContainer}>
           <h2 className={style.title}>World map</h2>
           <p className={style.subtitle}>Select your car</p>
-          <form className={style.from}>
+          <form className={style.form}>
             <div className={style.filterGroup}>
               <p className={style.biglable}>Filter by</p>
               <select className={style.select} defaultValue="Difficulty">
