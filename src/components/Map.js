@@ -30,12 +30,14 @@ const Map = () => {
               </select>
             </div>
             <div className={style.buttonGroup}>
-              <input className={style.input} type="radio" name="react-tips" value="option1" defaultChecked={true}/>
-              <label className={`${style.label}`}>Easy going</label>
-                <input className={style.input} type="radio" name="react-tips" value="option2"/>
-              <label className={`${style.label}`}>Challenging</label>
-                <input className={style.input} type="radio" name="react-tips" value="option3"/>
-              <label className={`${style.label} ${style.label__check}`}>Adventure Time</label>
+              <input className={style.input} type="radio" name="react-tips" value="option1" id="easygoing" defaultChecked={true}/>
+              <label className={`${style.label}`} for="easygoing">Easy going</label>
+
+              <input className={style.input} type="radio" name="react-tips" value="option2" id="challenging"/>
+              <label className={`${style.label}`} for="challenging">Challenging</label>
+
+              <input className={style.input} type="radio" name="react-tips" value="option3" id="adventuretime"/>
+              <label className={`${style.label}`} for="adventuretime">Adventure Time</label>
             </div>
           </form>
           <MapBoxMap class="container__map"></MapBoxMap>
