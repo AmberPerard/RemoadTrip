@@ -64,6 +64,7 @@
 
 .select {
   background-color: darkPrimary;
+  border: none;
   color: colorPrimary;
   width: 12rem;
   height: 3rem;

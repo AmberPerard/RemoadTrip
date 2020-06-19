@@ -20,7 +20,7 @@ const Map = () => {
         </div>
         <div className={style.mapContainer}>
           <h2 className={style.title}>World map</h2>
-          <p className={style.subtitle}>choose your location</p>
+          <p className={style.subtitle}>Select your car</p>
           <form className={style.from}>
             <div className={style.filterGroup}>
               <p className={style.biglable}>Filter by</p>
