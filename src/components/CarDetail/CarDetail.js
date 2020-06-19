@@ -117,19 +117,13 @@ const CarDetail = () => {
             </article>
 
             <article className={style.content__article}>
-              <h2 className={`${style.content__title}`}>Mexico, yucatan</h2>
+              <h2 className={`${style.content__title}`}>Bruges, Belgium</h2>
               <div>
                 <h3 className={style.content__subtitles}>
                   General information
                 </h3>
                 <p>
-                  The Yucatan Peninsula is an area in southeastern Mexico that
-                  separates the Caribbean Sea and the Gulf of Mexico. The
-                  peninsula itself is home to the Mexican nations of Yucatan,
-                  Campeche, and Quintana Roo. It also covers the northern parts
-                  of Belize and Guatemala. The Yucatan is known for its tropical
-                  rainforests and jungles, as well as its being the home of the
-                  ancient Maya people.
+                What could be more romantic and inspiring than a place that looks like a backdrop for a fairy tale? The medieval overtones of Bruges’ cobblestone streets lead to countless historical, architectural and artistic wonders. Marvel at ornate houses lining intricate canals, and understand why this is a favorite destination for all types of travelers. The whole city emanates an appreciation of the past, a love of the present, and enthusiasm for the future. Don’t miss Hof Bladelin, Groeninge Museum, Church of Our Lady, and Belfry and Market Halls.
                 </p>
               </div>
               <div>
@@ -149,31 +143,31 @@ const CarDetail = () => {
               </h2>
               <div className={style.content__pictures}>
                 <h3 className={style.content__subtitles}>
-                  Pictures of yucatan
+                  Pictures of Bruges
                 </h3>
                 <img
                   src="/assets/pic1.png"
                   width="374"
-                  height="196"
+                  height="214"
                   alt="a watercave in yucatan"
                 />
                 <div className={style.images__small}>
                   <img
                     src="/assets/pic2.png"
                     width="112"
-                    height="79"
+                    height="64"
                     alt="beach in yucatan"
                   />
                   <img
                     src="/assets/pic3.png"
                     width="112"
-                    height="79"
+                    height="64"
                     alt="temple in yucatan"
                   />
                   <img
                     src="/assets/pic4.png"
                     width="112"
-                    height="79"
+                    height="64"
                     alt="beach in yucatan"
                   />
                 </div>
