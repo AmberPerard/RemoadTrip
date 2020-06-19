@@ -66,7 +66,11 @@ const Map = () => {
               </label>
             </div>
           </form>
-          <MapBoxMap class="container__map"></MapBoxMap>
+          <MapBoxMap
+            classForMap={"mapContainer"}
+            controls={true}
+            zoom={2}
+          ></MapBoxMap>
         </div>
         <Road step={1}></Road>
         <BottomContainerStreamView

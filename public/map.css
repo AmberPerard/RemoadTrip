@@ -9,6 +9,12 @@
   border-radius: 10px;
 }
 
+.mapContainerSmall {
+  width: 38.9rem;
+  height: 15.6rem;
+  border-radius: 10px;
+}
+
 .container__map {
   display: flex;
   justify-content: center;
