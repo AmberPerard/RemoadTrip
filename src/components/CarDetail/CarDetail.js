@@ -85,30 +85,30 @@ const CarDetail = () => {
                   </li>
                 </ul>
                 <div className={style.coordinates__div}>
-                  <p>Live coordinates</p>
+                  <p  className={style.coordinates__title}>Live coordinates</p>
                   <ul className={style.coordinates}>
                     <li className={style.coordinate}>20°51'13.6"N</li>
                     <li className={style.coordinate}>89°14'12.6"W</li>
                   </ul>
                 </div>
                 <div className={style.details}>
-                  <div>
-                    <p>3</p>
-                    <p>
-                      <span>Nearby</span> <br />
+                  <div className={style.details__tokens}>
+                    <p  className={style.details__three}>3</p>
+                    <p className={style.align__left}>
+                      <span className={style.details__bold}>Nearby</span> <br />
                       tokens
                     </p>
                   </div>
                   <div>
-                    <img alt="" />
+                    <img src="/assets/detail__stars.png" alt="stars representing amount of challenge" width="59" height="16"/>
                     <p>
-                      <span>Formula</span> <br />
+                      <span className={style.details__bold}>Formula</span> <br />
                       challenging
                     </p>
                   </div>
                   <div>
                     <p>
-                      <span>€8</span> <br />
+                      <span className={style.details__bold}>€8</span> <br />
                       per hour
                     </p>
                   </div>
