@@ -40,7 +40,7 @@ const Map = () => {
                 id="easygoing"
                 defaultChecked={true}
               />
-              <label className={`${style.label}`} for="easygoing">
+              <label className={`${style.label}`} htmlFor="easygoing">
                 Easy going
               </label>
 
@@ -51,7 +51,7 @@ const Map = () => {
                 value="option2"
                 id="challenging"
               />
-              <label className={`${style.label}`} for="challenging">
+              <label className={`${style.label}`} htmlFor="challenging">
                 Challenging
               </label>
 
@@ -62,7 +62,7 @@ const Map = () => {
                 value="option3"
                 id="adventuretime"
               />
-              <label className={`${style.label}`} for="adventuretime">
+              <label className={`${style.label}`} htmlFor="adventuretime">
                 Adventure Time
               </label>
             </div>
