@@ -72,12 +72,12 @@ const Controller = () => {
           
         </div>
         <img
-          className={style.carRoad}
+          className={`${style.carRoad} ${style.roadandcar}`}
           src="./assets/driving_car.gif"
           alt="animation of car that is riding"
         ></img>
         <img
-          className={style.road}
+          className={`${style.road} ${style.roadandcar}`}
           src="./assets/road.png"
           alt="road to follow"
         ></img>
