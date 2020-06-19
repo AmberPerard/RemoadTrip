@@ -44,6 +44,7 @@ const Stream = () => {
         setPassedTime(`${hours}:0${minutes - hours * 60}:${seconds - minutes * 60}`);
       } else if (seconds - minutes * 60 < 10) {
         setPassedTime(`${hours}:0${minutes - hours * 60}:0${seconds - minutes * 60}`);
+
       }
     }
 

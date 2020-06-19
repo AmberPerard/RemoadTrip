@@ -5,6 +5,7 @@ import BackLink from "../Backlink/Backlink";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 import Road from "../Road/Road";
+import MapBoxMap from "../MapBoxMap/MapBoxMap";
 
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
@@ -155,12 +156,19 @@ const CarDetail = () => {
               </div>
               <div>
                 <h3 className={style.content__subtitles}>Live location</h3>
-                <img
+                <div>
+                  <MapBoxMap
+                    classForMap={"mapContainerSmall"}
+                    controls={false}
+                    zoom={14}
+                  ></MapBoxMap>
+                </div>
+                {/* <img
                   src="/assets/detail__map.png"
                   width="389"
                   height="156"
                   alt="live location of the remote car"
-                />
+                /> */}
               </div>
             </article>
 

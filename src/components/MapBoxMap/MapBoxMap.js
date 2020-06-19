@@ -6,11 +6,11 @@ import { useHistory } from "react-router-dom";
 
 mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 
-const MapBoxMap = () => {
+const MapBoxMap = ({ controls, classForMap, zoom }) => {
   let history = useHistory();
   const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
   let set = false;
-  const marker = useRef();
+  const marker = useRef(null);
 
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
@@ -52,10 +52,18 @@ const MapBoxMap = () => {
         container: mapContainer.current,
         style: process.env.REACT_APP_styleKey,
         center: [lng, lat],
-        zoom: 2,
+        zoom: zoom,
+        interactive: controls,
       });
-      const nav = new mapboxgl.NavigationControl();
+      //console.log(map);
+
+      const nav = new mapboxgl.NavigationControl({
+        showCompass: controls,
+        showZoom: controls,
+        visualizePitch: controls,
+      });
       map.addControl(nav, "bottom-right");
+
       marker.current = new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
 
       map.on("load", () => {
@@ -68,11 +76,11 @@ const MapBoxMap = () => {
     // return () => {
     //   marker.remove();
     // };
-  }, [el, lat, lng, map, marker]);
+  }, [controls, el, lat, lng, map, marker, zoom]);
 
   return (
     <div className="container__map">
-      <div ref={(el) => (mapContainer.current = el)} className="mapContainer" />
+      <div ref={(el) => (mapContainer.current = el)} className={classForMap} />
     </div>
   );
 };
