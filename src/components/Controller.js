@@ -48,11 +48,11 @@ const Controller = () => {
         <div className={style.controllerContainer}>
           <h2 className={style.title}>Connecting the devices</h2>
           <div className={style.qrcodes}>
-            <QRCode value="https://gentle-cove-91397.herokuapp.com/" />
+            <QRCode value="https://int4controllers.herokuapp.com/" />
             <p className={style.link}>
               or surf to:&#8192;
-              <a href="https://gentle-cove-91397.herokuapp.com/">
-                https://gentle-cove-91397.herokuapp.com/
+              <a href="https://int4controllers.herokuapp.com/">
+              https://int4controllers.herokuapp.com/
               </a>
             </p>
           </div>
