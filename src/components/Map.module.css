@@ -10,6 +10,7 @@
   grid-template-rows: 11rem auto 21rem;
   grid-template-areas: "backlink topbox ." " . middel ." "bottombox bottombox bottombox";
   justify-content: center;
+  overflow: hidden;
 }
 
 .hidden {
@@ -31,20 +32,21 @@
   color: #ffffff;
 }
 
-.subtitle {
+/* .subtitle {
   font-size: 1.8rem;
   text-align: center;
   text-transform: lowercase;
   color: #ffffff;
-}
+} */
 
-.from {
+.form {
   margin: 2.2rem 4.3rem;
   display: flex;
   text-align: center;
   align-self: center;
   width: 71rem;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .biglable {
@@ -185,8 +187,8 @@
 }
 
 .pointImg {
-  filter: grayscale(120%) brightness(120%) sepia(100%) hue-rotate(10deg)
-    saturate(500%) contrast(0.7);
+  -webkit-filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(0deg) saturate(0%) contrast(2);
+  filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(0deg) saturate(0%) contrast(2);
 }
 
 .roadandcar {

@@ -19,6 +19,13 @@ const SecondaryLanding = () => {
         <div className={style.imgcontainer}>
           {/* <img className={style.img__main} src="/assets/screenandroad.png" width="1758" height="1083" alt="computer and phone screen with a road and two cars"/> */}
           <img
+           className={style.youtubevid}
+           src="/assets/Pcphonejapan3.gif"
+           width="540"
+           height="348"
+           alt="phone and computer demonstration of concept"
+          />
+          <img
             className={style.img__maintwo}
             src="/assets/Pcphonejapan3.gif"
             width="540"
