@@ -5,14 +5,13 @@ import TopContainerStreamView from "../TopContainerStreamView/TopContainerStream
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 
 const Stream = () => {
-
   const [today, setToday] = useState(new Date());
   let time = today.toLocaleTimeString("en-BE");
   // let hours = useRef(0);
   // let minutes = useRef(0);
 
   const [seconds, setSeconds] = useState(0);
-  const [passedTime, setPassedTime] = useState("00:00");
+  const [passedTime, setPassedTime] = useState("0:00:00");
   const [isActive, setIsActive] = useState(false);
 
   const getTime = () => {
@@ -30,20 +29,21 @@ const Stream = () => {
       clearInterval(interval);
     }
 
-    const minutes = Math.floor(seconds/60)
-    console.log(minutes)
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(seconds / 60 / 60);
+    console.log(minutes);
 
-    if(minutes >= 10) {
-      if(seconds- (minutes*60) >= 10){
-        setPassedTime(`${minutes}:${seconds - (minutes*60)}`)
-      }else if (seconds- (minutes*60) < 10) {
-        setPassedTime(`${minutes}:0${seconds - (minutes*60)} `)
+    if (minutes - hours * 60 >= 10) {
+      if (seconds - minutes * 60 >= 10) {
+        setPassedTime(`${hours}:${minutes - hours * 60}:${seconds - minutes * 60}`);
+      } else if (seconds - minutes * 60 < 10) {
+        setPassedTime(`${hours}:${minutes - hours * 60}:0${seconds - minutes * 60} `);
       }
-    }else if (minutes < 10){
-      if(seconds- (minutes*60) >= 10){
-        setPassedTime(`0${minutes}:${seconds - (minutes*60)}`)
-      }else if (seconds- (minutes*60) < 10) {
-        setPassedTime(`0${minutes}:0${seconds -(minutes*60)}`)
+    } else if (minutes - hours * 60 < 10) {
+      if (seconds - minutes * 60 >= 10) {
+        setPassedTime(`${hours}:0${minutes - hours * 60}:${seconds - minutes * 60}`);
+      } else if (seconds - minutes * 60 < 10) {
+        setPassedTime(`${hours}:0${minutes - hours * 60}:0${seconds - minutes * 60}`);
       }
     }
 
