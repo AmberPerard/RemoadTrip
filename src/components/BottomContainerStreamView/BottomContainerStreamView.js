@@ -21,9 +21,13 @@ const BottomContainerStreamView = ({
           </p>
         </div>
         <Link className={style.finish} to={route}>
+          <img
+            className={style.flag}
+            alt="finsh flag"
+            src="./assets/flag.png"
+          ></img>
           {textButton}
         </Link>
-        <img className={style.flag} alt="finsh flag" src="./assets/flag.png"></img>
       </div>
     </>
   );

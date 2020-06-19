@@ -4,6 +4,7 @@ import style from "./CarDetail.module.css";
 import BackLink from "../Backlink";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
+import Road from "../Road/Road";
 
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
@@ -36,51 +37,7 @@ const CarDetail = () => {
             <h2 className={style.orderTitle}>Order detail</h2>
           </div>
         </div>
-        <div className={`${style.Point} ${style.firstPoint}`}>
-          <p className={style.redCircle}>1</p>
-          <p className={style.pointTitle}>Get ready</p>
-          <img
-            className={style.pointImg}
-            src="./assets/location_yellow.png"
-            alt="yellow location marker"
-            width="12px"
-            height="16.72px"
-          ></img>
-        </div>
-        <div
-          className={`${style.Point} ${style.secondPoint} ${style.bumpedUp}`}
-        >
-          <p className={style.redCircle}>2</p>
-          <p className={style.pointTitle}>Set</p>
-          <img
-            className={style.pointImg}
-            src="./assets/money.png"
-            alt="yellow location marker"
-            width="12px"
-            height="16.72px"
-          ></img>
-        </div>
-        <div className={`${style.Point} ${style.thirdPoint}`}>
-          <p className={style.redCircle}>3</p>
-          <p className={style.pointTitle}>go!</p>
-          <img
-            className={style.pointImg}
-            src="./assets/flag.png"
-            alt="yellow location marker"
-            width="19px"
-            height="14px"
-          ></img>
-        </div>
-        <img
-          className={`${style.carRoad} ${style.roadandcar}`}
-          src="./assets/driving_car.gif"
-          alt="animation of car that is riding"
-        ></img>
-        <img
-          className={`${style.road} ${style.roadandcar}`}
-          src="./assets/road.png"
-          alt="road to follow"
-        ></img>
+        <Road step={2}></Road>
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={"Brugge, Belgium"}
