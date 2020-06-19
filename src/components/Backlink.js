@@ -9,7 +9,7 @@ const BackLink = () => {
     history.goBack();
   };
   return (
-    <button className={styles.back} onClick={handleClick}>
+    <button className={`${styles.back} ${styles.button__animation}`} onClick={handleClick}>
       &#10094; go back
     </button>
   );
