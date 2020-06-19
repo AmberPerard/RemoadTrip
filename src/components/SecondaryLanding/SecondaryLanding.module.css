@@ -28,6 +28,7 @@
 }
 
 .imgcontainer {
+  width: 80vw;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 66rem;
@@ -42,8 +43,9 @@
 }
 
 .img__maintwo {
-  margin-top: 14rem;
+  margin-top: 6rem;
   margin-left: -8rem;
+  grid-column: 3/4;
 }
 
 .download__div {
@@ -135,4 +137,13 @@
 
 .start:hover::before {
   width: 100%;
+}
+
+.video {
+  grid-column: 1/3;
+  margin-top: 14rem;
+  margin-left: -5rem;
+  width: 48vw;
+  height: 26.63vw;
+  background: colorPrimary;
 }
