@@ -54,7 +54,7 @@ const MapBoxMap = () => {
         container: mapContainer.current,
         style:
           "mapbox://styles/ellensierens/ckbjen2be23431imn95rk4a5n?optimize=true",
-        center: [5, 34],
+        center: [51.22316, 3.238466],
         zoom: 2,
       });
       const nav = new mapboxgl.NavigationControl();
