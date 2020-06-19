@@ -33,6 +33,7 @@
   display: grid;
   grid-template-columns: 2fr 1.8fr 2fr;
   grid-template-areas: 'leftcontent middlecontent rightcontent';
+  gap: 3rem;
 }
 
 .road {
@@ -160,4 +161,114 @@
 
 .background__asset {
   position: absolute;
+}
+
+.content__subtitles {
+  font-size: 2.1rem;
+  font-family: "Bungee", sans-serif;
+  color: darkPrimary;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.article__left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5rem 1fr;
+  padding: 5rem;
+  padding-left: 8rem;
+  gap: .8rem;
+  height: 55vh;
+  margin-top: 19rem;
+}
+
+.localinfo {
+  background: darkPrimary;
+  border-radius: .7rem;
+  color: colorPrimary;
+  font-size: 1.6rem;
+  font-family: "Bungee", sans-serif;
+  text-align: center;
+  display: flex;
+}
+
+.localinfo__info {
+  grid-column: 1/3;
+  flex-direction: column;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.content__pictures {
+  margin-top: 10rem;
+}
+
+.content__pictures {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 7rem 1fr 1fr;
+  padding: 1rem 5rem;
+  padding-right: 8rem;
+}
+
+.images__small {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.localinfo__hour {
+  flex-direction: row-reverse;
+  text-align: left;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.localinfo__time {
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.8rem;
+  padding-left: 1rem;
+}
+
+.local__list {
+  margin: 0 3rem;
+}
+
+.list__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: .6rem;
+}
+
+.localinfo__title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+
+.list__value {
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.coordinates__div {
+  margin: 1rem;
+}
+
+.coordinates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem 4rem 0 4rem;
 }

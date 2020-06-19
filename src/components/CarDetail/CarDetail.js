@@ -34,38 +34,90 @@ const CarDetail = () => {
         </div>
 
         <div className={style.CarDetailContainer}>
-          <article className={style.content__article}>
+          <article className={`${style.content__article} ${style.article__left}`}>
             <h2 className={`${style.content__title} ${style.hidden}`}>Location information</h2>
-            <div>
-              <h3>Local time</h3>
+            <div className={`${style.localinfo} ${style.localinfo__hour}`}>
+              <div>
+                <h3>Local time</h3>
+                <p>06&#58;31</p>
+              </div>
+              <img src="/assets/local__time.png" width="32" height="32" alt="icon of time"/>
             </div>
-            <div>
+            <div className={`${style.localinfo} ${style.localinfo__time}`}>
               <h3>Daytime</h3>
+              <img src="/assets/local__daytime.png" width="32" height="32" alt="icon of the daytime"/>
+
             </div>
-            <div>
-              <h3>Local information &#x28;live&#x29;</h3>
+            <div className={`${style.localinfo} ${style.localinfo__info}`}>
+              <h3 className={style.localinfo__title}>Local information &#x28;live&#x29;</h3>
+              <ul className={style.local__list}>
+                <li className={style.list__items}>
+                  <p className={style.list__item}>General weather</p> 
+                  <p className={style.list__value}>Cloudy</p>
+                </li>
+                <li className={style.list__items}>
+                  <p className={style.list__item}>Humidity</p>
+                  <p className={style.list__value}>91%</p>
+                </li>
+                <li className={style.list__items}>
+                  <p className={style.list__item}>Precipitation</p>
+                  <p className={style.list__value}>14%</p>
+                </li>
+                <li className={style.list__items}>
+                  <p className={style.list__item}>Wind</p>
+                  <p className={style.list__value}>19 km/h</p>
+                </li>
+              </ul>
+              <div className={style.coordinates__div}>
+                <p>Live coordinates</p>
+                <ul className={style.coordinates}>
+                  <li className={style.coordinate}>20°51'13.6"N</li>
+                  <li className={style.coordinate}>89°14'12.6"W</li>
+                </ul>
+              </div>
+              <div className={style.details}>
+                <div>
+                  <p>3</p>
+                  <p><span>Nearby</span> <br/>tokens</p>
+                </div>
+                <div>
+                  <img alt=""/>
+                  <p><span>Formula</span> <br/>challenging</p>
+                </div>
+                <div>
+                  <p><span>€8</span> <br/>per hour</p>
+                </div>
+              </div>
             </div>
           </article>
 
           <article className={style.content__article}>
             <h2 className={`${style.content__title}`}>Mexico, yucatan</h2>
             <div>
-              <h3>General information</h3>
+              <h3 className={style.content__subtitles}>General information</h3>
+              <p>The Yucatan Peninsula is an area in southeastern Mexico that separates 
+                the Caribbean Sea and the Gulf of Mexico. The peninsula itself is home 
+                to the Mexican nations of Yucatan, Campeche, and Quintana Roo. It also 
+                covers the northern parts of Belize and Guatemala. The Yucatan is known 
+                for its tropical rainforests and jungles, as well as its being the home 
+                of the ancient Maya people.</p>
             </div>
             <div>
-              <h3>Live location</h3>
-              <img src="" width="" height="" alt=""/>
+              <h3 className={style.content__subtitles}>Live location</h3>
+              <img src="/assets/detail__map.png" width="389" height="156" alt="live location of the remote car"/>
             </div>
           </article>
 
-          <article >
+          <article className={style.content__article}>
             <h2 className={`${style.content__title} ${style.hidden}`}>Location pictures</h2>
-            <div>
-              <h3>Pictures of the yucatan region</h3>
-              <img src="" width="" height="" alt=""/>
-              <img src="" width="" height="" alt=""/>
-              <img src="" width="" height="" alt=""/>
-              <img src="" width="" height="" alt=""/>
+            <div className={style.content__pictures}>
+              <h3 className={style.content__subtitles}>Pictures of yucatan</h3>
+              <img src="/assets/pic1.png" width="374" height="196" alt="a watercave in yucatan"/>
+              <div className={style.images__small}>
+                <img src="/assets/pic2.png" width="112" height="79" alt="beach in yucatan"/>
+                <img src="/assets/pic3.png" width="112" height="79" alt="temple in yucatan"/>
+                <img src="/assets/pic4.png" width="112" height="79" alt="beach in yucatan"/>
+              </div>
             </div>
           </article>
 
