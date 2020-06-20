@@ -10,9 +10,7 @@ mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 const MapBoxMap = ({ controls, classForMap, zoom, position }) => {
   let history = useHistory();
   const { carStore } = useStores();
-  const [coords, setCoords] = useState();
 
-  // const marker = useRef(null);
   console.log(carStore.cars);
 
   const [map, setMap] = useState();
@@ -27,12 +25,6 @@ const MapBoxMap = ({ controls, classForMap, zoom, position }) => {
   console.log(carStore.cars[0].coordinates.lng);
 
   useEffect(() => {
-
-    // if(map){
-    //   map.remove();
-    //   setMap(undefined)
-    // }
-
     console.log("useEffect triggerd");
     console.log(carStore.cars[0].latitude);
     console.log(carStore.cars[0].longitude);
@@ -46,7 +38,6 @@ const MapBoxMap = ({ controls, classForMap, zoom, position }) => {
         zoom: zoom,
         interactive: controls,
       });
-      //console.log(map);
 
       const nav = new mapboxgl.NavigationControl({
         showCompass: controls,
@@ -55,38 +46,21 @@ const MapBoxMap = ({ controls, classForMap, zoom, position }) => {
       });
       map.addControl(nav, "bottom-right");
 
-      // carStore.cars.forEach((car) => {
-      // if (car.longitude && car.latitude) {
-      // console.log(car.latitude , car.longitude)
-      // new mapboxgl.Marker(el)
-      //   .setLngLat([car.longitude, car.latitude])
-      //   .addTo(map);
-      // }
-      // console.log("loading");
-      // });
-
       map.on("load", () => {
         setMap(map);
         map.resize();
       });
     };
 
-    console.log('new marker')
+    console.log("new marker");
 
     if (!map) initializeMap({ setMap, mapContainer });
-
-    // return (map) => {
-    //   if(map){
-    //     map.remove();
-    //   }
-    // };
-
   }, [carStore.cars, controls, el, map, zoom]);
 
-  if(map) {
+  if (map) {
     new mapboxgl.Marker(el)
-    .setLngLat([carStore.cars[0].longitude, carStore.cars[0].latitude])
-    .addTo(map);
+      .setLngLat([carStore.cars[0].longitude, carStore.cars[0].latitude])
+      .addTo(map);
   }
 
   return useObserver(() => (
