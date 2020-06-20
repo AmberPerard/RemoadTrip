@@ -6,8 +6,10 @@ import TopContainerStreamView from "../TopContainerStreamView/TopContainerStream
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 import Road from "../Road/Road";
 import { useObserver } from "mobx-react-lite";
+import { useStores } from "../../hooks/useStores.js";
 
 const Map = () => {
+  const { carStore } = useStores();
   return useObserver(() => (
     <>
       <h1 className={style.hidden}>World map</h1>
@@ -71,6 +73,8 @@ const Map = () => {
             classForMap={"mapContainer"}
             controls={true}
             zoom={2}
+            lat={carStore.cars[0].latitude}
+            lng={carStore.cars[0].longitude}
           ></MapBoxMap>
         </div>
         <Road step={1} noSelectedCar={false}></Road>
