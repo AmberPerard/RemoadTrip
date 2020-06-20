@@ -126,7 +126,7 @@ const ShareSupport = () => {
 
         <article className={`${style.article} ${style.article__cta}`}>
           <h3 className={`${style.title} ${style.title__cta}`}>
-            <span className={style.span}>Start your dream</span>
+            <span className={style.span}>Start your</span>
             <br />
             remoad trip
           </h3>

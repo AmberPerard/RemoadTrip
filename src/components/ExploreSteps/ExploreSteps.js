@@ -58,8 +58,8 @@ const ExploreSteps = () => {
 
         <article className={`${style.step} ${style.step__three}`}>
           <h3 className={style.step__title}>Step 3</h3>
-          <p className={style.step__subtitle}>Connect &amp; explore</p>
-          <p className={style.step__paragraph}>Once your computer, phone and car are connected, you can enjoy your ride!</p>
+          <p className={style.step__subtitle}>explore</p>
+          <p className={style.step__paragraph}>You can enjoy your ride!</p>
           <img className={`${style.step__gif} ${style.steproad__gifthree}`} src="/assets/Pcphonejapan3.gif" width="413" height="266" alt="phone and computer demonstration of concept remoad trip"/>
         </article>
         
