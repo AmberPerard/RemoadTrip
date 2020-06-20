@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
 import BackLink from "../Backlink/Backlink";
+import LocalTime from "../LocalTime/LocalTime";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 import Road from "../Road/Road";
@@ -30,7 +31,7 @@ const CarDetail = () => {
     }
   };
 
-  const setTime = setInterval(getTime, 1 * 1000);
+  // const setTime = setInterval(getTime, 1 * 1000);
 
   useEffect(() => {
     return () => {
@@ -61,7 +62,7 @@ const CarDetail = () => {
               <div className={`${style.localinfo} ${style.localinfo__hour}`}>
                 <div>
                   <h3>Local time</h3>
-                  <p>{time}</p>
+                  <LocalTime></LocalTime>
                 </div>
                 <img
                   src="/assets/local__time.png"
@@ -267,7 +268,6 @@ const CarDetail = () => {
           <BottomContainerStreamView
             timeDriven={"00:00"}
             location={"Bruges, Belgium"}
-            timeLocal={time}
             route={ROUTES.controller}
             textButton={"Set"}
           ></BottomContainerStreamView>
