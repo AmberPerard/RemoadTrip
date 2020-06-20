@@ -187,9 +187,7 @@ const CarDetail = () => {
                   <MapBoxMap
                     classForMap={"mapContainerSmall"}
                     controls={true}
-                    zoom={4}
-                    lat={carStore.cars[0].latitude}
-                    lng={carStore.cars[0].longitude}
+                    zoom={8}
                   ></MapBoxMap>
                 </div>
                 {/* <img

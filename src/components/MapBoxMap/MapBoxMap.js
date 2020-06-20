@@ -7,7 +7,7 @@ import { useObserver } from "mobx-react-lite";
 
 mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 
-const MapBoxMap = ({ controls, classForMap, zoom, lat, lng }) => {
+const MapBoxMap = ({ controls, classForMap, zoom }) => {
   let history = useHistory();
   const { carStore } = useStores();
 
@@ -34,7 +34,7 @@ const MapBoxMap = ({ controls, classForMap, zoom, lat, lng }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: process.env.REACT_APP_styleKey,
-        center: [0, 0],
+        center: [3.21667, 51.25],
         zoom: zoom,
         interactive: controls,
       });
@@ -55,7 +55,7 @@ const MapBoxMap = ({ controls, classForMap, zoom, lat, lng }) => {
     console.log("new marker");
 
     if (!map) initializeMap({ setMap, mapContainer });
-  }, [carStore.cars, controls, el, lat, lng, map, zoom]);
+  }, [carStore.cars, controls, el, map, zoom]);
 
   if (map) {
     new mapboxgl.Marker(el)
