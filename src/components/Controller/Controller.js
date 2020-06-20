@@ -11,17 +11,17 @@ import Road from "../Road/Road";
 
 const Controller = () => {
   const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
-  const [today, setToday] = useState(new Date());
+  // const [today, setToday] = useState(new Date());
   const [connected, setConnected] = useState(false);
-  let time = today.toLocaleTimeString("en-BE");
+  // let time = today.toLocaleTimeString("en-BE");
 
-  const getTime = () => {
-    setToday(new Date());
-  };
+  // const getTime = () => {
+  //   setToday(new Date());
+  // };
 
   let socket = socketIOClient(ENDPOINT);
 
-  const setTime = setInterval(getTime, 1 * 1000);
+  // const setTime = setInterval(getTime, 1 * 1000);
   useEffect(() => {
     // console.log(connected);
     socket.on("controllerConnected", () => {
@@ -31,10 +31,10 @@ const Controller = () => {
     });
     // setConnected(false)
 
-    return () => {
-      clearInterval(setTime);
-    };
-  }, [connected, setTime, socket]);
+    // return () => {
+    //   clearInterval(setTime);
+    // };
+  }, [connected, socket]);
   return (
     <>
       <h1 className={style.hidden}>Connecting the devices</h1>
@@ -90,7 +90,6 @@ const Controller = () => {
           <BottomContainerStreamView
             timeDriven={"00:00"}
             location={"Bruges, Belgium"}
-            timeLocal={time}
             route={ROUTES.stream}
             textButton={"Go"}
           ></BottomContainerStreamView>
@@ -98,7 +97,6 @@ const Controller = () => {
           <BottomContainerStreamView
             timeDriven={"00:00"}
             location={"Bruges, Belgium"}
-            timeLocal={time}
             route={"#"}
             textButton={"Go"}
             noClick={true}

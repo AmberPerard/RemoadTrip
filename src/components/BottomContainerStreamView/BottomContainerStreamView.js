@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./BottomContainerStreamView.module.css";
+import LocalTime from "../LocalTime/LocalTime";
 
 const BottomContainerStreamView = ({
   timeDriven,
   location,
-  timeLocal,
   route,
   textButton,
   noClick,
@@ -18,7 +18,7 @@ const BottomContainerStreamView = ({
           <p className={style.location}>{location}</p>
           <p className={style.localTime}>
             local time{" "}
-            <span className={style.localTimeBig}>&#8192;{timeLocal}</span>
+            <span className={style.localTimeBig}>&#8192; <LocalTime></LocalTime></span>
           </p>
         </div>
         <Link
