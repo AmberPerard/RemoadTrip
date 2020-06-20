@@ -85,12 +85,12 @@
   border: 0.5rem solid darkPrimary;
   box-sizing: border-box;
   border-radius: 1.7rem;
-  width: 36.7rem;
+  width: 34rem;
   height: 10.6rem;
   padding: 0.6rem;
 
   font-family: Bungee;
-  font-size: 3.5rem;
+  font-size: 6rem;
   display: flex;
   flex-flow: column;
   text-align: center;

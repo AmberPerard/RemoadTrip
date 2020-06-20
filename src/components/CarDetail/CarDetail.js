@@ -260,7 +260,7 @@ const CarDetail = () => {
               />
             </article>
           </div>
-          <Road step={2}></Road>
+          <Road step={2} noSelectedCar={true}></Road>
           <BottomContainerStreamView
             timeDriven={"00:00"}
             location={"Bruges, Belgium"}
