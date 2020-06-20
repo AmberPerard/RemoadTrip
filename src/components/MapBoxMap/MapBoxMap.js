@@ -1,42 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import { ROUTES } from "../../consts";
-import socketIOClient from "socket.io-client";
 import { useHistory } from "react-router-dom";
+import { useStores } from "../../hooks/useStores.js";
+import { useObserver } from "mobx-react-lite";
 
 mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 
 const MapBoxMap = ({ controls, classForMap, zoom }) => {
   let history = useHistory();
-  const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
-  let set = false;
-  const marker = useRef(null);
+  const { carStore } = useStores();
+  const [coords, setCoords] = useState();
+
+  // const marker = useRef(null);
+  console.log(carStore.cars);
 
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
-  const [lng, setLng] = useState(parseFloat("3.238466"));
-  const [lat, setLat] = useState(parseFloat("51.22316"));
-
-  let socket = socketIOClient(ENDPOINT);
-
-  if (set === false) {
-    set = true;
-    socket.emit("getCoords", (data) => {
-      // console.log(data);
-      if (
-        data === "geen current coords" ||
-        (data.latitude === 0 && data.longitude === 0 && data.altitude === 0)
-      ) {
-        // console.log("ik heb geen gps");
-        setLat(parseFloat("51.22316"));
-        setLng(parseFloat("3.238466"));
-      } else {
-        setLat(parseFloat(data.latitude));
-        setLng(parseFloat(data.longitude));
-      }
-      // console.log(lat, lng);
-    });
-  }
 
   var el = document.createElement("div");
   el.className = "autoMarker";
@@ -44,14 +24,16 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
   el.addEventListener("click", function () {
     history.push(ROUTES.cardetails.to);
   });
+  console.log(carStore.cars[0].coordinates.lng);
 
   useEffect(() => {
+    console.log("useEffect triggerd");
     mapboxgl.accessToken = process.env.REACT_APP_accessToken;
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: process.env.REACT_APP_styleKey,
-        center: [lng, lat],
+        center: [0, 0],
         zoom: zoom,
         interactive: controls,
       });
@@ -64,7 +46,14 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
       });
       map.addControl(nav, "bottom-right");
 
-      marker.current = new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
+      carStore.cars.forEach((car) => {
+        if (car.coordinates.lng) {
+          new mapboxgl.Marker(el)
+            .setLngLat([car.coordinates.lng, car.coordinates.lat])
+            .addTo(map);
+        }
+        console.log("loading");
+      });
 
       map.on("load", () => {
         setMap(map);
@@ -76,13 +65,13 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
     // return () => {
     //   marker.remove();
     // };
-  }, [controls, el, lat, lng, map, marker, zoom]);
+  }, [carStore.cars, controls, el, map, zoom]);
 
-  return (
+  return useObserver(() => (
     <div className="container__map">
       <div ref={(el) => (mapContainer.current = el)} className={classForMap} />
     </div>
-  );
+  ));
 };
 
 export default MapBoxMap;
