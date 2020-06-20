@@ -3,7 +3,7 @@ import socketIOClient from "socket.io-client";
 import { v4 } from "uuid";
 
 class Car {
-  constructor({ id = v4(), name, lat = 0, lng = 0, coordinates = {}, store }) {
+  constructor({ id = v4(), name, lat, lng, coordinates = {}, store }) {
     this.id = id;
     this.name = name;
     this.coordinates = coordinates;

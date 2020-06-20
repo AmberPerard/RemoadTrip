@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import style from "./Introduction.module.css";
-import { useStores } from "../../hooks/useStores";
 
 const Introduction = () => {
   return (

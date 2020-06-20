@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./BottomContainerStreamView.module.css";
 import LocalTime from "../LocalTime/LocalTime";
+import { useStores } from "../../hooks/useStores";
 
 const BottomContainerStreamView = ({
   timeDriven,
@@ -10,6 +11,14 @@ const BottomContainerStreamView = ({
   textButton,
   noClick,
 }) => {
+  const { carStore } = useStores();
+
+  const car = carStore.getCarsById("1");
+  console.log(car);
+
+  const result = car.getLocation();
+  console.log(result);
+
   return (
     <>
       <div className={style.bottomContainer}>
@@ -18,7 +27,9 @@ const BottomContainerStreamView = ({
           <p className={style.location}>{location}</p>
           <p className={style.localTime}>
             local time{" "}
-            <span className={style.localTimeBig}>&#8192; <LocalTime className={style.localTimeBig}></LocalTime></span>
+            <span className={style.localTimeBig}>
+              &#8192; <LocalTime className={style.localTimeBig}></LocalTime>
+            </span>
           </p>
         </div>
         <Link
