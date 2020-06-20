@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import { ROUTES } from "../../consts";
 import style from "./Stream.module.css";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";

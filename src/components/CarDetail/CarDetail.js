@@ -53,7 +53,7 @@ const CarDetail = () => {
               <div className={`${style.localinfo} ${style.localinfo__hour}`}>
                 <div>
                   <h3>Local time</h3>
-                  <p>06&#58;31</p>
+                  <p>{time}</p>
                 </div>
                 <img
                   src="/assets/local__time.png"
