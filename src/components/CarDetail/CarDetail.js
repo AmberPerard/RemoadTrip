@@ -19,7 +19,7 @@ const CarDetail = () => {
     if(isLoaded === false){
       console.log("fetched")
       // fetch(`https://samples.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=439d4b804bc8187953eb36d2a8c26a02`)
-      fetch(`http://api.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=bc485799c147d5e9cd675efa6f0c7a80`)
+      fetch(`http://api.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=${process.env.REACT_APP_apiKey_weather}`)
       .then((res) => res.json())
       .then(
         (result) => {
