@@ -11,6 +11,31 @@ const CarDetail = () => {
   const [today, setToday] = useState(new Date());
   const [bigImage, setBigImage] = useState("pic1.png");
   let time = today.toLocaleTimeString("en-BE");
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState(undefined);
+
+  const getWeather = () => {
+    if(isLoaded === false){
+      console.log("fetched")
+      // fetch(`https://samples.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=439d4b804bc8187953eb36d2a8c26a02`)
+      fetch(`http://api.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=bc485799c147d5e9cd675efa6f0c7a80`)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+    }
+  };
 
   const getTime = () => {
     setToday(new Date());
@@ -26,12 +51,15 @@ const CarDetail = () => {
   const setTime = setInterval(getTime, 1 * 1000);
 
   useEffect(() => {
+    getWeather();
+
     return () => {
       clearInterval(setTime);
     };
   });
   return (
     <>
+    {/* {items? console.log(items.weather[0].main): ""} */}
       <section>
         <h1 className={style.hidden}>Connecting the devices</h1>
         <div className={style.container}>
@@ -63,7 +91,11 @@ const CarDetail = () => {
                 />
               </div>
               <div className={`${style.localinfo} ${style.localinfo__time}`}>
-                <h3>Daytime</h3>
+                {/* <h3>Daytime</h3> */}
+                {items? console.log(items.sys.sunrise): ""}
+                {items? console.log(items.sys.sunset): ""}
+                {console.log(Math.round(today.getTime()/1000))}
+                {(items && Math.round(today.getTime()/1000) > items.sys.sunrise && Math.round(today.getTime()/1000) < items.sys.sunset)? <h3>Daytime</h3> : <h3>Nighttime</h3>}
                 <img
                   src="/assets/local__daytime.png"
                   width="32"
@@ -78,11 +110,13 @@ const CarDetail = () => {
                 <ul className={style.local__list}>
                   <li className={style.list__items}>
                     <p className={style.list__item}>General weather</p>
-                    <p className={style.list__value}>Cloudy</p>
+                    {items? <p className={style.list__value}>{items.weather[0].main}</p>: ""}
+                    {/* {items? console.log(items.weather[0].main): ""} */}
+                    
                   </li>
                   <li className={style.list__items}>
                     <p className={style.list__item}>Humidity</p>
-                    <p className={style.list__value}>91%</p>
+                    {items? <p className={style.list__value}>{`${items.main.humidity}%`}</p>: ""}
                   </li>
                   <li className={style.list__items}>
                     <p className={style.list__item}>Precipitation</p>
@@ -90,7 +124,8 @@ const CarDetail = () => {
                   </li>
                   <li className={style.list__items}>
                     <p className={style.list__item}>Wind</p>
-                    <p className={style.list__value}>19 km/h</p>
+                    {/* <p className={style.list__value}>19 km/h</p> */}
+                    {items? <p className={style.list__value}>{`${items.wind.speed*3.6} km/h`}</p>: ""}
                   </li>
                 </ul>
                 <div className={style.coordinates__div}>
