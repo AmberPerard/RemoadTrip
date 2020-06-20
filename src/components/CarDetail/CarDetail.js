@@ -12,7 +12,7 @@ import { useStores } from "../../hooks/useStores";
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
   const [bigImage, setBigImage] = useState("pic1.png");
-  let time = today.toLocaleTimeString("en-BE");
+
   const { carStore } = useStores();
 
   const car = carStore.getCarsById("1");
@@ -20,24 +20,12 @@ const CarDetail = () => {
   const weather = car.getWeather();
   console.log(weather);
 
-  const getTime = () => {
-    setToday(new Date());
-  };
-
   const handleClickImg = (e) => {
     if (e) {
       const img = e.currentTarget.src.split("/")[4];
       setBigImage(img);
     }
   };
-
-  // const setTime = setInterval(getTime, 1 * 1000);
-
-  useEffect(() => {
-    return () => {
-      clearInterval(setTime);
-    };
-  });
   return (
     <>
       {/* {items? console.log(items.weather[0].main): ""} */}
