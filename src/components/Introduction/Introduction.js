@@ -2,8 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import style from "./Introduction.module.css";
+import { useStores } from "../../hooks/useStores";
 
 const Introduction = () => {
+  const { carStore } = useStores();
+  const car = carStore.cars.getCarsById("1");
+
+  const result = car.getLocation();
+  console.log(result);
+
   return (
     <>
       <section className={style.landingcontainer}>

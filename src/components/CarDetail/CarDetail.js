@@ -6,36 +6,18 @@ import TopContainerStreamView from "../TopContainerStreamView/TopContainerStream
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 import Road from "../Road/Road";
 import MapBoxMap from "../MapBoxMap/MapBoxMap";
+import { useStores } from "../../hooks/useStores";
 
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
   const [bigImage, setBigImage] = useState("pic1.png");
   let time = today.toLocaleTimeString("en-BE");
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState(undefined);
+  const { carStore } = useStores();
 
-  const getWeather = () => {
-    if(isLoaded === false){
-      console.log("fetched")
-      // fetch(`https://samples.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=439d4b804bc8187953eb36d2a8c26a02`)
-      fetch(`http://api.openweathermap.org/data/2.5/weather?lat=51.25&lon=3.21667&appid=${process.env.REACT_APP_apiKey_weather}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-    }
-  };
+  const car = carStore.getCarsById("1");
+  console.log(car);
+  const weather = car.getWeather();
+  console.log(weather);
 
   const getTime = () => {
     setToday(new Date());
@@ -51,15 +33,13 @@ const CarDetail = () => {
   const setTime = setInterval(getTime, 1 * 1000);
 
   useEffect(() => {
-    getWeather();
-
     return () => {
       clearInterval(setTime);
     };
   });
   return (
     <>
-    {/* {items? console.log(items.weather[0].main): ""} */}
+      {/* {items? console.log(items.weather[0].main): ""} */}
       <section>
         <h1 className={style.hidden}>Connecting the devices</h1>
         <div className={style.container}>
@@ -92,10 +72,16 @@ const CarDetail = () => {
               </div>
               <div className={`${style.localinfo} ${style.localinfo__time}`}>
                 {/* <h3>Daytime</h3> */}
-                {items? console.log(items.sys.sunrise): ""}
-                {items? console.log(items.sys.sunset): ""}
-                {console.log(Math.round(today.getTime()/1000))}
-                {(items && Math.round(today.getTime()/1000) > items.sys.sunrise && Math.round(today.getTime()/1000) < items.sys.sunset)? <h3>Daytime</h3> : <h3>Nighttime</h3>}
+                {weather ? console.log(weather.sys.sunrise) : ""}
+                {weather ? console.log(weather.sys.sunset) : ""}
+                {console.log(Math.round(today.getTime() / 1000))}
+                {weather &&
+                Math.round(today.getTime() / 1000) > weather.sys.sunrise &&
+                Math.round(today.getTime() / 1000) < weather.sys.sunset ? (
+                  <h3>Daytime</h3>
+                ) : (
+                  <h3>Nighttime</h3>
+                )}
                 <img
                   src="/assets/local__daytime.png"
                   width="32"
@@ -108,24 +94,41 @@ const CarDetail = () => {
                   Local information &#x28;live&#x29;
                 </h3>
                 <ul className={style.local__list}>
-                  <li className={style.list__items}>
+                  <li className={style.list__weather}>
                     <p className={style.list__item}>General weather</p>
-                    {items? <p className={style.list__value}>{items.weather[0].main}</p>: ""}
-                    {/* {items? console.log(items.weather[0].main): ""} */}
-                    
+                    {weather ? (
+                      <p className={style.list__value}>
+                        {weather.weather[0].main}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                    {/* {weather? console.log(weather.weather[0].main): ""} */}
                   </li>
-                  <li className={style.list__items}>
+                  <li className={style.list__weather}>
                     <p className={style.list__item}>Humidity</p>
-                    {items? <p className={style.list__value}>{`${items.main.humidity}%`}</p>: ""}
+                    {weather ? (
+                      <p
+                        className={style.list__value}
+                      >{`${weather.main.humidity}%`}</p>
+                    ) : (
+                      ""
+                    )}
                   </li>
-                  <li className={style.list__items}>
+                  <li className={style.list__weather}>
                     <p className={style.list__item}>Precipitation</p>
                     <p className={style.list__value}>14%</p>
                   </li>
-                  <li className={style.list__items}>
+                  <li className={style.list__weather}>
                     <p className={style.list__item}>Wind</p>
                     {/* <p className={style.list__value}>19 km/h</p> */}
-                    {items? <p className={style.list__value}>{`${items.wind.speed*3.6} km/h`}</p>: ""}
+                    {weather ? (
+                      <p className={style.list__value}>{`${
+                        weather.wind.speed * 3.6
+                      } km/h`}</p>
+                    ) : (
+                      ""
+                    )}
                   </li>
                 </ul>
                 <div className={style.coordinates__div}>
