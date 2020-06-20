@@ -34,7 +34,7 @@ const MapBoxMap = ({ controls, classForMap, zoom, lat, lng }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: process.env.REACT_APP_styleKey,
-        center: [lng, lat],
+        center: [0, 0],
         zoom: zoom,
         interactive: controls,
       });
@@ -55,11 +55,11 @@ const MapBoxMap = ({ controls, classForMap, zoom, lat, lng }) => {
     console.log("new marker");
 
     if (!map) initializeMap({ setMap, mapContainer });
-  }, [carStore.cars, controls, el, map, zoom]);
+  }, [carStore.cars, controls, el, lat, lng, map, zoom]);
 
   if (map) {
     new mapboxgl.Marker(el)
-      .setLngLat([carStore.cars[0].longitude, carStore.cars[0].latitude])
+      .setLngLat([carStore.cars[0].lng, carStore.cars[0].lat])
       .addTo(map);
   }
 
