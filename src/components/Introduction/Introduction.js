@@ -5,28 +5,6 @@ import style from "./Introduction.module.css";
 import { useStores } from "../../hooks/useStores";
 
 const Introduction = () => {
-  const { carStore } = useStores();
-
-  const car = carStore.getCarsById("1");
-  console.log(car);
-
-  const result = car.getLocation();
-  console.log(result);
-
-  // console.log("fetching");
-  // fetch(
-  //   `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.longitude},${this.latitude}?access_token=${process.env.REACT_APP_apiKey_weather}`
-  // )
-  //   .then((res) => res.json())
-  //   .then(
-  //     (result) => {
-  //       return result;
-  //     },
-  //     (error) => {
-  //       return error;
-  //     }
-  //   );
-
   return (
     <>
       <section className={style.landingcontainer}>
