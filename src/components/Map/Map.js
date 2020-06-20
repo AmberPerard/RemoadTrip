@@ -72,7 +72,7 @@ const Map = () => {
             zoom={2}
           ></MapBoxMap>
         </div>
-        <Road step={1}></Road>
+        <Road step={1} noSelectedCar={false}></Road>
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={"location"}

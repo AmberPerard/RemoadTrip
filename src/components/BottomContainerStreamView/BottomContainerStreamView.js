@@ -22,7 +22,7 @@ const BottomContainerStreamView = ({
           </p>
         </div>
         <Link
-          className={`${style.finish} ${noClick === true ? style.noClick : ""}`}
+          className={`${style.finish} ${noClick === true ? style.hidden : ""}`}
           to={route}
         >
           <img
