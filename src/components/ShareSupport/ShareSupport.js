@@ -33,10 +33,10 @@ const ShareSupport = () => {
           </h3>
           <div className={style.div__one}>
             <p className={`${style.paragraph} ${style.paragraph__famfriends}`}>
-              You can actually enjoy your travel with family or friends,
+              You can enjoy your travel with family or friends,
               challenge eachother through your personal platform. Connect
               multiple phones to get a bigger experience. It also enables
-              quizzes, hints, hidden secret locations and so more!
+              quizzes, hints, hidden secret locations and so much more!
             </p>
             <img
               className={style.famfriends}
@@ -60,7 +60,7 @@ const ShareSupport = () => {
             Support many
           </h3>
           <p className={`${style.paragraph} ${style.paragraph__support}`}>
-            Your money mainly goes out to support all the local people who
+            Money goes out to support the local people who
             mostly depend on tourism! While having fun, you also give the locals
             and their economy a big boost up!
           </p>

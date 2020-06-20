@@ -9,7 +9,7 @@ const Introduction = () => {
       <section className={style.landingcontainer}>
         <h1 className={style.titel}>REMOAD TRIP</h1>
         <p className={style.text}>
-          Take a trip around the world from your couch
+          Take a road trip around the world from your couch
         </p>
         <Link className={style.start} to={ROUTES.map}>
           Start

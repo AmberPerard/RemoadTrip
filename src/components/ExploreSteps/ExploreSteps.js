@@ -10,8 +10,8 @@ const ExploreSteps = () => {
             <img className={style.sectionone__watcher} src="/assets/explorer_popup.gif" width="109" height="78" alt="person jumping out of mountain with binocular"/>
             <img className={style.sectionone__mountain} src="/assets/mountain.png" width="554" height="304" alt="illustration fo mountain"/>
           </div>
-          <p className={`${style.sectionone__paragraph} ${style.paragraph__one}`}>Go on a road trip to the Amazon, drive on the Big Chinese Wall or just drive through an unknown village somewhere in Romania!</p>
-          <p className={`${style.sectionone__paragraph} ${style.paragraph__two}`}>Go on a hunt and find hidden tokens with unique information about the local culture or just some fun and crazy facts.</p>
+          <p className={`${style.sectionone__paragraph} ${style.paragraph__one}`}>Go on a road trip to the Amazon, drive on the Big Chinese Wall or drive through an unknown village somewhere in Romania!</p>
+          <p className={`${style.sectionone__paragraph} ${style.paragraph__two}`}>Go on a hunt and find hidden tokens with unique information about the local culture or some fun and crazy facts.</p>
 
           <article className={style.token}>
             <h3 className={style.token__title}>Token YM231</h3>
@@ -27,7 +27,7 @@ const ExploreSteps = () => {
 
       <section className={`${style.block} ${style.block__exploration}`}>
           <h2 className={`${style.title} ${style.title__second}`}><span className={style.sub}>The map to</span><br/>your exploration</h2>
-          <p className={style.exploration__p}>You can explore the world from out of your couch, nothing can stop you! Not even COVID-19!</p>
+          <p className={style.exploration__p}>You can explore the world from your couch, nothing can stop you! Not even COVID-19!</p>
           <img className={style.img__worldmap} src="/assets/worldmap.png" width="455" height="241" alt="illustration of world map with cars located on it"/>
           <img className={style.img__globe} src="/assets/exploreglobe.png" width="550" height="578" alt="illustration of the globe in flat design"/>
       </section>
@@ -59,7 +59,7 @@ const ExploreSteps = () => {
         <article className={`${style.step} ${style.step__three}`}>
           <h3 className={style.step__title}>Step 3</h3>
           <p className={style.step__subtitle}>Connect &amp; explore</p>
-          <p className={style.step__paragraph}>Wait for your computer, phone and car to connect and enjoy your ride!</p>
+          <p className={style.step__paragraph}>Once your computer, phone and car are connected, you can enjoy your ride!</p>
           <img className={`${style.step__gif} ${style.steproad__gifthree}`} src="/assets/Pcphonejapan3.gif" width="413" height="266" alt="phone and computer demonstration of concept remoad trip"/>
         </article>
         

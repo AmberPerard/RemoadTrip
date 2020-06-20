@@ -9,7 +9,7 @@ const SecondaryLanding = () => {
       <section className={style.block} id="secondary">
         <h2 className={style.title}>Travel &amp; explore from your couch</h2>
         <p className={style.subtitle}>
-          You just need at least 1 computer and 1 phone.{" "}
+          You just need  1 computer and 1 phone.{" "}
         </p>
         <div className={style.button}>
           <Link className={style.start} to={ROUTES.map}>
