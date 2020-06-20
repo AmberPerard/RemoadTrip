@@ -15,7 +15,7 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
   // const marker = useRef(null);
   console.log(carStore.cars);
 
-  const [map, setMap] = useState(null);
+  const [map, setMap] = useState();
   const mapContainer = useRef(null);
 
   var el = document.createElement("div");
@@ -27,7 +27,16 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
   console.log(carStore.cars[0].coordinates.lng);
 
   useEffect(() => {
+
+    // if(map){
+    //   map.remove();
+    //   setMap(undefined)
+    // }
+
     console.log("useEffect triggerd");
+    console.log(carStore.cars[0].latitude);
+    console.log(carStore.cars[0].longitude);
+
     mapboxgl.accessToken = process.env.REACT_APP_accessToken;
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
@@ -46,14 +55,15 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
       });
       map.addControl(nav, "bottom-right");
 
-      carStore.cars.forEach((car) => {
-        if (car.coordinates.lng) {
-          new mapboxgl.Marker(el)
-            .setLngLat([car.coordinates.lng, car.coordinates.lat])
-            .addTo(map);
-        }
-        console.log("loading");
-      });
+      // carStore.cars.forEach((car) => {
+      // if (car.longitude && car.latitude) {
+      // console.log(car.latitude , car.longitude)
+      // new mapboxgl.Marker(el)
+      //   .setLngLat([car.longitude, car.latitude])
+      //   .addTo(map);
+      // }
+      // console.log("loading");
+      // });
 
       map.on("load", () => {
         setMap(map);
@@ -61,11 +71,23 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
       });
     };
 
+    console.log('new marker')
+
     if (!map) initializeMap({ setMap, mapContainer });
-    // return () => {
-    //   marker.remove();
+
+    // return (map) => {
+    //   if(map){
+    //     map.remove();
+    //   }
     // };
+
   }, [carStore.cars, controls, el, map, zoom]);
+
+  if(map) {
+    new mapboxgl.Marker(el)
+    .setLngLat([carStore.cars[0].longitude, carStore.cars[0].latitude])
+    .addTo(map);
+  }
 
   return useObserver(() => (
     <div className="container__map">

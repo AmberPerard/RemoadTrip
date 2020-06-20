@@ -41,6 +41,15 @@ class Car {
   getLocationInfoCar(coordinates) {
     //zoekt in de database naar de informatie van de locatie bij de auto
   }
+
+  get latitude() {
+    return this.lat
+  }
+
+  get longitude() {
+    return this.lng
+  }
+
   getWeatherForCarLocation(coordinates) {
     //haalt via api de weersomstandigheden op van de de locatie van de auto
   }
