@@ -5,9 +5,10 @@ import BackLink from "../Backlink/Backlink";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
 import BottomContainerStreamView from "../BottomContainerStreamView/BottomContainerStreamView";
 import Road from "../Road/Road";
+import { useObserver } from "mobx-react-lite";
 
 const Map = () => {
-  return (
+  return useObserver(() => (
     <>
       <h1 className={style.hidden}>World map</h1>
       <div className={style.container}>
@@ -83,7 +84,7 @@ const Map = () => {
         ></BottomContainerStreamView>
       </div>
     </>
-  );
+  ));
 };
 
 export default Map;
