@@ -14,7 +14,7 @@ const LocalTime = () => {
       clearInterval(setTime);
     };
   }, [setTime]);
-  return <p>{time}</p>;
+  return <span>{time}</span>;
 };
 
 export default LocalTime;

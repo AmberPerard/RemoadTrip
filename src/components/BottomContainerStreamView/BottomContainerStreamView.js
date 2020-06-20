@@ -18,7 +18,7 @@ const BottomContainerStreamView = ({
           <p className={style.location}>{location}</p>
           <p className={style.localTime}>
             local time{" "}
-            <span className={style.localTimeBig}>&#8192; <LocalTime></LocalTime></span>
+            <span className={style.localTimeBig}>&#8192; <LocalTime className={style.localTimeBig}></LocalTime></span>
           </p>
         </div>
         <Link
