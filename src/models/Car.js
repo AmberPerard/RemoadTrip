@@ -52,7 +52,7 @@ class Car {
     //haalt via api de weersomstandigheden op van de de locatie van de auto
     console.log("fetching");
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${process.env.REACT_APP_apiKey_weather}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${process.env.REACT_APP_apiKey_weather}`
     )
       .then((res) => res.json())
       .then(
