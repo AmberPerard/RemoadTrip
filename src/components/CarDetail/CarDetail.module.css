@@ -32,6 +32,7 @@
   z-index: 0;
   display: grid;
   grid-template-columns: 2fr 1.8fr 2fr;
+  grid-template-rows: auto;
   grid-template-areas: "leftcontent middlecontent rightcontent";
   gap: 3rem;
 }
