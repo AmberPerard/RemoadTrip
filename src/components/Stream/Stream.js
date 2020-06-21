@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { ROUTES } from "../../consts";
 import style from "./Stream.module.css";
 import TopContainerStreamView from "../TopContainerStreamView/TopContainerStreamView";
@@ -31,30 +31,39 @@ const Stream = () => {
 
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(seconds / 60 / 60);
-    console.log(minutes);
 
     if (minutes - hours * 60 >= 10) {
       if (seconds - minutes * 60 >= 10) {
-        setPassedTime(`${hours}:${minutes - hours * 60}:${seconds - minutes * 60}`);
+        setPassedTime(
+          `${hours}:${minutes - hours * 60}:${seconds - minutes * 60}`
+        );
       } else if (seconds - minutes * 60 < 10) {
-        setPassedTime(`${hours}:${minutes - hours * 60}:0${seconds - minutes * 60} `);
+        setPassedTime(
+          `${hours}:${minutes - hours * 60}:0${seconds - minutes * 60} `
+        );
       }
     } else if (minutes - hours * 60 < 10) {
       if (seconds - minutes * 60 >= 10) {
-        setPassedTime(`${hours}:0${minutes - hours * 60}:${seconds - minutes * 60}`);
+        setPassedTime(
+          `${hours}:0${minutes - hours * 60}:${seconds - minutes * 60}`
+        );
       } else if (seconds - minutes * 60 < 10) {
-        setPassedTime(`${hours}:0${minutes - hours * 60}:0${seconds - minutes * 60}`);
-
+        setPassedTime(
+          `${hours}:0${minutes - hours * 60}:0${seconds - minutes * 60}`
+        );
       }
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [isActive, seconds]);
 
-  const setTime = setInterval(getTime, 1 * 1000);
+  // const setTime = setInterval(getTime, 1 * 1000);
   // console.log(seconds);
 
   useEffect(() => {
+    const setTime = setInterval(getTime, 1 * 1000);
     return () => {
       clearInterval(setTime);
     };

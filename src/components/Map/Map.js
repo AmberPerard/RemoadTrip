@@ -7,6 +7,7 @@ import BottomContainerStreamView from "../BottomContainerStreamView/BottomContai
 import Road from "../Road/Road";
 import { useObserver } from "mobx-react-lite";
 import { useStores } from "../../hooks/useStores.js";
+import { ROUTES } from "../../consts/index.js";
 
 const Map = () => {
   const { carStore } = useStores();
@@ -19,7 +20,7 @@ const Map = () => {
           mtoToken={"-"}
         ></TopContainerStreamView>
         <div className={style.backlink}>
-          <BackLink></BackLink>
+          <BackLink route={ROUTES.home}></BackLink>
         </div>
         <div className={style.mapContainer}>
           {/* <h2 className={style.title}>World map</h2>
