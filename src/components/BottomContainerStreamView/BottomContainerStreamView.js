@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import style from "./BottomContainerStreamView.module.css";
 import LocalTime from "../LocalTime/LocalTime";
 import { useStores } from "../../hooks/useStores";
+import { useObserver } from "mobx-react-lite";
 
 const BottomContainerStreamView = ({
   timeDriven,
@@ -14,28 +15,26 @@ const BottomContainerStreamView = ({
   const { carStore } = useStores();
 
   const car = carStore.getCarsById("1");
-  console.log(car);
 
   if (car.lat && car.lng && car.location === undefined) {
-    console.log("in getLocation request");
     car.getLocation();
-    console.log(car.location[3].text + car.location[5].text);
   }
-
-  // const result = carStore.cars[0].getLocation();
-  // console.log(result);
-  console.log(car.location);
-  return (
+  return useObserver(() => (
     <>
       <div className={style.bottomContainer}>
         <p className={style.drivenTime}>{timeDriven}</p>
         <div className={style.local}>
-          <p className={style.location}>
-            {/* {location === true
-              ? car.location[3].text + car.location[5].text
-              : "Location"} */}
-            Location
-          </p>
+          {location ? (
+            <p className={style.location}>
+              {car.location
+                ? car.location.features[3].text +
+                  ", " +
+                  car.location.features[5].text
+                : "Location"}
+            </p>
+          ) : (
+            <p className={style.location}>Location</p>
+          )}
           <p className={style.localTime}>
             local time{" "}
             <span className={style.localTimeBig}>
@@ -56,7 +55,7 @@ const BottomContainerStreamView = ({
         </Link>
       </div>
     </>
-  );
+  ));
 };
 
 export default BottomContainerStreamView;

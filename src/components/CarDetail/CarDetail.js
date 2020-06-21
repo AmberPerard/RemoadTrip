@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
 import BackLink from "../Backlink/Backlink";
@@ -11,7 +11,7 @@ import { useStores } from "../../hooks/useStores";
 import { useObserver } from "mobx-react-lite";
 
 const CarDetail = () => {
-  const [today, setToday] = useState(new Date());
+  const today = new Date();
   const [bigImage, setBigImage] = useState("pic2.png");
   const { carStore } = useStores();
   const car = carStore.cars[0];
@@ -23,9 +23,6 @@ const CarDetail = () => {
     }
   };
 
-  console.log(car.lat);
-  console.log(car.lng);
-  console.log(car);
   if (car.lat && car.lng && car.weather === undefined) {
     console.log("in getWeather request");
     car.getWeather();
@@ -33,8 +30,8 @@ const CarDetail = () => {
 
   return useObserver(() => (
     <>
-      {console.log(car.lat, car.lng)}
-      {console.log(`weather: ${car.weather}`)}
+      {/* {console.log(car.lat, car.lng)}
+      {console.log(`weather: ${car.weather}`)} */}
       {/* {items? console.log(items.weather[0].main): ""} */}
       <section>
         <h1 className={style.hidden}>Connecting the devices</h1>
@@ -68,9 +65,8 @@ const CarDetail = () => {
               </div>
               <div className={`${style.localinfo} ${style.localinfo__time}`}>
                 {/* <h3>Daytime</h3> */}
-                {car.weather ? console.log(car.weather.sys.sunrise) : ""}
-                {car.weather ? console.log(car.weather.sys.sunset) : ""}
-                {console.log(Math.round(today.getTime() / 1000))}
+                {/* {car.weather ? console.log(car.weather.sys.sunrise) : ""}
+                {car.weather ? console.log(car.weather.sys.sunset) : ""} */}
                 {car.weather &&
                 Math.round(today.getTime() / 1000) > car.weather.sys.sunrise &&
                 Math.round(today.getTime() / 1000) < car.weather.sys.sunset ? (
@@ -119,9 +115,9 @@ const CarDetail = () => {
                     <p className={style.list__item}>Wind</p>
                     {/* <p className={style.list__value}>19 km/h</p> */}
                     {car.weather ? (
-                      <p className={style.list__value}>{`${
+                      <p className={style.list__value}>{`${(
                         car.weather.wind.speed * 3.6
-                      } km/h`}</p>
+                      ).toFixed(3)} km/h`}</p>
                     ) : (
                       ""
                     )}

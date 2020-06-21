@@ -89,14 +89,14 @@ const Controller = () => {
         {connected ? (
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Bruges, Belgium"}
+            location={true}
             route={ROUTES.stream}
             textButton={"Go"}
           ></BottomContainerStreamView>
         ) : (
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Bruges, Belgium"}
+            location={true}
             route={"#"}
             textButton={"Go"}
             noClick={true}

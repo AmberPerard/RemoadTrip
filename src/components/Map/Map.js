@@ -80,7 +80,7 @@ const Map = () => {
         <Road step={1} noSelectedCar={false}></Road>
         <BottomContainerStreamView
           timeDriven={"00:00"}
-          location={"location"}
+          location={false}
           timeLocal={"00:00"}
           route={"#"}
           textButton={"Get ready"}

@@ -38,7 +38,7 @@ class Car {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result);
+          // console.log(result);
           this.setLocation(result);
           // return result;
         },
@@ -57,7 +57,7 @@ class Car {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result);
+          // console.log(result);
           this.setWeather(result);
           // return result;
         },
