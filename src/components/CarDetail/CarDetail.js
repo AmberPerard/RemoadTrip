@@ -125,9 +125,9 @@ const CarDetail = () => {
                     <p className={style.list__item}>Wind</p>
                     {/* <p className={style.list__value}>19 km/h</p> */}
                     {car.weather ? (
-                      <p className={style.list__value}>{`${(
+                      <p className={style.list__value}>{`${Math.round(
                         car.weather.wind.speed * 3.6
-                      ).toFixed(3)} km/h`}</p>
+                      )} km/h`}</p>
                     ) : (
                       ""
                     )}
