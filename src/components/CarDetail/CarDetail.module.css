@@ -25,11 +25,8 @@
 
 .CarDetailContainer {
   grid-area: inhoud;
-  grid-row: 1/3;
-  width: 100vw;
-  height: 100vh;
+  grid-row: 1/2;
   position: absolute;
-  z-index: 0;
   display: grid;
   grid-template-columns: 2fr 1.8fr 2fr;
   grid-template-rows: auto;

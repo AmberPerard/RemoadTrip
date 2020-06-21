@@ -14,9 +14,12 @@ const CarDetail = () => {
   const today = new Date();
   const [bigImage, setBigImage] = useState("pic2.png");
   const { carStore } = useStores();
+  // const [coordinateLat, setCoordinatLat] = useState();
+  // const [coordinateLng, setCoordinatLng] = useState();
 
   // const weather = useRef();
   const car = carStore.getCarsById("1");
+  let coordinateLat, coordinateLng;
 
   const handleClickImg = (e) => {
     if (e) {
@@ -25,10 +28,8 @@ const CarDetail = () => {
     }
   };
 
-  console.log(car.lat);
-
   if (car.lat && car.lng && car.weather === undefined) {
-    console.log("in getWeather request");
+    // console.log("in getWeather request");
     car.getWeather();
     // weather.current = car.getWeather();
   }
@@ -38,10 +39,36 @@ const CarDetail = () => {
   }
   // console.log(weather.current);
 
+  if (car.lat) {
+    const resultLat = car.lat.toString().split(".");
+    const resultLng = car.lng.toString().split(".");
+    const lastnumbersLat = resultLat[1].split("");
+    const lastnumbersLng = resultLng[1].split("");
+    coordinateLat =
+      resultLat[0] +
+      "°" +
+      lastnumbersLat[0] +
+      lastnumbersLat[1] +
+      "'" +
+      lastnumbersLat[2] +
+      lastnumbersLat[3] +
+      "''";
+
+    coordinateLng =
+      resultLng[0] +
+      "°" +
+      lastnumbersLng[0] +
+      lastnumbersLng[1] +
+      "'" +
+      lastnumbersLng[2] +
+      lastnumbersLng[3] +
+      "''";
+  }
+
   return useObserver(() => (
     <>
-      {console.log(car.lat, car.lng)}
-      {console.log(`weather: ${car.weather}`)}
+      {/* {console.log(car.lat, car.lng)} */}
+      {/* {console.log(`weather: ${car.weather}`)} */}
       {/* {items? console.log(items.weather[0].main): ""} */}
       <section>
         <h1 className={style.hidden}>Detailed information of the car</h1>
@@ -137,10 +164,12 @@ const CarDetail = () => {
                   <p className={style.coordinates__title}>Live coordinates</p>
                   <ul className={style.coordinates}>
                     <li className={style.coordinate}>
-                      51&#176;12&#8217;34&#8220;N
+                      {coordinateLat}
+                      {car.lat > 0 ? "N" : "S"}
                     </li>
                     <li className={style.coordinate}>
-                      3&#176;13&#8217;29&#8220;E
+                      {coordinateLng}
+                      {car.lng > 0 ? "E" : "W"}
                     </li>
                   </ul>
                 </div>
