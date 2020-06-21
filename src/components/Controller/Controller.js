@@ -44,7 +44,7 @@ const Controller = () => {
           mtoToken={"-"}
         ></TopContainerStreamView>
         <div className={style.backlink}>
-          <BackLink></BackLink>
+          <BackLink route={ROUTES.cardetails.to}></BackLink>
         </div>
         <div className={style.controllerContainer}>
           <h2 className={style.title}>Connecting the devices</h2>

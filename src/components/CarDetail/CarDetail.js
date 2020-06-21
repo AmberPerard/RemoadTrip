@@ -78,7 +78,7 @@ const CarDetail = () => {
             mtoToken={"-"}
           ></TopContainerStreamView>
           <div className={style.backlink}>
-            <BackLink></BackLink>
+            <BackLink route={ROUTES.map}></BackLink>
           </div>
 
           <div className={style.CarDetailContainer}>

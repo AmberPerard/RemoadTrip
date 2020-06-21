@@ -1,17 +1,12 @@
 import React from "react";
 import styles from "./backlink.module.css";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const BackLink = () => {
-  let history = useHistory();
-
-  const handleClick = () => {
-    history.goBack();
-  };
+const BackLink = ({ route }) => {
   return (
-    <button className={`${styles.back} ${styles.button__animation}`} onClick={handleClick}>
+    <Link className={`${styles.back} ${styles.button__animation}`} to={route}>
       &#10094; go back
-    </button>
+    </Link>
   );
 };
 
