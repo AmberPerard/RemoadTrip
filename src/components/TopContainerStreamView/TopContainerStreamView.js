@@ -5,7 +5,7 @@ const TopContainerStreamView = ({ tokensFound, mtoToken }) => {
   return (
     <>
       <div className={style.topContainer}>
-        <p className={style.tokenNear}>{mtoToken}m</p>
+      <p className={style.tokenFound}>{tokensFound}</p>
         <img
           className={style.compass}
           src="./assets/Compass.png"
@@ -13,7 +13,8 @@ const TopContainerStreamView = ({ tokensFound, mtoToken }) => {
           width="95px"
           height="95px"
         ></img>
-        <p className={style.tokenFound}>{tokensFound}</p>
+
+        <p className={style.tokenNear}>{mtoToken}m</p>
       </div>
     </>
   );
