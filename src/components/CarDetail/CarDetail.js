@@ -8,17 +8,13 @@ import BottomContainerStreamView from "../BottomContainerStreamView/BottomContai
 import Road from "../Road/Road";
 import MapBoxMap from "../MapBoxMap/MapBoxMap";
 import { useStores } from "../../hooks/useStores";
+import { useObserver } from "mobx-react-lite";
 
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
   const [bigImage, setBigImage] = useState("pic1.png");
-
   const { carStore } = useStores();
-
-  const car = carStore.getCarsById("1");
-  console.log(car);
-  const weather = car.getWeather();
-  console.log(weather);
+  const car = carStore.cars[0];
 
   const handleClickImg = (e) => {
     if (e) {
@@ -26,8 +22,19 @@ const CarDetail = () => {
       setBigImage(img);
     }
   };
-  return (
+
+  console.log(car.lat);
+  console.log(car.lng);
+  console.log(car);
+  if (car.lat && car.lng && car.weather === undefined) {
+    console.log("in getWeather request")
+    car.getWeather();
+  }
+
+  return useObserver(() => (
     <>
+      {console.log(car.lat, car.lng)}
+      {console.log(`weather: ${car.weather}`)}
       {/* {items? console.log(items.weather[0].main): ""} */}
       <section>
         <h1 className={style.hidden}>Connecting the devices</h1>
@@ -61,12 +68,12 @@ const CarDetail = () => {
               </div>
               <div className={`${style.localinfo} ${style.localinfo__time}`}>
                 {/* <h3>Daytime</h3> */}
-                {weather ? console.log(weather.sys.sunrise) : ""}
-                {weather ? console.log(weather.sys.sunset) : ""}
+                {car.weather ? console.log(car.weather.sys.sunrise) : ""}
+                {car.weather ? console.log(car.weather.sys.sunset) : ""}
                 {console.log(Math.round(today.getTime() / 1000))}
-                {weather &&
-                Math.round(today.getTime() / 1000) > weather.sys.sunrise &&
-                Math.round(today.getTime() / 1000) < weather.sys.sunset ? (
+                {car.weather &&
+                Math.round(today.getTime() / 1000) > car.weather.sys.sunrise &&
+                Math.round(today.getTime() / 1000) < car.weather.sys.sunset ? (
                   <h3>Daytime</h3>
                 ) : (
                   <h3>Nighttime</h3>
@@ -83,37 +90,37 @@ const CarDetail = () => {
                   Local information &#x28;live&#x29;
                 </h3>
                 <ul className={style.local__list}>
-                  <li className={style.list__weather}>
+                  <li className={style.list__items}>
                     <p className={style.list__item}>General weather</p>
-                    {weather ? (
+                    {car.weather ? (
                       <p className={style.list__value}>
-                        {weather.weather[0].main}
+                        {car.weather.weather[0].main}
                       </p>
                     ) : (
                       ""
                     )}
                     {/* {weather? console.log(weather.weather[0].main): ""} */}
                   </li>
-                  <li className={style.list__weather}>
+                  <li className={style.list__items}>
                     <p className={style.list__item}>Humidity</p>
-                    {weather ? (
+                    {car.weather ? (
                       <p
                         className={style.list__value}
-                      >{`${weather.main.humidity}%`}</p>
+                      >{`${car.weather.main.humidity}%`}</p>
                     ) : (
                       ""
                     )}
                   </li>
-                  <li className={style.list__weather}>
+                  <li className={style.list__items}>
                     <p className={style.list__item}>Precipitation</p>
                     <p className={style.list__value}>14%</p>
                   </li>
-                  <li className={style.list__weather}>
+                  <li className={style.list__items}>
                     <p className={style.list__item}>Wind</p>
                     {/* <p className={style.list__value}>19 km/h</p> */}
-                    {weather ? (
+                    {car.weather ? (
                       <p className={style.list__value}>{`${
-                        weather.wind.speed * 3.6
+                        car.weather.wind.speed * 3.6
                       } km/h`}</p>
                     ) : (
                       ""
@@ -262,7 +269,7 @@ const CarDetail = () => {
         </div>
       </section>
     </>
-  );
+  ));
 };
 
 export default CarDetail;

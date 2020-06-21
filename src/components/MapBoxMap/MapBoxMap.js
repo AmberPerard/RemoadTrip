@@ -11,7 +11,7 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
   let history = useHistory();
   const { carStore } = useStores();
 
-  console.log(carStore.cars);
+  // console.log(carStore.cars);
 
   const [map, setMap] = useState();
   const mapContainer = useRef(null);
@@ -22,12 +22,12 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
   el.addEventListener("click", function () {
     history.push(ROUTES.cardetails.to);
   });
-  console.log(carStore.cars[0].coordinates.lng);
+  // console.log(carStore.cars[0].coordinates.lng);
 
   useEffect(() => {
-    console.log("useEffect triggerd");
-    console.log(carStore.cars[0].latitude);
-    console.log(carStore.cars[0].longitude);
+    // console.log("useEffect triggerd");
+    // console.log(carStore.cars[0].latitude);
+    // console.log(carStore.cars[0].longitude);
 
     mapboxgl.accessToken = process.env.REACT_APP_accessToken;
     const initializeMap = ({ setMap, mapContainer }) => {
@@ -52,7 +52,7 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
       });
     };
 
-    console.log("new marker");
+    // console.log("new marker");
 
     if (!map) initializeMap({ setMap, mapContainer });
   }, [carStore.cars, controls, el, map, zoom]);
