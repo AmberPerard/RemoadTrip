@@ -11,6 +11,7 @@ class Car {
     coordinates = {},
     store,
     weather = undefined,
+    location = undefined,
   }) {
     this.id = id;
     this.name = name;
@@ -19,6 +20,7 @@ class Car {
     this.lat = lat;
     this.lng = lng;
     this.weather = weather;
+    this.location = location;
 
     this.ENDPOINTCAR = "https://evening-caverns-60077.herokuapp.com/";
     this.carSocket = socketIOClient(this.ENDPOINTCAR);
@@ -30,14 +32,15 @@ class Car {
 
   getLocation() {
     console.log("fetching");
-    console.log(this.coordinates.lng);
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.lng},${this.lat}.json?access_token=${process.env.REACT_APP_apiKey}`
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.longitude},${this.latitude}.json?access_token=${process.env.REACT_APP_apiKey}`
     )
       .then((res) => res.json())
       .then(
         (result) => {
-          return result;
+          console.log(result);
+          this.setLocation(result);
+          // return result;
         },
         (error) => {
           return error;
@@ -48,9 +51,6 @@ class Car {
   getWeather() {
     //haalt via api de weersomstandigheden op van de de locatie van de auto
     console.log("fetching");
-    console.log(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${process.env.REACT_APP_apiKey_weather}`
-    );
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${process.env.REACT_APP_apiKey_weather}`
     )
@@ -58,7 +58,7 @@ class Car {
       .then(
         (result) => {
           console.log(result);
-          this.setWeather(result)
+          this.setWeather(result);
           // return result;
         },
         (error) => {
@@ -71,6 +71,10 @@ class Car {
     this.weather = weather;
   }
 
+  setLocation(location) {
+    this.location = location;
+  }
+
   get latitude() {
     return this.lat;
   }
@@ -81,6 +85,7 @@ class Car {
 }
 decorate(Car, {
   weather: observable,
+  location: observable,
   coordinates: observable,
   lat: observable,
   lng: observable,
@@ -90,6 +95,7 @@ decorate(Car, {
   getLocation: action,
   getLocationInfoCar: action,
   setWeather: action,
+  setLocation: action,
 });
 
 export default Car;

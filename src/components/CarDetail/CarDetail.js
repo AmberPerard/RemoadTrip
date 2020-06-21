@@ -27,7 +27,7 @@ const CarDetail = () => {
   console.log(car.lng);
   console.log(car);
   if (car.lat && car.lng && car.weather === undefined) {
-    console.log("in getWeather request")
+    console.log("in getWeather request");
     car.getWeather();
   }
 
@@ -262,7 +262,7 @@ const CarDetail = () => {
           <Road step={2} noSelectedCar={true}></Road>
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Bruges, Belgium"}
+            location={true}
             route={ROUTES.controller}
             textButton={"Set"}
           ></BottomContainerStreamView>

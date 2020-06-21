@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./BottomContainerStreamView.module.css";
 import LocalTime from "../LocalTime/LocalTime";
-// import { useStores } from "../../hooks/useStores";
+import { useStores } from "../../hooks/useStores";
 
 const BottomContainerStreamView = ({
   timeDriven,
@@ -11,20 +11,31 @@ const BottomContainerStreamView = ({
   textButton,
   noClick,
 }) => {
-  // const { carStore } = useStores();
+  const { carStore } = useStores();
 
-  // const car = carStore.getCarsById("1");
-  // console.log(car);
+  const car = carStore.getCarsById("1");
+  console.log(car);
 
-  // const result = car.getLocation();
-  // console.log(result.id);
+  if (car.lat && car.lng && car.location === undefined) {
+    console.log("in getLocation request");
+    car.getLocation();
+    console.log(car.location[3].text + car.location[5].text);
+  }
 
+  // const result = carStore.cars[0].getLocation();
+  // console.log(result);
+  console.log(car.location);
   return (
     <>
       <div className={style.bottomContainer}>
         <p className={style.drivenTime}>{timeDriven}</p>
         <div className={style.local}>
-          <p className={style.location}>{location}</p>
+          <p className={style.location}>
+            {/* {location === true
+              ? car.location[3].text + car.location[5].text
+              : "Location"} */}
+            Location
+          </p>
           <p className={style.localTime}>
             local time{" "}
             <span className={style.localTimeBig}>
