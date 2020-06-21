@@ -12,7 +12,7 @@ import { useObserver } from "mobx-react-lite";
 
 const CarDetail = () => {
   const [today, setToday] = useState(new Date());
-  const [bigImage, setBigImage] = useState("pic1.png");
+  const [bigImage, setBigImage] = useState("pic2.png");
   const { carStore } = useStores();
   const car = carStore.cars[0];
 
