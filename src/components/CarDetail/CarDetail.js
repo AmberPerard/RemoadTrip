@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
 import BackLink from "../Backlink/Backlink";
@@ -14,7 +14,9 @@ const CarDetail = () => {
   const today = new Date();
   const [bigImage, setBigImage] = useState("pic2.png");
   const { carStore } = useStores();
-  const car = carStore.cars[0];
+
+  // const weather = useRef();
+  const car = carStore.getCarsById("1");
 
   const handleClickImg = (e) => {
     if (e) {
@@ -23,18 +25,26 @@ const CarDetail = () => {
     }
   };
 
+  console.log(car.lat);
+
   if (car.lat && car.lng && car.weather === undefined) {
     console.log("in getWeather request");
     car.getWeather();
+    // weather.current = car.getWeather();
   }
+
+  if (car.lat && car.lng && car.location === undefined) {
+    car.getLocation();
+  }
+  // console.log(weather.current);
 
   return useObserver(() => (
     <>
-      {/* {console.log(car.lat, car.lng)}
-      {console.log(`weather: ${car.weather}`)} */}
+      {console.log(car.lat, car.lng)}
+      {console.log(`weather: ${car.weather}`)}
       {/* {items? console.log(items.weather[0].main): ""} */}
       <section>
-        <h1 className={style.hidden}>Connecting the devices</h1>
+        <h1 className={style.hidden}>Detailed information of the car</h1>
         <div className={style.container}>
           <TopContainerStreamView
             tokensFound={0}
@@ -166,7 +176,13 @@ const CarDetail = () => {
             </article>
 
             <article className={style.content__article}>
-              <h2 className={`${style.content__title}`}>Bruges, Belgium</h2>
+              <h2 className={`${style.content__title}`}>
+                {car.location
+                  ? car.location.features[3].text +
+                    ", " +
+                    car.location.features[5].text
+                  : "Loading"}
+              </h2>
               <div>
                 <h3 className={style.content__subtitles}>
                   General information
@@ -207,7 +223,10 @@ const CarDetail = () => {
                 Location pictures
               </h2>
               <div className={style.content__pictures}>
-                <h3 className={style.content__subtitles}>Pictures of Bruges</h3>
+                <h3 className={style.content__subtitles}>
+                  Pictures of{" "}
+                  {car.location ? car.location.features[3].text : "Loading"}
+                </h3>
                 <img
                   src={`/assets/${bigImage}`}
                   width="374"

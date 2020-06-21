@@ -76,6 +76,10 @@
   margin-top: 2.5rem;
 }
 
+.fadded {
+  opacity: 50%;
+}
+
 .Point {
   margin-top: -4rem;
   height: 9.6rem;
