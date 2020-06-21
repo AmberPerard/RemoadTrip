@@ -28,7 +28,7 @@
 .tokenFound {
   /* transform: rotate(-180deg); */
   padding: 2rem;
-  /* margin-top: -6rem; */
+  transform: translateY(-.5rem);
 }
 
 .tokenFound::before {
@@ -46,7 +46,7 @@
 .tokenNear {
   /* transform: rotate(-180deg); */
   padding: 2rem;
-  /* margin-top: -6rem; */
+  transform: translateY(-.5rem);
 }
 
 .tokenNear::before {
