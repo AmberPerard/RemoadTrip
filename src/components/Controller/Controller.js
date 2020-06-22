@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import style from "./Controller.module.css";
 import QRCode from "qrcode.react";
@@ -24,6 +24,7 @@ const Controller = () => {
 
   // const setTime = setInterval(getTime, 1 * 1000);
   useEffect(() => {
+
     socket.emit("isControllerConnected", (status) => {
       setConnected(status);
       console.log(`status: ${status}`);
@@ -52,6 +53,7 @@ const Controller = () => {
   }, [connected, socket]);
   return (
     <>
+    {connected? <Redirect to={ROUTES.stream}></Redirect> : null}
       <h1 className={style.hidden}>Connecting the devices</h1>
       <div className={style.container}>
         <TopContainerStreamView
@@ -91,23 +93,6 @@ const Controller = () => {
               </p>
             )}
           </div>
-          {connected ? (
-            <Link className={style.start} to={ROUTES.stream}>
-              <div>
-                <img
-                  className={style.whiteImg}
-                  alt="finsh flag"
-                  src="./assets/flag.png"
-                  width="85px"
-                  height="70px"
-                ></img>
-                Go
-              </div>
-              {/* <p className={style.littlebuttonText}>start driving</p> */}
-            </Link>
-          ) : (
-            ""
-          )}
         </div>
         <Road step={3} noSelectedCar={true}></Road>
         {connected ? (
