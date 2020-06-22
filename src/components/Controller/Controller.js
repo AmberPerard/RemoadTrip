@@ -27,7 +27,7 @@ const Controller = () => {
     socket.emit("isControllerConnected", (status) => {
       setConnected(status);
       console.log(`status: ${status}`);
-    })
+    });
 
     // console.log(connected);
     // socket.on("controllerConnected", () => {
@@ -80,7 +80,16 @@ const Controller = () => {
               width="148px"
               height="126px"
             ></img>
-            <p>{connected ? "Connected" : "Connecting..."}</p>
+
+            {connected ? (
+              <p>Connected</p>
+            ) : (
+              <p className={style.animationDots}>
+                Connecting<span>.</span>
+                <span>.</span>
+                <span>.</span>
+              </p>
+            )}
           </div>
           {connected ? (
             <Link className={style.start} to={ROUTES.stream}>
