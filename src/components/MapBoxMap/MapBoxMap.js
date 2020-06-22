@@ -9,6 +9,7 @@ mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 
 const MapBoxMap = ({ controls, classForMap, zoom, center }) => {
   let history = useHistory();
+  let el;
   const { carStore } = useStores();
 
   // console.log(carStore.cars);
@@ -16,8 +17,13 @@ const MapBoxMap = ({ controls, classForMap, zoom, center }) => {
   const [map, setMap] = useState();
   const mapContainer = useRef(null);
 
-  var el = document.createElement("div");
-  el.className = "autoMarker";
+  if (controls) {
+    el = document.createElement("div");
+    el.className = "autoMarker";
+  } else {
+    el = document.createElement("div");
+    el.className = "autoMarkerWithoutHover";
+  }
 
   el.addEventListener("click", function () {
     history.push(ROUTES.cardetails.to);

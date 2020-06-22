@@ -46,6 +46,14 @@
   filter: saturate(0.3);
 }
 
+.autoMarkerWithoutHover {
+  background-image: url(./assets/auto.png);
+  background-size: 50px;
+  width: 50px;
+  height: 45px;
+  cursor: pointer;
+}
+
 .autoMarker:hover {
   filter: saturate(1);
 }
