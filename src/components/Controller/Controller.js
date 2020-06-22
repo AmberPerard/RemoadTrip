@@ -10,8 +10,8 @@ import BottomContainerStreamView from "../BottomContainerStreamView/BottomContai
 import Road from "../Road/Road";
 
 const Controller = () => {
-  // const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
-  const ENDPOINT = "http://127.0.0.1:8081";
+  const ENDPOINT = "https://evening-caverns-60077.herokuapp.com/";
+  // const ENDPOINT = "http://127.0.0.1:8081";
   // const [today, setToday] = useState(new Date());
   const [connected, setConnected] = useState(false);
   // let time = today.toLocaleTimeString("en-BE");
@@ -24,7 +24,6 @@ const Controller = () => {
 
   // const setTime = setInterval(getTime, 1 * 1000);
   useEffect(() => {
-
     socket.emit("isControllerConnected", (status) => {
       setConnected(status);
       console.log(`status: ${status}`);
