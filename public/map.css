@@ -43,9 +43,9 @@
   width: 50px;
   height: 45px;
   cursor: pointer;
-  opacity: 65%;
+  filter: saturate(0.3);
 }
 
 .autoMarker:hover {
-  opacity: 100%;
+  filter: saturate(1);
 }
