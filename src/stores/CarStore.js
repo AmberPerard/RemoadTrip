@@ -16,9 +16,9 @@ class CarStore {
   }
 
   seed(data) {
-    console.log(this.cars);
+    // console.log(this.cars);
     this.cars.push(...data);
-    console.log(this.cars);
+    // console.log(this.cars);
   }
 
   onCoords = (data) => {
@@ -38,7 +38,7 @@ class CarStore {
         car.lng = parseFloat(data.longitude);
       }
     });
-    console.log(this.cars);
+    // console.log(this.cars);
   };
 
   // getLocationforCar = async () => {

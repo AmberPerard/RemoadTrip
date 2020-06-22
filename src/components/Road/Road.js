@@ -9,7 +9,7 @@ const Road = ({ step, noSelectedCar }) => {
       <Link
         to={ROUTES.map}
         className={`${style.Point} ${style.firstPoint} ${
-          step === 1 ? style.bumpedUp : ""
+          step === 1 ? style.bumpedUp : style.fadded
         }`}
       >
         <p className={style.redCircle}>1</p>
@@ -26,33 +26,33 @@ const Road = ({ step, noSelectedCar }) => {
         <Link
           to={ROUTES.cardetails.to}
           className={`${style.Point} ${style.secondPoint} ${
-            step === 2 ? style.bumpedUp : ""
+            step === 2 ? style.bumpedUp : style.fadded
           }`}
         >
           <p className={style.redCircle}>2</p>
           <p className={style.pointTitle}>Set</p>
           <img
             className={style.pointImg}
-            src="./assets/money.png"
+            src="./assets/auto__icon.png"
             alt="yellow location marker"
-            width="12px"
-            height="16.72px"
+            width="24px"
+            height="16.77px"
           ></img>
         </Link>
       ) : (
         <div
           className={`${style.Point} ${style.secondPoint} ${
-            step === 2 ? style.bumpedUp : ""
+            step === 2 ? style.bumpedUp : style.fadded
           }`}
         >
           <p className={style.redCircle}>2</p>
           <p className={style.pointTitle}>Set</p>
           <img
             className={style.pointImg}
-            src="./assets/money.png"
+            src="./assets/auto__icon.png"
             alt="yellow location marker"
-            width="12px"
-            height="16.72px"
+            width="24px"
+            height="16.77px"
           ></img>
         </div>
       )}
@@ -60,7 +60,7 @@ const Road = ({ step, noSelectedCar }) => {
         <Link
           to={ROUTES.controller}
           className={`${style.Point} ${style.thirdPoint} ${
-            step === 3 ? style.bumpedUp : ""
+            step === 3 ? style.bumpedUp : style.fadded
           }`}
         >
           <p className={style.redCircle}>3</p>
@@ -76,7 +76,7 @@ const Road = ({ step, noSelectedCar }) => {
       ) : (
         <div
           className={`${style.Point} ${style.thirdPoint} ${
-            step === 3 ? style.bumpedUp : ""
+            step === 3 ? style.bumpedUp : style.fadded
           }`}
         >
           <p className={style.redCircle}>3</p>

@@ -60,7 +60,7 @@ const Controller = () => {
           mtoToken={"-"}
         ></TopContainerStreamView>
         <div className={style.backlink}>
-          <BackLink></BackLink>
+          <BackLink route={ROUTES.cardetails.to}></BackLink>
         </div>
         <div className={style.controllerContainer}>
           <h2 className={style.title}>Connecting the devices</h2>
@@ -81,7 +81,7 @@ const Controller = () => {
               width="148px"
               height="126px"
             ></img>
-            <p>{connected ? "Connected" : "Connecting"}</p>
+            <p>{connected ? "Connected" : "Connecting..."}</p>
           </div>
           {connected ? (
             <Link className={style.start} to={ROUTES.stream}>
@@ -105,14 +105,14 @@ const Controller = () => {
         {connected ? (
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Bruges, Belgium"}
+            location={true}
             route={ROUTES.stream}
             textButton={"Go"}
           ></BottomContainerStreamView>
         ) : (
           <BottomContainerStreamView
             timeDriven={"00:00"}
-            location={"Bruges, Belgium"}
+            location={true}
             route={"#"}
             textButton={"Go"}
             noClick={true}

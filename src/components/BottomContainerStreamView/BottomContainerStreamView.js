@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./BottomContainerStreamView.module.css";
 import LocalTime from "../LocalTime/LocalTime";
-// import { useStores } from "../../hooks/useStores";
+import { useStores } from "../../hooks/useStores";
+import { useObserver } from "mobx-react-lite";
 
 const BottomContainerStreamView = ({
   timeDriven,
@@ -11,24 +12,48 @@ const BottomContainerStreamView = ({
   textButton,
   noClick,
 }) => {
-  // const { carStore } = useStores();
+  const { carStore } = useStores();
 
-  // const car = carStore.getCarsById("1");
-  // console.log(car);
+  const car = carStore.getCarsById("1");
 
-  // const result = car.getLocation();
-  // console.log(result.id);
-
-  return (
+  if (car.lat && car.lng && car.location === undefined) {
+    car.getLocation();
+  }
+  return useObserver(() => (
     <>
       <div className={style.bottomContainer}>
         <p className={style.drivenTime}>{timeDriven}</p>
         <div className={style.local}>
-          <p className={style.location}>{location}</p>
-          <p className={style.localTime}>
+          {location ? (
+            <p className={`${location ? style.location : style.locationGrey}`}>
+              {car.location
+                ? car.location.features[3].text +
+                  ", " +
+                  car.location.features[5].text
+                : "Location"}
+            </p>
+          ) : (
+            <p className={`${location ? style.location : style.locationGrey}`}>
+              Location
+            </p>
+          )}
+          <p className={`${location ? style.localTime : style.localTimeGrey}`}>
             local time{" "}
-            <span className={style.localTimeBig}>
-              &#8192; <LocalTime className={style.localTimeBig}></LocalTime>
+            <span
+              className={`${
+                location ? style.localTimeBig : style.localTimeBigGrey
+              }`}
+            >
+              &#8192;{" "}
+              {location ? (
+                <LocalTime
+                  className={`${
+                    location ? style.localTimeBig : style.localTimeBigGrey
+                  }`}
+                ></LocalTime>
+              ) : (
+                "00:00"
+              )}
             </span>
           </p>
         </div>
@@ -45,7 +70,7 @@ const BottomContainerStreamView = ({
         </Link>
       </div>
     </>
-  );
+  ));
 };
 
 export default BottomContainerStreamView;

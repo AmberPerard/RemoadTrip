@@ -8,9 +8,7 @@ const SecondaryLanding = () => {
     <>
       <section className={style.block} id="secondary">
         <h2 className={style.title}>Travel &amp; explore from your couch</h2>
-        <p className={style.subtitle}>
-          You just need  1 computer and 1 phone.{" "}
-        </p>
+        <p className={style.subtitle}>You just need 1 computer and 1 phone. </p>
         <div className={style.button}>
           <Link className={style.start} to={ROUTES.map}>
             Start driving
@@ -18,7 +16,18 @@ const SecondaryLanding = () => {
         </div>
         <div className={style.imgcontainer}>
           {/* <img className={style.img__main} src="/assets/screenandroad.png" width="1758" height="1083" alt="computer and phone screen with a road and two cars"/> */}
-          <iframe className={style.video} width="560" height="315" src="https://www.youtube.com/embed/SUftVy9NrCM?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video Remoad Trip">Your browser doesn't support iframe</iframe>
+          <iframe
+            className={style.video}
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/SUftVy9NrCM?rel=0"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Video Remoad Trip"
+          >
+            Your browser doesn't support iframe
+          </iframe>
           <img
             className={style.img__maintwo}
             src="/assets/Pcphonejapan3.gif"
