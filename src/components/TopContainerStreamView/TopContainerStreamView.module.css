@@ -13,16 +13,30 @@
   z-index: 1;
   display: flex;
   justify-content: space-around;
+  padding: 0 7rem;
 
-  border-bottom: 6.1rem solid darkPrimary;
+  background-image: url("/assets/topView.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+
+  /* border-top: 6.1rem solid darkPrimary;
   border-left: 2.5rem solid transparent;
-  border-right: 2.5rem solid transparent;
-  transform: rotate(180deg);
+  border-right: 2.5rem solid transparent; */
+  /* transform: rotate(180deg); */
 }
+
 .tokenFound {
-  transform: rotate(-180deg);
+  /* transform: rotate(-180deg); */
   padding: 2rem;
-  margin-top: 2rem;
+  transform: translateY(-0.5rem);
+}
+
+.tokenFoundGrey {
+  padding: 2rem;
+  transform: translateY(-0.5rem);
+  color: #909090;
+  filter: grayscale(100%) contrast(10%);
 }
 
 .tokenFound::before {
@@ -37,10 +51,22 @@
   margin-top: -0.3rem;
 }
 
+.tokenFoundGrey::before {
+  content: "";
+  background: url("/assets/token_small.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -0.3rem;
+}
+
 .tokenNear {
-  transform: rotate(-180deg);
+  /* transform: rotate(-180deg); */
   padding: 2rem;
-  margin-top: 2rem;
+  transform: translateY(-0.5rem);
 }
 
 .tokenNear::before {
@@ -65,4 +91,45 @@
   height: 3rem;
   margin-left: 1rem;
   margin-top: -0.3rem;
+}
+
+.tokenNearGrey {
+  color: #909090;
+  filter: grayscale(100%) contrast(10%);
+  padding: 2rem;
+  transform: translateY(-0.5rem);
+}
+
+.tokenNearGrey::before {
+  content: "";
+  background: url("/assets/token_small.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -0.3rem;
+}
+
+.tokenNearGrey::after {
+  content: "";
+  background: url("/assets/near.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+  margin-top: -0.3rem;
+}
+
+.compass {
+  margin-top: 1rem;
+  /* justify-self: center; */
+}
+
+.grey {
+  color: #909090;
+  filter: grayscale(100%);
 }

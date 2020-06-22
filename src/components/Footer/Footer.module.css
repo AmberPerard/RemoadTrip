@@ -1,0 +1,46 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
+
+.block {
+  background: darkPrimary;
+  color: colorPrimary;
+}
+
+.title {
+  display: none;
+}
+
+.sec__title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.footer__blocks {
+  margin: 0 auto;
+  width: 96rem;
+  display: flex;
+  padding: 2rem 0;
+  justify-content: flex-start;
+}
+
+.footer__block {
+  font-size: 1.6rem;
+  padding-right: 8rem;
+  line-height: 1.8;
+}
+
+.footerblock__right {
+  margin-left: auto;
+  padding-right: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: colorPrimary;
+}
+
+.footing {
+  text-align: center;
+  padding: 2rem;
+}

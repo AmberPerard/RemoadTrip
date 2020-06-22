@@ -1,0 +1,58 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary from tokens;
+
+.back {
+  composes: blueButton from "../../styles/buttons.module.css";
+  font-size: 3rem;
+  width: 20.4rem;
+  padding: 0.5rem 1rem;
+  height: 5.8rem;
+  border: none;
+
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.button__animation {
+  margin-top: 1rem;
+  composes: blueButton from "../../styles/buttons.module.css";
+  z-index: 1;
+
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.button__animation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: darkPrimary;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.button__animation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: colorPrimary;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+
+.button__animation:hover {
+  color: #002860;
+}
+
+.button__animation:hover::before {
+  width: 100%;
+}

@@ -1,0 +1,280 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
+
+.block {
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.article {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start {
+  margin-top: 2rem;
+  margin-left: 19.5rem;
+  z-index: 1;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background: darkPrimary;
+  border-radius: 1rem;
+  width: 20rem;
+  height: 6.3rem;
+  color: colorPrimary;
+  font-family: Bungee;
+  font-size: 3.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.start::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: darkPrimary;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.start::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: OrangeColor;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+.start:hover {
+  color: #002860;
+}
+
+.start:hover::before {
+  width: 100%;
+}
+
+.div__roadcar {
+  display: grid;
+  grid-template-areas: "roadcar";
+  width: 100%;
+  overflow: hidden;
+  margin-top: -8.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.car {
+  grid-area: roadcar;
+  transform: scaleX(-1) rotate(9deg);
+  margin-left: 6rem;
+}
+
+.road__one {
+  grid-area: roadcar;
+  width: 100vw;
+  height: auto;
+}
+
+.road__two {
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+  width: 100vw;
+  height: auto;
+}
+
+.span {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3rem;
+}
+
+.title__friendsfam {
+  text-align: center;
+  margin-left: -40rem;
+}
+
+.article__friendsfam {
+  margin-top: -10rem;
+  overflow: hidden;
+}
+
+.div__one {
+  display: flex;
+  flex-flow: row-reverse;
+  height: 35rem;
+  justify-content: flex-end;
+}
+
+.famfriends {
+  margin-top: -18rem;
+  margin-left: -42rem;
+}
+
+.paragraph {
+  background: colorPrimary;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.paragraph__famfriends {
+  margin-left: -7rem;
+  width: 39rem;
+  margin-top: 9rem;
+}
+
+.title {
+  font-family: "Bungee", sans-serif;
+  font-size: 4rem;
+  background: colorPrimary;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.title__support {
+  width: 25rem;
+  text-align: left;
+  line-height: 1.2;
+  align-self: flex-start;
+  margin-left: 20vw;
+}
+
+.paragraph__support {
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 20vw;
+  width: 22rem;
+  margin-top: 0.5rem;
+}
+
+.div__support {
+  margin-top: -73rem;
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  grid-template-areas: "together";
+}
+
+.image__tdoubleroad {
+  position: absolute;
+  z-index: -1;
+  grid-area: together;
+  left: 0;
+}
+
+.image__uturn {
+  position: absolute;
+  left: 0;
+  margin-top: 54.5rem;
+  z-index: -2;
+}
+
+.list {
+  text-align: center;
+  grid-area: together;
+  width: 50rem;
+  height: 7rem;
+  margin-top: 84.5rem;
+  margin-left: 42rem;
+  transform: rotate(-18deg);
+  font-family: "Bungee", sans-serif;
+  font-size: 3rem;
+  display: flex;
+  margin-bottom: 30rem;
+}
+
+.listitem {
+  padding-right: 3.5rem;
+}
+
+.image__support {
+  grid-area: together;
+  position: relative;
+  z-index: -3;
+  transform: rotate(-18deg);
+  margin-top: 46.5rem;
+  margin-left: 60rem;
+}
+
+.listitem__up {
+  margin-top: -7rem;
+}
+
+.article__share {
+  display: grid;
+  grid-template-columns: 55vw 45vw;
+  overflow: hidden;
+  margin-top: -21.65rem;
+}
+
+.socialcar__div {
+  order: -1;
+  grid-column: 1/3;
+  width: 100%;
+  height: 13rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.socialcar {
+  position: absolute;
+  z-index: -2;
+  margin-left: 36.8rem;
+  height: 12rem;
+  width: auto;
+}
+
+.title__share {
+  grid-column: 2/3;
+  margin-left: -4.7rem;
+}
+
+.paragraph__share {
+  grid-column: 2/3;
+  margin-left: -4.7rem;
+  width: 42rem;
+}
+
+.hashtags {
+  grid-column: 2/3;
+  background: colorPrimary;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  margin-left: -4.7rem;
+  background: none;
+}
+
+.article__cta {
+  align-items: flex-start;
+}
+
+.title__cta {
+  text-align: center;
+  line-height: 1.3;
+  background: none;
+  margin-left: 14rem;
+  margin-top: -6rem;
+}
+
+.road__cta {
+  height: auto;
+  width: 100%;
+  margin-top: -24rem;
+  position: relative;
+  z-index: -1;
+  margin-bottom: 8rem;
+}

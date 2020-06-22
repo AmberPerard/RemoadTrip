@@ -1,0 +1,228 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  padding: 6rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.containerFinish {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.finish {
+  font-family: Bungee;
+  font-size: 4rem;
+  color: darkPrimary;
+}
+
+.finishImg {
+  margin-bottom: 2.4rem;
+}
+
+.containerBox {
+  display: flex;
+  align-items: center;
+}
+
+.boxLeft {
+  margin-left: 3rem;
+  width: 33.4rem;
+  height: 25.1rem;
+  background-color: darkPrimary;
+  color: colorPrimary;
+  font-size: 2.5rem;
+  border-radius: 1.1rem;
+  padding: 2.7rem;
+  text-align: center;
+}
+
+.boxMiddle {
+  margin: 0 3rem;
+  height: 30.4rem;
+  width: 45rem;
+  background-color: darkPrimary;
+  color: colorPrimary;
+  font-size: 2.5rem;
+  border-radius: 1.1rem;
+  padding: 2.7rem 1.4rem;
+  text-align: center;
+}
+
+.containerCollectedToken {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.collectedToken {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-rows: 9rem 3rem;
+  grid-template-columns: 3rem 9rem;
+  grid-template-areas: "text icon" "button button";
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
+}
+
+.rotated {
+  grid-area: text;
+  font-size: 2.4rem;
+  text-align: center;
+  margin-left: 2rem;
+  margin-top: 5rem;
+  transform: rotate(-90deg);
+}
+
+.buttonToken {
+  margin-left: 3.5rem;
+  grid-area: button;
+  background: colorPrimary;
+  border-radius: 0.7rem;
+  width: 97px;
+  height: 31px;
+  color: darkPrimary;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.bigText {
+  font-family: Bungee;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.smallText {
+  font-size: 2rem;
+}
+
+.boxRight {
+  margin-right: 3rem;
+  width: 33.4rem;
+  height: 25.1rem;
+  background-color: darkPrimary;
+  color: colorPrimary;
+  font-size: 2.5rem;
+  border-radius: 1.1rem;
+  padding: 2.7rem;
+  text-align: center;
+}
+
+.distanceText {
+  font-family: Bungee;
+  font-size: 8rem;
+  margin-top: 3rem;
+}
+
+.containerButton {
+  display: flex;
+  flex-flow: row;
+}
+
+.roads {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.road {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: none;
+}
+
+.road__one {
+  width: 30vw;
+  height: auto;
+}
+
+.road__two {
+  position: fixed;
+  top: unset;
+  left: unset;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+}
+
+.road__three {
+  position: fixed;
+  top: unset;
+  left: unset;
+  right: 0;
+  bottom: 0;
+  width: 59vw;
+  height: auto;
+}
+
+.button {
+  composes: blueButton from "../../styles/buttons.module.css";
+  font-size: 2.3rem;
+  width: 29.1rem;
+  padding: 2rem;
+  height: 7.4rem;
+  margin: 0 1rem;
+  background-color: colorPrimary;
+  color: darkPrimary;
+  border: 0.2rem solid darkPrimary;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.button__animation {
+  z-index: 1;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.button__animation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.button__animation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: darkPrimary;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+
+.button__animation:hover {
+  color: colorPrimary;
+}
+
+.button__animation:hover::before {
+  width: 100%;
+}
+
+.trackedjourney {
+  margin: 1.5rem 0;
+}

@@ -1,19 +1,19 @@
 import React from "react";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { ROUTES } from "./consts";
 
-import Introduction from "./components/Introduction.js";
-import Stream from "./components/Stream.js";
-import Map from "./components/Map.js";
-import Finish from "./components/Finish.js";
-import SecondaryLanding from "./components/SecondaryLanding.js";
-import ExploreSteps from "./components/ExploreSteps.js";
-import Formulas from "./components/Formulas.js";
-import Footer from "./components/Footer.js";
-import ShareSupport from "./components/ShareSupport.js";
-import Controller from "./components/Controller.js";
-import CarDetail from "./components/CarDetail/CarDetail";
+import Introduction from "./components/Introduction/Introduction.js";
+import Stream from "./components/Stream/Stream.js";
+import Map from "./components/Map/Map.js";
+import Finish from "./components/Finish/Finish.js";
+import SecondaryLanding from "./components/SecondaryLanding/SecondaryLanding.js";
+import ExploreSteps from "./components/ExploreSteps/ExploreSteps.js";
+import Formulas from "./components/Formulas/Formulas.js";
+import Footer from "./components/Footer/Footer.js";
+import ShareSupport from "./components/ShareSupport/ShareSupport.js";
+import Controller from "./components/Controller/Controller.js";
+import CarDetail from "./components/CarDetail/CarDetail.js";
 
 const App = () => {
   return (
@@ -41,6 +41,7 @@ const App = () => {
         <ShareSupport />
         <Footer />
       </Route>
+      <Route render={() => <Redirect to={ROUTES.home} />} />
     </Switch>
   );
 };

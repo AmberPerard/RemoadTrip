@@ -1,0 +1,149 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
+
+.block {
+  width: 100%;
+  height: 100vh;
+  min-height: 90rem;
+  max-height: 100rem;
+  background-color: darkPrimary;
+  color: colorPrimary;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  padding-top: 9.4rem;
+  color: colorPrimary;
+  text-align: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 3.5rem;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  margin-top: 1.3rem;
+}
+
+.imgcontainer {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 66rem;
+}
+
+.img__main {
+  grid-column: 2/3;
+  position: relative;
+  margin-top: -15rem;
+  margin-left: -9rem;
+  transform: scale(0.9);
+}
+
+.img__maintwo {
+  margin-top: 6rem;
+  margin-left: -8rem;
+  grid-column: 3/4;
+}
+
+.download__div {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5rem 1fr;
+  margin-top: -21rem;
+  /* dit hieronder wegdoen indien img__maintwo weg moet en img__main wel blijft*/
+  align-self: flex-end;
+  margin-right: 17rem;
+}
+
+.download__title {
+  grid-column: 1/3;
+  text-align: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 3rem;
+}
+
+.dowload__apps {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.download__img {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.download__name {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.download__store {
+  font-size: 2.2rem;
+  width: 12rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: -18rem;
+  margin-right: 5rem;
+  margin-bottom: 8rem;
+}
+
+.start {
+  margin-top: 4rem;
+  composes: yellowButton from "../../styles/buttons.module.css";
+  z-index: 1;
+
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.start::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.start::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: OrangeColor;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+.start:hover {
+  color: #002860;
+}
+
+.start:hover::before {
+  width: 100%;
+}
+
+.video {
+  grid-column: 1/3;
+  margin-top: 14rem;
+  margin-left: -5rem;
+  width: 48vw;
+  height: 27vw;
+  background: colorPrimary;
+}

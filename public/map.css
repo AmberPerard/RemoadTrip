@@ -9,6 +9,12 @@
   border-radius: 10px;
 }
 
+.mapContainerSmall {
+  width: 53.5rem;
+  height: 15.6rem;
+  border-radius: 10px;
+}
+
 .container__map {
   display: flex;
   justify-content: center;
@@ -36,4 +42,17 @@
   background-size: 50px;
   width: 50px;
   height: 45px;
+  cursor: pointer;
+  filter: saturate(0.3);
+}
+
+.autoMarkerWithoutHover {
+  background-image: url(./assets/auto.png);
+  background-size: 50px;
+  width: 50px;
+  height: 45px;
+}
+
+.autoMarker:hover {
+  filter: saturate(1);
 }

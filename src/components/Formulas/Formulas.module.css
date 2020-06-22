@@ -1,0 +1,61 @@
+@value tokens: "../../styles/tokens.module.css";
+@value colorPrimary, darkPrimary, OrangeColor from tokens;
+
+.block {
+  background: darkPrimary;
+  color: colorPrimary;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: -0.5rem;
+  position: relative;
+  z-index: 0;
+  height: 75rem;
+}
+
+.title {
+  font-family: "Bungee", sans-serif;
+  font-size: 4rem;
+  margin-top: 10rem;
+}
+
+.paragraph {
+  font-size: 2rem;
+  width: 56rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.formulas {
+  display: grid;
+  grid-template-columns: repeat(3, 29rem);
+  gap: 4.7rem;
+  margin: 3rem 0;
+}
+
+.formula {
+  background-color: colorPrimary;
+  color: darkPrimary;
+  padding: 2rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.sec__img {
+  order: -1;
+  margin-bottom: 1rem;
+}
+
+.sec__title {
+  font-family: "Bungee", sans-serif;
+  font-size: 2.6rem;
+  width: 26rem;
+  margin-bottom: 2.5rem;
+}
+
+.sec__paragraph {
+  margin-bottom: 2.5rem;
+}
