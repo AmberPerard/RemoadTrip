@@ -103,7 +103,7 @@
   /* padding: 5rem;
   padding-left: 8rem; */
   gap: 0.8rem;
-  height: 40vh;
+  height: 40rem;
   width: 33rem;
 }
 
@@ -257,6 +257,7 @@
 
 .align__left {
   text-align: left;
+  overflow: scroll;
 }
 
 .button__animation {
