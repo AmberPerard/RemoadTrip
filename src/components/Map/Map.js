@@ -14,9 +14,30 @@ const Map = () => {
   const [center, setCenter] = useState([3.21667, 51.25]);
   const handleChangeForm = (e) => {
     const continent = e.currentTarget.value;
-    console.log(continent);
-    if (continent === "Europa") {
-      setCenter([58.122405, 8.199722]);
+    // console.log(continent);
+    if (continent === "Africa") {
+      setCenter([16.052607, 10.376212]);
+    }
+    if (continent === "Antarctica") {
+      setCenter([5.329951, -78.193822]);
+    }
+    if (continent === "Asia") {
+      setCenter([103.415886, 30.955671]);
+    }
+    if (continent === "Australia") {
+      setCenter([134.03451, -26.369858]);
+    }
+    if (continent === "Europe") {
+      setCenter([8.199722, 58.122405]);
+    }
+    if (continent === "North-America") {
+      setCenter([-97.83403, 41.131939]);
+    }
+    if (continent === "South-America") {
+      setCenter([-59.889703, -17.740837]);
+    }
+    if (continent === "empty") {
+      setCenter([3.21667, 51.25]);
     }
   };
 
@@ -54,10 +75,11 @@ const Map = () => {
                 onChange={(e) => handleChangeForm(e)}
               >
                 <option value="empty">-Continent-</option>
+                <option value="Africa">Africa</option>
                 <option value="Antarctica">Antarctica</option>
                 <option value="Asia">Asia</option>
                 <option value="Australia">Australia</option>
-                <option value="Europa">Europe</option>
+                <option value="Europe">Europe</option>
                 <option value="North-America">North America</option>
                 <option value="South-America">South America</option>
               </select>
