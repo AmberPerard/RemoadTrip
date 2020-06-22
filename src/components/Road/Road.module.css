@@ -5,7 +5,6 @@
   grid-area: car;
   width: 30.6rem;
   height: 20.9rem;
-
   border-radius: 1.6rem;
   color: colorPrimary;
   background-color: darkPrimary;
@@ -39,6 +38,7 @@
 }
 
 .road {
+  z-index: 1;
   grid-area: bottombox;
   align-self: center;
   width: 100%;
@@ -47,6 +47,7 @@
 
 .carRoad3 {
   grid-row: 3;
+  z-index: 2;
   grid-column: 3;
   justify-self: left;
   transform: rotateY(180deg);
@@ -56,6 +57,7 @@
 
 .carRoad2 {
   grid-row: 3;
+  z-index: 2;
   grid-column: 2;
   justify-self: center;
   transform: rotateY(180deg);
@@ -65,6 +67,7 @@
 
 .carRoad1 {
   grid-row: 3;
+  z-index: 2;
   grid-column: 1;
   justify-self: right;
   transform: rotateY(180deg);
