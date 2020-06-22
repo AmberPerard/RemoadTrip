@@ -97,7 +97,6 @@ const Map = () => {
         <BottomContainerStreamView
           timeDriven={"00:00"}
           location={false}
-          timeLocal={"00:00"}
           route={"#"}
           textButton={"Get ready"}
           noClick={true}

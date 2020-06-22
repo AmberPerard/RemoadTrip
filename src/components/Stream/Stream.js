@@ -75,6 +75,7 @@ const Stream = () => {
         <TopContainerStreamView
           tokensFound={0}
           mtoToken={29}
+          driving={true}
         ></TopContainerStreamView>
         {/* <embed
           src="https://serverwebrtcint4.herokuapp.com/"
