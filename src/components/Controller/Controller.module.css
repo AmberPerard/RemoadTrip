@@ -64,6 +64,7 @@
 
 .car {
   grid-area: car;
+  justify-self: end;
   width: 30.6rem;
   height: 20.9rem;
 
