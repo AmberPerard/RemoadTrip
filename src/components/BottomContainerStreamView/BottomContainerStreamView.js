@@ -42,17 +42,6 @@ const BottomContainerStreamView = ({
             </span>
           </p>
         </div>
-        <Link
-          className={`${style.finish} ${noClick === true ? style.hidden : ""}`}
-          to={route}
-        >
-          <img
-            className={style.flag}
-            alt="finsh flag"
-            src="./assets/flag.png"
-          ></img>
-          {textButton}
-        </Link>
       </div>
     </>
   ));
