@@ -25,7 +25,7 @@ const BottomContainerStreamView = ({
         <p className={style.drivenTime}>{timeDriven}</p>
         <div className={style.local}>
           {location ? (
-            <p className={style.location}>
+            <p className={`${location ? style.location : style.locationGrey}`}>
               {car.location
                 ? car.location.features[3].text +
                   ", " +
@@ -33,14 +33,24 @@ const BottomContainerStreamView = ({
                 : "Location"}
             </p>
           ) : (
-            <p className={style.location}>Location</p>
+            <p className={`${location ? style.location : style.locationGrey}`}>
+              Location
+            </p>
           )}
-          <p className={style.localTime}>
+          <p className={`${location ? style.localTime : style.localTimeGrey}`}>
             local time{" "}
-            <span className={style.localTimeBig}>
+            <span
+              className={`${
+                location ? style.localTimeBig : style.localTimeBigGrey
+              }`}
+            >
               &#8192;{" "}
               {location ? (
-                <LocalTime className={style.localTimeBig}></LocalTime>
+                <LocalTime
+                  className={`${
+                    location ? style.localTimeBig : style.localTimeBigGrey
+                  }`}
+                ></LocalTime>
               ) : (
                 "00:00"
               )}
