@@ -36,7 +36,6 @@
   padding: 1.4rem;
   /* padding-top: 1rem; */
   width: 45rem;
-  height: 11.4rem;
 
   /* background: #00204b; */
   border-radius: 1rem 1rem 0 0;
@@ -56,8 +55,30 @@
   /* height: 0; */
 }
 
+.locationGrey {
+  color: #909090;
+  filter: grayscale(100%);
+}
+
 .location {
   /* margin-top: 15rem; */
+}
+
+.locationGrey {
+  color: #909090;
+  filter: grayscale(100%) contrast(10%);
+}
+
+.locationGrey::before {
+  content: "";
+  background: url("/assets/location.png") no-repeat;
+  position: absolute;
+  background-size: contain;
+  display: inline-block;
+  width: 1.8rem;
+  height: 2.4rem;
+  margin-left: -2.3rem;
+  margin-top: 0.2rem;
 }
 
 .location::before {
@@ -76,8 +97,18 @@
   padding-top: 1rem;
 }
 
+.localTimeGrey {
+  padding-top: 1rem;
+  color: #909090;
+}
+
 .localTimeBig {
   font-size: 3rem;
+}
+
+.localTimeBigGrey {
+  font-size: 3rem;
+  color: #909090;
 }
 
 .finish {

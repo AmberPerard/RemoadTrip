@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
 import BackLink from "../Backlink/Backlink";
@@ -9,15 +9,13 @@ import Road from "../Road/Road";
 import MapBoxMap from "../MapBoxMap/MapBoxMap";
 import { useStores } from "../../hooks/useStores";
 import { useObserver } from "mobx-react-lite";
+import { Link } from "react-router-dom";
 
 const CarDetail = () => {
   const today = new Date();
-  const [bigImage, setBigImage] = useState("pic2.png");
+  const [bigImage, setBigImage] = useState("pic1.jpeg");
   const { carStore } = useStores();
-  // const [coordinateLat, setCoordinatLat] = useState();
-  // const [coordinateLng, setCoordinatLng] = useState();
 
-  // const weather = useRef();
   const car = carStore.getCarsById("1");
   let coordinateLat, coordinateLng;
 
@@ -82,9 +80,81 @@ const CarDetail = () => {
           </div>
 
           <div className={style.CarDetailContainer}>
-            <article
-              className={`${style.content__article} ${style.article__left}`}
-            >
+            <h2 className={`${style.content__title}`}>
+              {car.location
+                ? car.location.features[3].text +
+                  ", " +
+                  car.location.features[5].text
+                : "Loading"}
+            </h2>
+            <div className={style.content__article}>
+              <div>
+                <h3
+                  className={` ${style.noMarginTop} ${style.content__subtitles}`}
+                >
+                  General information
+                </h3>
+                <p>
+                  What could be more romantic and inspiring than a place that
+                  looks like a backdrop for a fairy tale? The medieval overtones
+                  of Bruges’ cobblestone streets lead to countless historical,
+                  architectural and artistic wonders. Marvel at ornate houses
+                  lining intricate canals, and understand why this is a favorite
+                  destination for all types of travelers. The whole city
+                  emanates an appreciation of the past, a love of the present,
+                  and enthusiasm for the future. Don’t miss Hof Bladelin,
+                  Groeninge Museum, Church of Our Lady, and Belfry and Market
+                  Halls.
+                </p>
+              </div>
+              <div className={style.content__pictures}>
+                <h3 className={style.content__subtitles}>
+                  Pictures of{" "}
+                  {car.location ? car.location.features[3].text : "Loading"}
+                </h3>
+                <img
+                  src={`/assets/${bigImage}`}
+                  width="374"
+                  height="214"
+                  alt="a wide shot of bruges"
+                />
+                <div className={style.images__small}>
+                  <img
+                    src="/assets/pic1.jpeg"
+                    width="112"
+                    height="64"
+                    alt="shops in bruges"
+                    onClick={handleClickImg}
+                  />
+                  <img
+                    src="/assets/pic2.jpeg"
+                    width="112"
+                    height="64"
+                    alt="houses alongside the water in bruges"
+                    onClick={handleClickImg}
+                  />
+                  <img
+                    src="/assets/pic3.jpeg"
+                    width="112"
+                    height="64"
+                    alt="burges"
+                    onClick={handleClickImg}
+                  />
+                </div>
+              </div>
+              <div>
+                <h3 className={style.content__subtitles}>Live location</h3>
+                <div className={style.content__map}>
+                  <MapBoxMap
+                    classForMap={"mapContainerSmall"}
+                    controls={false}
+                    zoom={8}
+                  ></MapBoxMap>
+                </div>
+              </div>
+            </div>
+            <div className={style.article__left}></div>
+            <article className={style.article__left}>
               <h2 className={`${style.content__title} ${style.hidden}`}>
                 Location information
               </h2>
@@ -101,9 +171,6 @@ const CarDetail = () => {
                 />
               </div>
               <div className={`${style.localinfo} ${style.localinfo__time}`}>
-                {/* <h3>Daytime</h3> */}
-                {/* {car.weather ? console.log(car.weather.sys.sunrise) : ""}
-                {car.weather ? console.log(car.weather.sys.sunset) : ""} */}
                 {car.weather &&
                 Math.round(today.getTime() / 1000) > car.weather.sys.sunrise &&
                 Math.round(today.getTime() / 1000) < car.weather.sys.sunset ? (
@@ -132,7 +199,6 @@ const CarDetail = () => {
                     ) : (
                       ""
                     )}
-                    {/* {weather? console.log(weather.weather[0].main): ""} */}
                   </li>
                   <li className={style.list__items}>
                     <p className={style.list__item}>Humidity</p>
@@ -145,12 +211,7 @@ const CarDetail = () => {
                     )}
                   </li>
                   <li className={style.list__items}>
-                    <p className={style.list__item}>Precipitation</p>
-                    <p className={style.list__value}>14%</p>
-                  </li>
-                  <li className={style.list__items}>
                     <p className={style.list__item}>Wind</p>
-                    {/* <p className={style.list__value}>19 km/h</p> */}
                     {car.weather ? (
                       <p className={style.list__value}>{`${Math.round(
                         car.weather.wind.speed * 3.6
@@ -202,106 +263,27 @@ const CarDetail = () => {
                   </div>
                 </div>
               </div>
-            </article>
-
-            <article className={style.content__article}>
-              <h2 className={`${style.content__title}`}>
-                {car.location
-                  ? car.location.features[3].text +
-                    ", " +
-                    car.location.features[5].text
-                  : "Loading"}
-              </h2>
-              <div>
-                <h3 className={style.content__subtitles}>
-                  General information
-                </h3>
-                <p>
-                  What could be more romantic and inspiring than a place that
-                  looks like a backdrop for a fairy tale? The medieval overtones
-                  of Bruges’ cobblestone streets lead to countless historical,
-                  architectural and artistic wonders. Marvel at ornate houses
-                  lining intricate canals, and understand why this is a favorite
-                  destination for all types of travelers. The whole city
-                  emanates an appreciation of the past, a love of the present,
-                  and enthusiasm for the future. Don’t miss Hof Bladelin,
-                  Groeninge Museum, Church of Our Lady, and Belfry and Market
-                  Halls.
-                </p>
-              </div>
-              <div>
-                <h3 className={style.content__subtitles}>Live location</h3>
-                <div>
-                  <MapBoxMap
-                    classForMap={"mapContainerSmall"}
-                    controls={true}
-                    zoom={8}
-                  ></MapBoxMap>
-                </div>
-                {/* <img
-                  src="/assets/detail__map.png"
-                  width="389"
-                  height="156"
-                  alt="live location of the remote car"
-                /> */}
-              </div>
-            </article>
-
-            <article className={style.content__article}>
-              <h2 className={`${style.content__title} ${style.hidden}`}>
-                Location pictures
-              </h2>
-              <div className={style.content__pictures}>
-                <h3 className={style.content__subtitles}>
-                  Pictures of{" "}
-                  {car.location ? car.location.features[3].text : "Loading"}
-                </h3>
-                <img
-                  src={`/assets/${bigImage}`}
-                  width="374"
-                  height="214"
-                  alt="a wide shot of bruges"
-                />
-                <div className={style.images__small}>
-                  <img
-                    src="/assets/pic2.png"
-                    width="112"
-                    height="64"
-                    alt="shops in bruges"
-                    onClick={handleClickImg}
-                  />
-                  <img
-                    src="/assets/pic3.png"
-                    width="112"
-                    height="64"
-                    alt="houses alongside the water in bruges"
-                    onClick={handleClickImg}
-                  />
-                  <img
-                    src="/assets/pic4.png"
-                    width="112"
-                    height="64"
-                    alt="burges"
-                    onClick={handleClickImg}
-                  />
-                </div>
-              </div>
-            </article>
-
-            <article className={style.content__background}>
-              <h2
-                className={`${style.background__title} ${style.background__asset}`}
+              <Link
+                className={`${style.button__ready}  ${style.button__animation}`}
+                to={ROUTES.controller}
               >
-                N° MY312
-              </h2>
-              <img
-                className={`${style.background__img} ${style.background__asset}`}
-                src="/assets/detailpage__bg.png"
-                width="525"
-                height="370"
-                alt="illustration of an orange road with a red car on"
-              />
+                Choose this car
+              </Link>
             </article>
+          </div>
+          <div className={style.content__background}>
+            <p
+              className={`${style.background__title} ${style.background__asset}`}
+            >
+              N° MY312
+            </p>
+            <img
+              className={`${style.background__img} ${style.background__asset}`}
+              src="/assets/detailpage__bg.png"
+              width="525"
+              height="370"
+              alt="illustration of an orange road with a red car on"
+            />
           </div>
           <Road step={2} noSelectedCar={true}></Road>
           <BottomContainerStreamView
@@ -309,6 +291,7 @@ const CarDetail = () => {
             location={true}
             route={ROUTES.controller}
             textButton={"Set"}
+            noClick={true}
           ></BottomContainerStreamView>
         </div>
       </section>

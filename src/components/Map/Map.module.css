@@ -23,13 +23,22 @@
 
 .mapContainer {
   grid-area: middel;
+  display: flex;
+  flex-flow: column;
 }
 
 .title {
   font-family: Bungee;
   font-size: 4rem;
   text-align: center;
-  color: #ffffff;
+  color: darkPrimary;
+}
+
+.titleCar {
+  justify-self: center;
+  align-self: center;
+  margin-top: -5rem;
+  margin-left: -5rem;
 }
 
 /* .subtitle {
@@ -47,12 +56,13 @@
   width: 71rem;
   justify-content: space-between;
   margin-bottom: 1rem;
+  margin-top: 5rem;
 }
 
 .biglable {
   font-family: Bungee;
   font-size: 2rem;
-  color: darkPrimary;
+  color: white;
   height: 3rem;
   padding: 0.3rem;
 }
@@ -68,7 +78,6 @@
   background-color: darkPrimary;
   border: none;
   color: colorPrimary;
-  width: 12rem;
   height: 3rem;
   border-radius: 0.8rem;
   font-size: 1.7rem;

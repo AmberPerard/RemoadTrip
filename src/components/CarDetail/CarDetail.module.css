@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 80rem 1fr;
   grid-template-rows: 11rem auto 21rem;
-  grid-template-areas: "backlink topbox ." "inhoud inhoud inhoud" "bottombox bottombox bottombox";
+  grid-template-areas: "backlink topbox ." ".  inhoud . " "bottombox bottombox bottombox";
   justify-content: center;
   position: relative;
   z-index: 1;
@@ -28,13 +28,17 @@
   grid-row: 1/2;
   position: absolute;
   display: grid;
-  grid-template-columns: 2fr 1.8fr 2fr;
-  grid-template-rows: auto;
-  grid-template-areas: "leftcontent middlecontent rightcontent";
-  gap: 3rem;
+  margin: 10rem auto;
+  grid-template-columns: 53.7rem 37rem;
+  grid-template-rows: 6.7rem 50rem;
+  grid-template-areas: "title title" "leftcontent middlecontent";
+  grid-column-gap: 7rem;
 }
 
 .content__title {
+  grid-area: title;
+  padding-bottom: 2rem;
+  grid-row: 1/2;
   text-align: center;
   font-family: "Bungee", sans-serif;
   font-size: 4rem;
@@ -43,12 +47,19 @@
 }
 
 .content__article {
-  margin-top: 14rem;
+  /* margin-top: 14rem; */
+  height: 100%;
+  overflow: scroll;
 }
 
 .content__background {
+  grid-area: car;
   position: absolute;
   z-index: -1;
+}
+
+.content__map {
+  padding-bottom: 7rem;
 }
 
 .background__title {
@@ -79,16 +90,36 @@
   margin-bottom: 1rem;
 }
 
+.noMarginTop {
+  margin-top: 0;
+}
+
 .article__left {
+  grid-area: middlecontent;
   display: grid;
+  /* margin-top: 15rem; */
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 5rem 1fr;
-  padding: 5rem;
-  padding-left: 8rem;
+  grid-template-rows: 5rem 1fr 6.2rem;
+  /* padding: 5rem;
+  padding-left: 8rem; */
   gap: 0.8rem;
-  height: 55vh;
-  margin-top: 19rem;
-  width: 50rem;
+  height: 40vh;
+  width: 33rem;
+}
+
+.button__ready {
+  color: darkPrimary;
+  grid-column: 1/3;
+  border: 0.27rem solid darkPrimary;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Bungee;
+
+  font-size: 2.6rem;
+  text-align: center;
 }
 
 .localinfo {
@@ -99,6 +130,7 @@
   font-family: "Bungee", sans-serif;
   text-align: center;
   display: flex;
+  height: 33vh;
 }
 
 .localinfo__info {
@@ -108,13 +140,15 @@
 }
 
 .content__pictures {
-  margin-top: 10rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem 1fr 1fr;
-  padding: 1rem 5rem;
-  padding-right: 8rem;
+  grid-template-rows: 6rem 1fr 78.96px;
+  padding-right: 10rem;
   width: 50rem;
+}
+
+.content__pictures img {
+  border-radius: 1rem;
 }
 
 .images__small {
@@ -123,6 +157,7 @@
   justify-content: space-between;
   margin-top: 1.5rem;
   cursor: pointer;
+  height: 78.96px;
 }
 
 .localinfo__hour {
@@ -131,6 +166,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 0 0.5rem;
+  height: auto;
 }
 
 .localinfo__time {
@@ -140,6 +176,7 @@
   justify-content: space-around;
   padding: 0 1.8rem;
   padding-left: 1rem;
+  height: auto;
 }
 
 .local__list {
@@ -220,4 +257,43 @@
 
 .align__left {
   text-align: left;
+}
+
+.button__animation {
+  z-index: 1;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.button__animation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.button__animation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: darkPrimary;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+
+.button__animation:hover {
+  color: colorPrimary;
+}
+
+.button__animation:hover::before {
+  width: 100%;
 }

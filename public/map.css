@@ -10,7 +10,7 @@
 }
 
 .mapContainerSmall {
-  width: 38.9rem;
+  width: 53.5rem;
   height: 15.6rem;
   border-radius: 10px;
 }
@@ -42,4 +42,9 @@
   background-size: 50px;
   width: 50px;
   height: 45px;
+  cursor: pointer;
+}
+
+.autoMarker:hover {
+  opacity: 60%;
 }

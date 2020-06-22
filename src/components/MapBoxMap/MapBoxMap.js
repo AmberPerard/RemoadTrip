@@ -7,7 +7,7 @@ import { useObserver } from "mobx-react-lite";
 
 mapboxgl.accessToken = process.env.REACT_APP_apiKey;
 
-const MapBoxMap = ({ controls, classForMap, zoom }) => {
+const MapBoxMap = ({ controls, classForMap, zoom, center }) => {
   let history = useHistory();
   const { carStore } = useStores();
 
@@ -61,6 +61,10 @@ const MapBoxMap = ({ controls, classForMap, zoom }) => {
     new mapboxgl.Marker(el)
       .setLngLat([carStore.cars[0].lng, carStore.cars[0].lat])
       .addTo(map);
+  }
+
+  if (map) {
+    map.panTo(center);
   }
 
   return useObserver(() => (
