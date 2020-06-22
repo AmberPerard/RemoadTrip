@@ -258,3 +258,42 @@
 .align__left {
   text-align: left;
 }
+
+.button__animation {
+  z-index: 1;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.button__animation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  z-index: -2;
+}
+
+.button__animation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: darkPrimary;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  z-index: -1;
+}
+
+.button__animation:hover {
+  color: colorPrimary;
+}
+
+.button__animation:hover::before {
+  width: 100%;
+}

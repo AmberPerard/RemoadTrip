@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { ROUTES } from "../../consts";
 import style from "./CarDetail.module.css";
 import BackLink from "../Backlink/Backlink";
@@ -15,10 +15,7 @@ const CarDetail = () => {
   const today = new Date();
   const [bigImage, setBigImage] = useState("pic1.jpeg");
   const { carStore } = useStores();
-  // const [coordinateLat, setCoordinatLat] = useState();
-  // const [coordinateLng, setCoordinatLng] = useState();
 
-  // const weather = useRef();
   const car = carStore.getCarsById("1");
   let coordinateLat, coordinateLng;
 
@@ -266,7 +263,10 @@ const CarDetail = () => {
                   </div>
                 </div>
               </div>
-              <Link className={style.button__ready} to={ROUTES.controller}>
+              <Link
+                className={`${style.button__ready}  ${style.button__animation}`}
+                to={ROUTES.controller}
+              >
                 Choose this car
               </Link>
             </article>

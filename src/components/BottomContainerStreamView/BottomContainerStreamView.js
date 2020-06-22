@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import style from "./BottomContainerStreamView.module.css";
 import LocalTime from "../LocalTime/LocalTime";
 import { useStores } from "../../hooks/useStores";
