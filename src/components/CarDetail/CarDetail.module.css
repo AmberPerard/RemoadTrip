@@ -28,7 +28,7 @@
   grid-row: 1/2;
   position: absolute;
   display: grid;
-  margin: 14rem auto;
+  margin: 10rem auto;
   grid-template-columns: 53.7rem 37rem;
   grid-template-rows: 6.7rem 50rem;
   grid-template-areas: "title title" "leftcontent middlecontent";
@@ -48,7 +48,7 @@
 
 .content__article {
   /* margin-top: 14rem; */
-  height: 101%;
+  height: 100%;
   overflow: scroll;
 }
 

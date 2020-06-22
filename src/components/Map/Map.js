@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MapBoxMap from "../MapBoxMap/MapBoxMap.js";
 import style from "./Map.module.css";
 import BackLink from "../Backlink/Backlink";
@@ -11,6 +11,15 @@ import { ROUTES } from "../../consts/index.js";
 
 const Map = () => {
   const { carStore } = useStores();
+  const [center, setCenter] = useState([3.21667, 51.25]);
+  const handleChangeForm = (e) => {
+    const continent = e.currentTarget.value;
+    console.log(continent);
+    if (continent === "Europa") {
+      setCenter([58.122405, 8.199722]);
+    }
+  };
+
   return useObserver(() => (
     <>
       <h1 className={style.hidden}>World map</h1>
@@ -39,7 +48,11 @@ const Map = () => {
           <form className={style.form}>
             <div className={style.filterGroup}>
               <p className={style.biglable}>Filter by</p>
-              <select className={style.select} defaultValue="-Continent-">
+              <select
+                className={style.select}
+                defaultValue="-Continent-"
+                onChange={(e) => handleChangeForm(e)}
+              >
                 <option value="empty">-Continent-</option>
                 <option value="Antarctica">Antarctica</option>
                 <option value="Asia">Asia</option>
@@ -91,6 +104,7 @@ const Map = () => {
             zoom={2}
             lat={carStore.cars[0].latitude}
             lng={carStore.cars[0].longitude}
+            center={center}
           ></MapBoxMap>
         </div>
         <Road step={1} noSelectedCar={false}></Road>
