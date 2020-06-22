@@ -291,6 +291,7 @@ const CarDetail = () => {
             location={true}
             route={ROUTES.controller}
             textButton={"Set"}
+            noClick={true}
           ></BottomContainerStreamView>
         </div>
       </section>

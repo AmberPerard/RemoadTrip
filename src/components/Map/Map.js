@@ -25,13 +25,28 @@ const Map = () => {
         <div className={style.mapContainer}>
           {/* <h2 className={style.title}>World map</h2>
           <p className={style.subtitle}>Select your car</p> */}
-          <h2 className={style.title}>Select a car on the map</h2>
+          <h2 className={style.title}>
+            Select a <span className={style.hidden}>car</span> &ensp; &ensp; on
+            the map
+          </h2>
+          <img
+            className={style.titleCar}
+            alt="Car"
+            src="./assets/car__3D.png"
+            width="45px"
+            height="38px"
+          ></img>
           <form className={style.form}>
             <div className={style.filterGroup}>
               <p className={style.biglable}>Filter by</p>
-              <select className={style.select} defaultValue="Difficulty">
-                <option value="difficulty">Difficulty</option>
-                <option value="availability">Availability</option>
+              <select className={style.select} defaultValue="-Continent-">
+                <option value="empty">-Continent-</option>
+                <option value="Antarctica">Antarctica</option>
+                <option value="Asia">Asia</option>
+                <option value="Australia">Australia</option>
+                <option value="Europa">Europe</option>
+                <option value="North-America">North America</option>
+                <option value="South-America">South America</option>
               </select>
             </div>
             <div className={style.buttonGroup}>

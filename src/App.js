@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { ROUTES } from "./consts";
 
 import Introduction from "./components/Introduction/Introduction.js";
@@ -41,6 +41,7 @@ const App = () => {
         <ShareSupport />
         <Footer />
       </Route>
+      <Route render={() => <Redirect to={ROUTES.home} />} />
     </Switch>
   );
 };
