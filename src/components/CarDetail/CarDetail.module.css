@@ -48,7 +48,7 @@
 
 .content__article {
   /* margin-top: 14rem; */
-  height: 100%;
+  min-height: 50vh;
   overflow: scroll;
 }
 
