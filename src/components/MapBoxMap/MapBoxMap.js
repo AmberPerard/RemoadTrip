@@ -63,7 +63,7 @@ const MapBoxMap = ({ controls, classForMap, zoom, center }) => {
     if (!map) initializeMap({ setMap, mapContainer });
   }, [carStore.cars, controls, el, map, zoom]);
 
-  if (map) {
+  if (map && carStore.cars[0].lng) {
     new mapboxgl.Marker(el)
       .setLngLat([carStore.cars[0].lng, carStore.cars[0].lat])
       .addTo(map);

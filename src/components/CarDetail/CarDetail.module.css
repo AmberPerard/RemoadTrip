@@ -143,21 +143,27 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 6rem 1fr 78.96px;
-  padding-right: 10rem;
-  width: 50rem;
+  width: 100%;
 }
 
 .content__pictures img {
   border-radius: 1rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .images__small {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 1.5rem;
   cursor: pointer;
   height: 78.96px;
+}
+
+.images__small img {
+  width: 12rem;
+  margin-right: 2rem;
 }
 
 .localinfo__hour {
