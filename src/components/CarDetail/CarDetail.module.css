@@ -25,10 +25,10 @@
 
 .CarDetailContainer {
   grid-area: inhoud;
-  grid-row: 1/2;
+  /* grid-row: 1/2; */
   position: absolute;
   display: grid;
-  margin: 10rem auto;
+  margin: 0 auto;
   grid-template-columns: 53.7rem 37rem;
   grid-template-rows: 6.7rem 50rem;
   grid-template-areas: "title title" "leftcontent middlecontent";
